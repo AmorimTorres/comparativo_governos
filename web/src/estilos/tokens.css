@@ -1,0 +1,19 @@
+/* Gerado por web/scripts/preparar.mjs a partir de design/tokens.json. Não editar à mão. */
+:root {
+  --identidade-verde: #13893B;
+  --identidade-verde-escuro: #0B6B2C;
+  --identidade-amarelo: #FEDD02;
+  --identidade-azul-marinho: #012672;
+  --identidade-vermelho-estrela: #EA0104;
+  --identidade-branco: #FFFFFF;
+  --superficie-off-white: #FAF7EE;
+  --superficie-painel: #FFFFFF;
+  --superficie-amarelo-claro: #FFF6CC;
+  --superficie-borda: #D8D4C6;
+  --superficie-grade: #E4E0D2;
+  --texto-principal: #1A1A1A;
+  --texto-secundario: #5B5B5B;
+  --dados-governo-a: #012672;
+  --dados-governo-b: #946800;
+  --dados-neutro-contexto: #5B5B5B;
+}

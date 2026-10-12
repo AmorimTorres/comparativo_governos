@@ -1,0 +1,150 @@
+# Eventos de contexto (choques externos, políticas públicas e mudanças de
+# metodologia) exibidos como camada opcional nos gráficos.
+#
+# Regra: cada evento precisa de fonte oficial (ato legal, órgão público ou
+# organismo internacional). As datas e descrições foram conferidas nas fontes
+# em 11/10/2026. Evento sem fonte verificável não entra.
+#
+# categoria: saude | economia_externa | clima | politica_publica | metodologia
+# data_fim vazia = evento pontual.
+# exibir_no_grafico: false para mudanças retroativas (que alteram a série
+# inteira e não marcam um ponto no tempo); o evento continua listado.
+
+eventos:
+  - data_inicio: 2020-02-03
+    data_fim: 2022-05-22
+    evento: Emergência de saúde pública nacional pela COVID-19
+    categoria: saude
+    indicadores_afetados: [desemprego, pib_anual, pib_trimestral, caged_saldo, rendimento_real, informalidade, extrema_pobreza, pobreza, gini, covid_obitos, mortalidade_infantil, ideb_anos_iniciais, ideb_anos_finais, ideb_ensino_medio, divida_bruta, resultado_primario, bolsa_familia_beneficio_real]
+    fonte_url: https://bvsms.saude.gov.br/bvs/saudelegis/gm/2020/prt0188_04_02_2020.html ; https://bvsms.saude.gov.br/bvs/saudelegis/gm/2022/prt0913_22_04_2022.html
+    descricao: Declarada pela Portaria MS 188, de 3/2/2020, e encerrada pela Portaria GM/MS 913, de 22/4/2022, que entrou em vigor 30 dias após a publicação.
+
+  - data_inicio: 2020-03-11
+    data_fim: ""
+    evento: OMS caracteriza a COVID-19 como pandemia
+    categoria: saude
+    indicadores_afetados: [desemprego, pib_trimestral, caged_saldo, covid_obitos, ipca_mensal]
+    fonte_url: https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/oms-classifica-coronavirus-como-pandemia ; https://www.paho.org/pt/covid19/historico-da-pandemia-covid-19
+    descricao: A Organização Mundial da Saúde passou a classificar a COVID-19 como pandemia.
+
+  - data_inicio: 2020-04-02
+    data_fim: 2021-10-31
+    evento: Auxílio Emergencial
+    categoria: politica_publica
+    indicadores_afetados: [extrema_pobreza, pobreza, gini, bolsa_familia_beneficio_real, resultado_primario, divida_bruta]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l13982.htm ; https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/mpv/mpv1039.htm ; https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/decreto/d10740.htm
+    descricao: Criado pela Lei 13.982/2020; nova rodada em 2021 pela MP 1.039/2021, prorrogada por três meses pelo Decreto 10.740/2021. Famílias do Bolsa Família receberam o auxílio no lugar do benefício regular.
+
+  - data_inicio: 2021-02-24
+    data_fim: ""
+    evento: Lei de autonomia do Banco Central
+    categoria: politica_publica
+    indicadores_afetados: [selic_meta]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm
+    descricao: A Lei Complementar 179/2021 define os objetivos do Banco Central e dispõe sobre sua autonomia e o mandato de seus dirigentes.
+
+  - data_inicio: 2021-09-01
+    data_fim: 2022-04-30
+    evento: Bandeira tarifária de escassez hídrica
+    categoria: clima
+    indicadores_afetados: [ipca_mensal, ipca_12m]
+    fonte_url: https://www.gov.br/mme/pt-br/assuntos/noticias/creg-determina-a-implementacao-de-programa-de-resposta-voluntaria-da-demanda-para-os-consumidores-cativos-e-de-bandeira-tarifaria-201cescassez-hidrica201d ; https://www2.aneel.gov.br/cedoc/res2021003creg.pdf
+    descricao: Criada pela Resolução CREG 3/2021 para cobrir custos de geração térmica durante a crise hídrica, de setembro de 2021 a abril de 2022.
+
+  - data_inicio: 2021-11-01
+    data_fim: 2023-02-28
+    evento: Auxílio Brasil substitui o Bolsa Família
+    categoria: politica_publica
+    indicadores_afetados: [bolsa_familia_familias, bolsa_familia_beneficio_real]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/mpv/mpv1061.htm ; https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14284.htm
+    descricao: Instituído pela MP 1.061/2021, convertida na Lei 14.284/2021. Os pagamentos com o novo nome aparecem nos dados do MDS de novembro de 2021 a fevereiro de 2023.
+
+  - data_inicio: 2022-02-24
+    data_fim: ""
+    evento: Início da guerra na Ucrânia
+    categoria: economia_externa
+    indicadores_afetados: [ipca_mensal, ipca_12m, ipca_alimentos, gasolina_real, diesel_real, glp_real, cambio, balanca_comercial]
+    fonte_url: https://news.un.org/pt/story/2022/02/1781042 ; https://news.un.org/pt/story/2022/03/1781482
+    descricao: Ofensiva militar da Rússia contra a Ucrânia, condenada pela Assembleia Geral da ONU em março de 2022. Afetou preços internacionais de petróleo, gás, fertilizantes e grãos.
+
+  - data_inicio: 2022-06-23
+    data_fim: ""
+    evento: ICMS de combustíveis e energia passa a ter teto de bem essencial
+    categoria: politica_publica
+    indicadores_afetados: [gasolina_real, diesel_real, ipca_mensal, ipca_12m]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp194.htm
+    descricao: A Lei Complementar 194/2022 considera essenciais, para fins de ICMS, os combustíveis, a energia elétrica, as comunicações e o transporte coletivo.
+
+  - data_inicio: 2022-07-14
+    data_fim: 2022-12-31
+    evento: Benefícios temporários da Emenda Constitucional 123
+    categoria: politica_publica
+    indicadores_afetados: [bolsa_familia_familias, bolsa_familia_beneficio_real, gasolina_real, ipca_mensal]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc123.htm
+    descricao: Acréscimo extraordinário de R$ 200 por mês ao Auxílio Brasil de agosto a dezembro de 2022, ampliação do Auxílio Gás e auxílios a caminhoneiros e taxistas, entre outras medidas válidas até 31/12/2022.
+
+  - data_inicio: 2023-02-28
+    data_fim: ""
+    evento: Novas alíquotas de PIS/Cofins sobre gasolina e etanol
+    categoria: politica_publica
+    indicadores_afetados: [gasolina_real, ipca_mensal]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/mpv/mpv1163.htm
+    descricao: A MP 1.163/2023 fixa alíquotas de PIS/Pasep e Cofins sobre gasolina, álcool, gás natural veicular e querosene de aviação.
+
+  - data_inicio: 2023-03-02
+    data_fim: ""
+    evento: Novo Bolsa Família
+    categoria: politica_publica
+    indicadores_afetados: [bolsa_familia_familias, bolsa_familia_beneficio_real]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/mpv/mpv1164.htm ; https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm
+    descricao: O Programa Bolsa Família é reinstituído pela MP 1.164/2023, convertida na Lei 14.601/2023.
+
+  - data_inicio: 2023-07-01
+    data_fim: 2023-12-31
+    evento: Seca extrema na bacia amazônica
+    categoria: clima
+    indicadores_afetados: [focos_queimadas, prodes_amazonia, deter_amazonia]
+    fonte_url: https://www.gov.br/cemaden/pt-br/assuntos/noticias-cemaden/secas-sem-precedentes-na-bacia-amazonica-sao-apontadas-pelo-observatorio-global-da-secas
+    descricao: Segundo o Cemaden, os países da bacia amazônica tiveram em 2023 as menores chuvas de julho a setembro em mais de 40 anos, associadas ao El Niño.
+
+  - data_inicio: 2024-05-07
+    data_fim: 2024-12-31
+    evento: Calamidade pública pelas enchentes no Rio Grande do Sul
+    categoria: clima
+    indicadores_afetados: [pib_trimestral, ipca_alimentos, caged_saldo, resultado_primario]
+    fonte_url: https://www2.camara.leg.br/legin/fed/decleg/2024/decretolegislativo-36-7-maio-2024-795574-publicacaooriginal-171706-pl.html
+    descricao: O Decreto Legislativo 36/2024 reconhece calamidade pública para atender às consequências dos eventos climáticos no Rio Grande do Sul, até 31/12/2024.
+
+  - data_inicio: 2025-08-06
+    data_fim: ""
+    evento: Tarifa adicional dos EUA sobre produtos brasileiros
+    categoria: economia_externa
+    indicadores_afetados: [balanca_comercial, cambio]
+    fonte_url: https://www.govinfo.gov/content/pkg/DCPD-202500811/pdf/DCPD-202500811.pdf ; https://www.govinfo.gov/content/pkg/DCPD-202501135/html/DCPD-202501135.htm
+    descricao: Ordem Executiva 14323 (30/7/2025) impõe tarifa adicional de 40% a parte das importações do Brasil a partir de 6/8/2025, com exceções; o escopo foi alterado pela Ordem Executiva 14361 (20/11/2025).
+
+  # ------------------------------------------- mudanças de metodologia
+  - data_inicio: 2020-01-01
+    data_fim: ""
+    evento: Novo CAGED substitui o CAGED
+    categoria: metodologia
+    indicadores_afetados: [caged_saldo]
+    fonte_url: ftp://ftp.mtps.gov.br/pdet/microdados/NOVO%20CAGED/Sobre%20o%20Novo%20Caged.pdf
+    descricao: A partir de janeiro de 2020 as estatísticas de emprego formal passam a vir do eSocial, do CAGED e do Empregador Web; a série anterior não é comparável.
+
+  - data_inicio: 2020-01-01
+    data_fim: ""
+    evento: IPCA passa a usar os pesos da POF 2017–2018
+    categoria: metodologia
+    indicadores_afetados: [ipca_mensal, ipca_12m, ipca_alimentos]
+    fonte_url: https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/26821-ipca-de-janeiro-fica-em-0-21
+    descricao: O IPCA de janeiro de 2020 foi o primeiro com a estrutura de ponderação atualizada pela POF 2017–2018.
+
+  - data_inicio: 2025-07-31
+    data_fim: ""
+    evento: PNAD Contínua reponderada com base no Censo 2022
+    categoria: metodologia
+    indicadores_afetados: [desemprego, informalidade, rendimento_real]
+    fonte_url: https://www.ibge.gov.br/novo-portal-destaques/44067-pnad-continua-reponderacao-em-2025.html
+    descricao: O IBGE recalculou os pesos de toda a série da PNAD Contínua com as estimativas populacionais derivadas do Censo 2022. Os dados deste painel já usam a série reponderada.
+    exibir_no_grafico: false

@@ -1,0 +1,29 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Brutos: o manifesto (URL, hash, tamanho, data) é versionado; os arquivos
+# ficam fora do git porque somam centenas de MB. `make data` baixa de novo;
+# o GitHub Actions guarda cache entre execuções.
+data/raw/*
+!data/raw/manifest.jsonl
+data/interim/
+data/run_log.txt
+
+node_modules/
+web/dist/
+web/public/data/
+web/test-results/
+web/playwright-report/
+
+# Artes e cartões de referência usados no desenho (material de terceiros, com
+# imagem e número de candidato): ficam só na máquina local.
+referencias/
+
+# Configuração local do editor/assistente.
+.claude/
+
+# Cache do compilador TypeScript.
+*.tsbuildinfo

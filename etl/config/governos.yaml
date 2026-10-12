@@ -1,0 +1,39 @@
+# Mandatos presidenciais usados na atribuição dos dados.
+#
+# Esta é a constante única de atribuição governo -> estilo visual. O front-end
+# lê a versão exportada em data/processed/governos.json.
+#
+# Para incluir outro governo (ex.: Lula 1 e 2, Dilma, Temer), acrescente uma
+# entrada com id, nome, inicio e fim, e um estilo. Dados fora de qualquer
+# mandato listado aqui recebem governo = "outro".
+#
+# estilo: cor (hex), traco (solido | tracejado | pontilhado) e
+# marcador (circulo | quadrado | triangulo | losango).
+
+governos:
+  - id: bolsonaro
+    nome: Bolsonaro
+    nome_completo: Governo Jair Bolsonaro
+    inicio: 2019-01-01
+    fim: 2022-12-31
+    em_curso: false
+    estilo: { cor: "#012672", traco: solido, marcador: circulo }
+
+  - id: lula3
+    nome: Lula 3
+    nome_completo: Governo Luiz Inácio Lula da Silva (3º mandato)
+    inicio: 2023-01-01
+    fim: 2026-12-31   # fim previsto do mandato
+    em_curso: true
+    estilo: { cor: "#946800", traco: tracejado, marcador: quadrado }
+
+  # Exemplos para o futuro (descomente e ajuste o estilo):
+  # - id: temer
+  #   nome: Temer
+  #   inicio: 2016-08-31
+  #   fim: 2018-12-31
+  #   em_curso: false
+  #   estilo: { cor: "#5B5B5B", traco: pontilhado, marcador: triangulo }
+
+# Governos comparados por padrão no painel (ordem = A, B).
+comparacao_padrao: [bolsonaro, lula3]

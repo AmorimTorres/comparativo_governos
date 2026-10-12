@@ -1,0 +1,47 @@
+name: Atualizar dados
+
+# Toda segunda-feira às 12h UTC (9h em Brasília) e sob demanda. Refaz a coleta
+# nas fontes oficiais, roda as validações e abre um PR com o resumo do que
+# mudou. Não há merge automático: uma pessoa revisa antes de publicar.
+on:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      # Brutos grandes de períodos fechados são reaproveitados entre execuções.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            data/raw
+            data/interim
+          key: brutos-${{ github.run_id }}
+          restore-keys: brutos-
+      - name: Coletar e validar
+        run: python -m etl.run
+      - name: Testes
+        run: python -m pytest -q
+      - name: Resumo das mudanças
+        run: python scripts/resumo_mudancas.py > resumo_mudancas.md
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: atualizacao-dados
+          title: "Atualização de dados (${{ github.run_started_at }})"
+          body-path: resumo_mudancas.md
+          commit-message: "Atualiza dados das fontes oficiais"
+          add-paths: |
+            data/processed
+            data/raw/manifest.jsonl

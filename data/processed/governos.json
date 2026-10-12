@@ -1,0 +1,34 @@
+{
+  "governos": [
+    {
+      "id": "bolsonaro",
+      "nome": "Bolsonaro",
+      "nome_completo": "Governo Jair Bolsonaro",
+      "inicio": "2019-01-01",
+      "fim": "2022-12-31",
+      "em_curso": false,
+      "estilo": {
+        "cor": "#012672",
+        "traco": "solido",
+        "marcador": "circulo"
+      }
+    },
+    {
+      "id": "lula3",
+      "nome": "Lula 3",
+      "nome_completo": "Governo Luiz Inácio Lula da Silva (3º mandato)",
+      "inicio": "2023-01-01",
+      "fim": "2026-12-31",
+      "em_curso": true,
+      "estilo": {
+        "cor": "#946800",
+        "traco": "tracejado",
+        "marcador": "quadrado"
+      }
+    }
+  ],
+  "comparacao_padrao": [
+    "bolsonaro",
+    "lula3"
+  ]
+}
