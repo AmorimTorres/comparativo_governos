@@ -86,11 +86,12 @@ O site hoje compara dois governos (A e B) por vez. Mostrar três ou mais lado a 
 
 ## Publicação
 
-- `.github/workflows/deploy.yml` publica `web/dist` no GitHub Pages a cada push em `main`.
-- `.github/workflows/ci.yml` roda os testes Python, o build e os testes de ponta a ponta.
-- O site usa endereços relativos e também funciona no Cloudflare Pages (comando de build `cd web && npm ci && npm run build`, pasta `web/dist`).
+O site é publicado na Vercel a partir de `vercel.json`, na raiz: instala e compila `web/`, que lê `data/processed`, e serve `web/dist`. Cada push em `main` publica de novo. Não há backend nem variáveis de ambiente; o Python roda só na coleta (`make data` ou o workflow semanal).
 
-Repositório: <https://github.com/AmorimTorres/comparativo_governos>. Mantido por André Amorim Torres - Dreds (amorimtorresandre@gmail.com); para mudar, edite a constante `MANTENEDOR` em `web/src/paginas/Metodologia.tsx`. Para o deploy funcionar, ative o GitHub Pages em *Settings → Pages → Source: GitHub Actions*.
+- `.github/workflows/ci.yml` roda os testes Python, o build e os testes de ponta a ponta.
+- `.github/workflows/update-data.yml` atualiza os dados toda semana e abre um PR; ao fazer o merge, a Vercel publica.
+
+Repositório: <https://github.com/AmorimTorres/comparativo_governos>. Mantido por André Amorim Torres - Dreds (amorimtorresandre@gmail.com); para mudar, edite a constante `MANTENEDOR` em `web/src/paginas/Metodologia.tsx`.
 
 ## Documentação
 
