@@ -86,7 +86,7 @@ O site hoje compara dois governos (A e B) por vez. Mostrar três ou mais lado a 
 
 ## Publicação
 
-O site é publicado na Vercel a partir de `vercel.json`, na raiz: instala e compila `web/`, que lê `data/processed`, e serve `web/dist`. Cada push em `main` publica de novo. Não há backend nem variáveis de ambiente; o Python roda só na coleta (`make data` ou o workflow semanal).
+O site é publicado na Vercel como um único projeto estático, com *Root Directory* `web` (configuração em `web/vercel.json`). O build lê `data/processed` e `design/tokens.json` na raiz do repositório, por isso a opção *Include files outside the Root Directory* precisa ficar ligada (é o padrão). Cada push em `main` publica de novo. Não há backend nem variáveis de ambiente; o Python roda só na coleta (`make data` ou o workflow semanal).
 
 - `.github/workflows/ci.yml` roda os testes Python, o build e os testes de ponta a ponta.
 - `.github/workflows/update-data.yml` atualiza os dados toda semana e abre um PR; ao fazer o merge, a Vercel publica.
