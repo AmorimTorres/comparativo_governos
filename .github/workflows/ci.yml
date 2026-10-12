@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements-etl.txt
       # Os CSVs processados estão versionados; os testes conferem estrutura,
       # validações, valores conhecidos e contraste de cores.
       - run: python -m pytest -q

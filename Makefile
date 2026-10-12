@@ -16,7 +16,7 @@ help:
 venv:
 	$(PYTHON) -m venv .venv
 	$(PIP) install --upgrade pip
-	$(PIP) install -r requirements.txt
+	$(PIP) install -r requirements-etl.txt
 
 data:
 	$(PY) -m etl.run

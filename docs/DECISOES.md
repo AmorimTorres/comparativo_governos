@@ -57,6 +57,11 @@ Mudanças de experiência:
 - Tabela "Todas as métricas" com o melhor de cada linha na página do indicador.
 - As animações respeitam "reduzir movimento" e usam só transformações, sem opacidade em texto, para manter o contraste em todos os quadros.
 
+## 2026-10-12 · Publicação na Vercel
+
+- O site é publicado na Vercel como projeto estático único, com raiz em `web/` (`web/vercel.json`). O GitHub Pages foi removido.
+- As dependências do Python ficam em `requirements-etl.txt`, e não em `requirements.txt`. Com o nome padrão, a Vercel detectava o repositório como uma aplicação Python e sugeria dois serviços. O Python só roda na coleta (`make data` e GitHub Actions), nunca na Vercel.
+
 ## Pendências
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).
