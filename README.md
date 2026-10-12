@@ -91,6 +91,8 @@ O site é publicado na Vercel como um único projeto estático, com *Root Direct
 - `.github/workflows/ci.yml` roda os testes Python, o build e os testes de ponta a ponta.
 - `.github/workflows/update-data.yml` atualiza os dados toda semana e abre um PR; ao fazer o merge, a Vercel publica.
 
+A prévia em WhatsApp e redes sociais usa as meta tags Open Graph de `web/index.html`, com a imagem `web/public/og-image.png`. O endereço absoluto da imagem vem do domínio de produção da Vercel (`VERCEL_PROJECT_PRODUCTION_URL`). Em outro domínio, defina a variável `SITE_URL` (ex.: `https://meusite.com.br`) no build.
+
 Repositório: <https://github.com/AmorimTorres/comparativo_governos>. Mantido por André Amorim Torres - Dreds (amorimtorresandre@gmail.com); para mudar, edite a constante `MANTENEDOR` em `web/src/paginas/Metodologia.tsx`.
 
 ## Documentação

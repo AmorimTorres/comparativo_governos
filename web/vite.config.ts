@@ -1,9 +1,21 @@
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { type Plugin, defineConfig } from "vite";
 
-// base relativa: o site funciona em GitHub Pages (subpasta) ou Cloudflare Pages.
+// Endereço público do site, usado nas meta tags Open Graph (as redes exigem
+// URL absoluta). Ordem: SITE_URL definido à mão; domínio de produção da
+// Vercel (variável injetada no build); vazio no desenvolvimento local.
+const siteUrl = (
+  process.env.SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "")
+).replace(/\/$/, "");
+
+function enderecoPublico(): Plugin {
+  return { name: "endereco-publico", transformIndexHtml: { order: "pre", handler: (html) => html.replaceAll("%SITE_URL%", siteUrl) } };
+}
+
+// base relativa: o site funciona na raiz de qualquer domínio ou numa subpasta.
 export default defineConfig({
   base: "./",
-  plugins: [react()],
+  plugins: [react(), enderecoPublico()],
   build: { outDir: "dist", sourcemap: false },
 });

@@ -7,6 +7,27 @@
     <meta name="theme-color" content="#13893B" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <title>Dois governos em dados</title>
+
+    <!-- Prévia em WhatsApp, redes sociais e mensageiros (Open Graph e Twitter).
+         %SITE_URL% é trocado no build pelo endereço público (vite.config.ts):
+         as redes exigem URL absoluta para a imagem. -->
+    <link rel="canonical" href="%SITE_URL%/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Dois governos em dados" />
+    <meta property="og:title" content="Dois governos, os mesmos indicadores" />
+    <meta property="og:description" content="Bolsonaro (2019–2022) × Lula 3 (2023–): mesma série, mesma métrica, mesma janela de tempo. Só dados oficiais, com fonte e data de coleta." />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:image" content="%SITE_URL%/og-image.png" />
+    <meta property="og:image:secure_url" content="%SITE_URL%/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="888" />
+    <meta property="og:image:height" content="842" />
+    <meta property="og:image:alt" content="Dois governos, os mesmos indicadores. Mesma série, mesma métrica, mesma janela de tempo." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dois governos, os mesmos indicadores" />
+    <meta name="twitter:description" content="Bolsonaro (2019–2022) × Lula 3 (2023–) com dados oficiais: mesma série, mesma métrica, mesma janela de tempo." />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.png" />
   </head>
   <body>
     <div id="raiz"></div>
