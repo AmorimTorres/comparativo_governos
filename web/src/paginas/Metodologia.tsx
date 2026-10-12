@@ -5,8 +5,8 @@ import type { Dados } from "../tipos";
 
 // Responsável pelo painel: preencha antes de publicar.
 const MANTENEDOR = {
-  nome: "",
-  contato: "",
+  nome: "André Amorim Torres - Dreds",
+  contato: "amorimtorresandre@gmail.com",
   repositorio: "https://github.com/AmorimTorres/comparativo_governos",
 };
 

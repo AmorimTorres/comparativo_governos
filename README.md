@@ -90,7 +90,7 @@ O site hoje compara dois governos (A e B) por vez. Mostrar três ou mais lado a 
 - `.github/workflows/ci.yml` roda os testes Python, o build e os testes de ponta a ponta.
 - O site usa endereços relativos e também funciona no Cloudflare Pages (comando de build `cd web && npm ci && npm run build`, pasta `web/dist`).
 
-Repositório: <https://github.com/AmorimTorres/comparativo_governos>. Antes de divulgar, preencha o nome e o contato de quem mantém o painel em `web/src/paginas/Metodologia.tsx` (constante `MANTENEDOR`). Para o deploy funcionar, ative o GitHub Pages em *Settings → Pages → Source: GitHub Actions*.
+Repositório: <https://github.com/AmorimTorres/comparativo_governos>. Mantido por André Amorim Torres - Dreds (amorimtorresandre@gmail.com); para mudar, edite a constante `MANTENEDOR` em `web/src/paginas/Metodologia.tsx`. Para o deploy funcionar, ative o GitHub Pages em *Settings → Pages → Source: GitHub Actions*.
 
 ## Documentação
 

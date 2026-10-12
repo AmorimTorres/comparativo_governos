@@ -61,7 +61,6 @@ Mudanças de experiência:
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).
 - Taxa de abandono escolar (INEP) e gasto federal em saúde (Tesouro, COFOG): fontes verificadas, ainda não implementadas.
-- Nome de quem mantém o painel e endereço do repositório (`web/src/paginas/Metodologia.tsx`, constante `MANTENEDOR`).
 
 ## Revisões de dados pelas fontes
 
