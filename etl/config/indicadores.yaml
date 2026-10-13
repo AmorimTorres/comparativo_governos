@@ -864,7 +864,7 @@ indicadores:
 
   # -------------------------------------------------------- macro e fiscal
   - indicator_id: selic_meta
-    tema: macro_fiscal
+    tema: economia
     grupo: selic
     camada: nucleo
     ordem: 25

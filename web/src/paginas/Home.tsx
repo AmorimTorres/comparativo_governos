@@ -90,7 +90,10 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
 
         <div className="palco" aria-labelledby="palco-nome">
           <EstrelasArco />
-          <span className="kicker">Sorteado entre {nucleo.length} • {NOMES_TEMA[sorteado.tema]}</span>
+          <p className="palco-kicker">
+            <span className="kicker">Card sorteado</span>
+            <span className="kicker">{NOMES_TEMA[sorteado.tema]}</span>
+          </p>
           <h2 className="palco-nome" id="palco-nome">
             <a href={hrefRota("indicador", sorteado.indicator_id)}>{sorteado.nome}</a>
           </h2>

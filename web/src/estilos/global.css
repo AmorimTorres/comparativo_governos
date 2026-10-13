@@ -113,6 +113,7 @@ button { font: inherit; }
 }
 .palco .estrelas-arco { display: block; width: min(74%, 420px); height: auto; margin: 0 auto 6px; }
 .palco .kicker { background: rgba(0, 0, 0, 0.28); }
+.palco-kicker { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 0; }
 .palco-nome { font-family: var(--fonte-display); font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 7.4cqi, 58px); line-height: 1; margin: 10px 0 4px; }
 .palco-nome a { color: #fff; text-decoration: none; }
 .palco-nome a:hover { text-decoration: underline; text-decoration-color: var(--identidade-amarelo); text-decoration-thickness: 3px; }
@@ -121,6 +122,7 @@ button { font: inherit; }
 .palco .frase-destaque { justify-content: center; color: #fff; font-size: 16px; }
 .palco .frase-destaque strong { color: var(--identidade-amarelo); font-size: 18px; }
 .palco .frase-destaque .direcao { margin-left: 0; color: #fff; }
+.palco .frase-destaque.sem_direcao, .palco .frase-destaque.indefinido, .palco .frase-destaque.empate { color: #fff; }
 .palco-acoes { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
 
 /* ---------- duelo: os dois números no losango ---------- */
