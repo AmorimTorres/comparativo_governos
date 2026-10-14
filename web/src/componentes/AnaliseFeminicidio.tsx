@@ -117,7 +117,7 @@ export function AnaliseFeminicidio({ dados, governos, metrica, janela, destacar 
       .map((a) => ({ ano: a, feminicidios: f.get(a)!, mulheres: m.get(a)!, parcela: p.get(a) ?? null }));
   }, [series]);
 
-  const comparaveis = ["mulheres_assassinadas", "homicidios_mulheres_taxa"]
+  const comparaveis = ["mulheres_assassinadas"]
     .map((id) => dados.catalogo.find((i) => i.indicator_id === id))
     .filter((i): i is NonNullable<typeof i> => Boolean(i));
 
@@ -155,7 +155,7 @@ export function AnaliseFeminicidio({ dados, governos, metrica, janela, destacar 
           )}
           <p>
             Por isso, comparar só os feminicídios registrados favorece mecanicamente o período mais antigo, e o painel não aponta melhor resultado nesse
-            indicador. Para comparar a violência letal contra mulheres, os dois indicadores abaixo contam todas as mulheres mortas, sem depender da
+            indicador. Para comparar a violência letal contra mulheres, o indicador abaixo conta todas as mulheres mortas, sem depender da
             classificação.
           </p>
         </div>

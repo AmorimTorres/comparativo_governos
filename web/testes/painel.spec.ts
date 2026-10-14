@@ -75,9 +75,8 @@ test("feminicídios: sem estrela no registro, análise e indicadores comparávei
   const analise = page.locator(".analise");
   await expect(analise).toContainText("Entenda este número");
   await expect(analise.locator("#grafico-analise svg")).toBeVisible();
-  await expect(analise.locator("article.cartao")).toHaveCount(2);
+  await expect(analise.locator("article.cartao")).toHaveCount(1);
   await expect(analise.locator("#t-mulheres_assassinadas")).toBeVisible();
-  await expect(analise.locator("#t-homicidios_mulheres_taxa")).toBeVisible();
   await semViolacoes(page);
 });
 
