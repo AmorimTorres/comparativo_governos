@@ -18,6 +18,7 @@ export interface Lado {
 export interface DadosDuelo {
   ind: Indicador;
   ef: MetricaEfetiva;
+  padrao: boolean; // métrica recomendada (a vista inicial do painel)
   lados: Lado[];
   destaque: Destaque;
   rotulo: string; // ex.: "Média • meses 1–44 do mandato"
@@ -37,7 +38,7 @@ export function montarDuelo(ind: Indicador, resumos: Resumo[], governos: Governo
   const d = destaque(ind, lados, metrica);
   const partes = lados.map(({ g, v }) => `${g.nome}: ${v.texto}, ${v.janela}${v.parcial && g.em_curso ? ", mandato em curso (parcial)" : ""}`);
   const textoDestaque = d.tipo === "melhor" ? `Melhor resultado: ${d.nome} (${d.texto}).` : `${d.texto}.`;
-  return { ind, ef, lados, destaque: d, rotulo, janelaDesc, textoBase: `${rotulo} (${janelaDesc}). ${partes.join("; ")}.`, textoDestaque };
+  return { ind, ef, padrao: metrica === "padrao", lados, destaque: d, rotulo, janelaDesc, textoBase: `${rotulo} (${janelaDesc}). ${partes.join("; ")}.`, textoDestaque };
 }
 
 /** Formatação do número grande: prefixo, sufixo e casas como no cartão. */
@@ -80,7 +81,7 @@ function Numero({ v, ind, ativo, inicio }: { v: ValorCartao; ind: Indicador; ati
 }
 
 export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados: DadosDuelo; destacar: boolean; ativo: boolean; mostrarJanela?: boolean }) {
-  const { ind, ef, lados, destaque: d } = dados;
+  const { ind, ef, padrao, lados, destaque: d } = dados;
   return (
     <div className={`duelo${ativo ? " visivel" : ""}`} aria-hidden="true">
       <LosangoAlongado />
@@ -101,10 +102,10 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
               </span>
               <Numero v={v} ind={ind} ativo={ativo} inicio={ef === "inicio_fim"} />
               <span className="lado-ref">
-                {ef === "inicio_fim" ? <span>{variacaoTexto(v, ind)}</span> : v.periodoRef && <span>em {rotuloCurto(v.periodoRef, ind.periodicidade)}</span>}
+                {ef === "inicio_fim" ? <span>{variacaoTexto(v, ind)}</span> : v.periodoRef && !(padrao && trienio(v)) && <span>em {rotuloCurto(v.periodoRef, ind.periodicidade)}</span>}
               </span>
               {/* espaço não separável mantém a altura padrão do losango quando a linha sai */}
-              {mostrarJanela && <span className="lado-janela">{janelaCurta(v) || "\u00a0"}</span>}
+              {mostrarJanela && <span className="lado-janela">{janelaCurta(v, ind, padrao) || "\u00a0"}</span>}
             </div>
           );
         })}
@@ -113,13 +114,19 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
   );
 }
 
+const TRIENIO = /^triênios (\d{4})-\d{4} a \d{4}-(\d{4})$/;
+const trienio = (v: ValorCartao) => TRIENIO.test(v.janela);
+
 /** Janela de cobertura no losango. As de triênios (FAO: "triênios 2018-2020 a
- * 2019-2021") não cabem no lado: se o cartão já mostra o período de referência
- * ("em 2019–2021"), a linha sai; senão vira só o intervalo de anos ("2018–2021"). */
-function janelaCurta(v: ValorCartao): string {
-  const t = /^triênios (\d{4})-\d{4} a \d{4}-(\d{4})$/.exec(v.janela);
+ * 2019-2021") não cabem no lado e viram só as datas. Na métrica recomendada, em
+ * que nenhum outro cartão usa a linha de referência ("em …"), o triênio de
+ * referência ("2023–2025") desce para a linha da janela, como nos demais; nas
+ * outras métricas a referência fica no lugar dela e a janela vira o intervalo
+ * de anos coberto ("2018–2021"). */
+function janelaCurta(v: ValorCartao, ind: Indicador, padrao: boolean): string {
+  const t = TRIENIO.exec(v.janela);
   if (!t) return v.janela;
-  return v.periodoRef ? "" : `${t[1]}–${t[2]}`;
+  return padrao && v.periodoRef ? rotuloCurto(v.periodoRef, ind.periodicidade) : `${t[1]}–${t[2]}`;
 }
 
 /** Frase do destaque, para o rodapé do cartão e o cabeçalho do indicador. */
