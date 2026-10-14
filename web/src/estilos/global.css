@@ -152,8 +152,11 @@ button { font: inherit; }
 .lado-janela { font-size: clamp(12px, 2.7cqi, 15px); line-height: 1.25; margin-top: 3px; }
 .selo-melhor {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  display: inline-flex; align-items: center; gap: 4px; white-space: nowrap;
-  background: #fff; color: var(--identidade-verde-escuro); border-radius: 999px; padding: 3px 10px 3px 7px;
+  /* max-content: com left: 50%, o navegador limitaria a largura à metade do lado
+     e, nos cartões estreitos do celular, o texto vazaria pela borda. */
+  display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; width: max-content;
+  /* à direita, desconta o espaçamento que o letter-spacing deixa após a última letra */
+  background: #fff; color: var(--identidade-verde-escuro); border-radius: 999px; padding: 3px calc(9px - 0.14em) 3px 7px;
   font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; font-size: 12.5px; line-height: 1.2;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
