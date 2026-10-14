@@ -91,7 +91,6 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
         <div className="palco" aria-labelledby="palco-nome">
           <EstrelasArco />
           <p className="palco-kicker">
-            <span className="kicker">Card sorteado</span>
             <span className="kicker">{NOMES_TEMA[sorteado.tema]}</span>
           </p>
           <h2 className="palco-nome" id="palco-nome">
