@@ -52,14 +52,28 @@ export function formatoNumero(ind: Indicador, composto: boolean, referencia: num
   };
 }
 
-function Numero({ v, ind, ativo, inicio }: { v: ValorCartao; ind: Indicador; ativo: boolean; inicio?: boolean }) {
-  if (v.valor === null) return <span className="numero">—</span>;
+/** Largura do número em caracteres, para o tamanho da fonte caber no lado. */
+function larguraNumero(v: ValorCartao, ind: Indicador, inicio: boolean): number {
+  if (v.valor === null) return 3.2;
   const f = formatoNumero(ind, v.composto, v.valor);
   if (inicio) {
     const ini = v.valorInicio ?? null;
     const txt = `${v.qualificadorInicio ?? ""}${ini === null ? "—" : f.formatar(ini)}→${v.qualificador}${f.formatar(v.valor)}`;
+    return txt.length + (f.suf ? 1 : 0) + 1;
+  }
+  const n = f.formatar(v.valor).length + (v.qualificador ? 1 : 0) + (f.pre ? 1.2 : 0) + (f.suf ? (f.suf.length > 1 ? 1.4 : 0.8) : 0);
+  return Math.max(n, 3.2);
+}
+
+/** n: largura usada no tamanho da fonte — a maior dos dois lados, para os dois
+ * números de um mesmo cartão saírem sempre do mesmo tamanho. */
+function Numero({ v, ind, ativo, inicio, n }: { v: ValorCartao; ind: Indicador; ativo: boolean; inicio?: boolean; n: number }) {
+  if (v.valor === null) return <span className="numero">—</span>;
+  const f = formatoNumero(ind, v.composto, v.valor);
+  if (inicio) {
+    const ini = v.valorInicio ?? null;
     return (
-      <span className="numero" style={{ "--n": txt.length + (f.suf ? 1 : 0) + 1 } as CSSProperties}>
+      <span className="numero" style={{ "--n": n } as CSSProperties}>
         {v.qualificadorInicio}
         {ini === null ? "—" : <Contador valor={ini} formatar={f.formatar} ativo={ativo} />}
         <span className="seta-num"><Seta direcao="direita" /></span>
@@ -69,9 +83,8 @@ function Numero({ v, ind, ativo, inicio }: { v: ValorCartao; ind: Indicador; ati
       </span>
     );
   }
-  const n = f.formatar(v.valor).length + (v.qualificador ? 1 : 0) + (f.pre ? 1.2 : 0) + (f.suf ? (f.suf.length > 1 ? 1.4 : 0.8) : 0);
   return (
-    <span className="numero" style={{ "--n": Math.max(n, 3.2) } as CSSProperties}>
+    <span className="numero" style={{ "--n": n } as CSSProperties}>
       {f.pre && <span className="prefixo">{f.pre}</span>}
       {v.qualificador}
       <Contador valor={v.valor} formatar={f.formatar} ativo={ativo} />
@@ -82,6 +95,7 @@ function Numero({ v, ind, ativo, inicio }: { v: ValorCartao; ind: Indicador; ati
 
 export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados: DadosDuelo; destacar: boolean; ativo: boolean; mostrarJanela?: boolean }) {
   const { ind, ef, padrao, lados, destaque: d } = dados;
+  const n = Math.max(3.2, ...lados.map(({ v }) => larguraNumero(v, ind, ef === "inicio_fim")));
   return (
     <div className={`duelo${ativo ? " visivel" : ""}`} aria-hidden="true">
       <LosangoAlongado />
@@ -100,7 +114,7 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
                 <MarcadorGoverno cor={g.estilo.cor} traco={g.estilo.traco} />
                 {g.nome}
               </span>
-              <Numero v={v} ind={ind} ativo={ativo} inicio={ef === "inicio_fim"} />
+              <Numero v={v} ind={ind} ativo={ativo} inicio={ef === "inicio_fim"} n={n} />
               <span className="lado-ref">
                 {ef === "inicio_fim" ? <span>{variacaoTexto(v, ind)}</span> : v.periodoRef && !(padrao && trienio(v)) && <span>em {rotuloCurto(v.periodoRef, ind.periodicidade)}</span>}
               </span>
