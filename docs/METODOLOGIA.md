@@ -2,7 +2,7 @@
 
 ## Princípios
 
-1. **Nenhum número digitado à mão.** Todo valor vem de arquivo baixado por `etl.comum.obter()`, que registra a URL, o hash SHA-256, o tamanho e a data de coleta em `data/raw/manifest.jsonl`.
+1. **Nenhum número digitado à mão.** Todoa valor vem de arquivo baixado por `etl.comum.obter()`, que registra a URL, o hash SHA-256, o tamanho e a data de coleta em `data/raw/manifest.jsonl`.
 2. **Comparação justa.** Mesma série, mesma métrica e mesma janela de tempo. Por padrão, o painel compara a **janela comum**: só os meses (ou anos) de mandato que existem para os dois governos.
 3. **Mandato em curso e números parciais.** O governo Lula 3 é em curso (`mandato_completo = false`). Para evitar ruído visual e repetição desnecessária, a etiqueta visual "PARCIAL" não é exibida na home nem nos cartões; o tratamento dos dados parciais é feito de forma metodológica (janela comum obrigatória por padrão, preservação de sazonalidade e exclusão de períodos incompletos das médias e resumos, aparecendo nos gráficos apenas com marcador vazado). A seção de Metodologia do painel discorre detalhadamente sobre essas salvaguardas.
 4. **Melhor resultado por dado, sem placar geral.** Quando a direção desejável é consensual (`sentido_desejavel` diferente de `neutro`) e o indicador não é de contexto, uma estrela marca o governo com o melhor número na métrica e na janela exibidas. Não há contagem de estrelas. O destaque pode ser desligado (parâmetro `d=0` na URL).
