@@ -117,6 +117,15 @@ Até aqui o tema tinha só a mortalidade infantil. Os candidatos foram escolhido
 
 - **Mortes por dengue:** chegou a entrar, mas saiu a pedido em 14/10/2026, junto com os eventos do El Niño e do COE Dengue.
 
+## 2026-10-14 · Novo marcador dos governos
+
+- **O que mudou.** O círculo (Bolsonaro) e o quadrado (Lula 3) deram lugar a um marcador único: o traço da linha do gráfico terminando no losango da identidade.
+  - Bolsonaro: azul-marinho, traço sólido.
+  - Lula 3: âmbar, traço tracejado.
+- **Onde aparece.** Legenda, duelos, tabelas, legenda do cartão grande, Metodologia e imagem compartilhada.
+- **Nos gráficos.** Os pontos das duas linhas viram losangos (`governos.yaml`), vazados quando o dado é parcial.
+- **Acessibilidade.** Os governos continuam diferenciados por cor, pelo traço (sólido × tracejado) e pelo rótulo direto, nunca só pela cor.
+
 ## Pendências
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).

@@ -17,7 +17,7 @@ governos:
     inicio: 2019-01-01
     fim: 2022-12-31
     em_curso: false
-    estilo: { cor: "#012672", traco: solido, marcador: circulo }
+    estilo: { cor: "#012672", traco: solido, marcador: losango }
 
   - id: lula3
     nome: Lula 3
@@ -25,7 +25,7 @@ governos:
     inicio: 2023-01-01
     fim: 2026-12-31   # fim previsto do mandato
     em_curso: true
-    estilo: { cor: "#946800", traco: tracejado, marcador: quadrado }
+    estilo: { cor: "#946800", traco: tracejado, marcador: losango }
 
   # Exemplos para o futuro (descomente e ajuste o estilo):
   # - id: temer

@@ -20,7 +20,7 @@ export function montarCartaoExportavel(ind: Indicador, resumos: Resumo[], govern
   const lados = governos.slice(0, 2).map((g) => {
     const r = resumos.find((x) => x.governo === g.id);
     if (!r) {
-      return { governo: g.nome, cor: g.estilo.cor, marcador: g.estilo.marcador, valorTexto: "—", janela: "sem dados", parcial: g.em_curso };
+      return { governo: g.nome, cor: g.estilo.cor, traco: g.estilo.traco, valorTexto: "—", janela: "sem dados", parcial: g.em_curso };
     }
     const v = valorCartao(r, ind, metrica, janela);
     const texto =
@@ -30,7 +30,7 @@ export function montarCartaoExportavel(ind: Indicador, resumos: Resumo[], govern
     return {
       governo: g.nome,
       cor: g.estilo.cor,
-      marcador: g.estilo.marcador,
+      traco: g.estilo.traco,
       valorTexto: texto,
       janela: v.janela,
       parcial: g.em_curso && v.parcial,

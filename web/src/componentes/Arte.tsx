@@ -51,14 +51,18 @@ export function Losango({
   );
 }
 
-export function MarcadorGoverno({ cor, marcador, tamanho = 10 }: { cor: string; marcador: string; tamanho?: number }) {
-  const s = tamanho;
+/** Marcador do governo: o mesmo traço do gráfico (sólido ou tracejado, na cor
+ * do governo) terminando no losango da identidade, que também marca os pontos
+ * das linhas. Liga legenda, cartões, tabelas e gráficos sem depender só da cor. */
+export function MarcadorGoverno({ cor, traco, tamanho = 10 }: { cor: string; traco: string; tamanho?: number }) {
+  const h = tamanho;
+  const w = h * 2.6;
+  const d = h * 0.45; // meia-diagonal do losango
+  const xl = w - d - 0.5;
   return (
-    <svg width={s} height={s} viewBox="0 0 10 10" className="marcador" aria-hidden="true">
-      {marcador === "circulo" && <circle cx="5" cy="5" r="5" fill={cor} />}
-      {marcador === "quadrado" && <rect width="10" height="10" fill={cor} />}
-      {marcador === "triangulo" && <polygon points="5,0 10,10 0,10" fill={cor} />}
-      {marcador === "losango" && <polygon points="5,0 10,5 5,10 0,5" fill={cor} />}
+    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} className="marcador" aria-hidden="true">
+      <line x1={1} x2={xl - d} y1={h / 2} y2={h / 2} stroke={cor} strokeWidth={Math.max(2, h * 0.24)} strokeLinecap="round" strokeDasharray={traco === "tracejado" ? `${h * 0.38} ${h * 0.3}` : traco === "pontilhado" ? `1 ${h * 0.3}` : undefined} />
+      <polygon points={`${xl},${h / 2 - d} ${xl + d},${h / 2} ${xl},${h / 2 + d} ${xl - d},${h / 2}`} fill={cor} />
     </svg>
   );
 }

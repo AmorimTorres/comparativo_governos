@@ -66,13 +66,13 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
           <ul className="legenda" aria-label="Como ler os cartões">
             {a && (
               <li>
-                <MarcadorGoverno cor={a.estilo.cor} marcador={a.estilo.marcador} tamanho={12} />
+                <MarcadorGoverno cor={a.estilo.cor} traco={a.estilo.traco} tamanho={12} />
                 <strong>{a.nome}</strong> {mesAno(a.inicio)}–{mesAno(a.fim)}
               </li>
             )}
             {b && (
               <li>
-                <MarcadorGoverno cor={b.estilo.cor} marcador={b.estilo.marcador} tamanho={12} />
+                <MarcadorGoverno cor={b.estilo.cor} traco={b.estilo.traco} tamanho={12} />
                 <strong>{b.nome}</strong> desde {mesAno(b.inicio)}
               </li>
             )}

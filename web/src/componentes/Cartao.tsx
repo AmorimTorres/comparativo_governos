@@ -3,6 +3,7 @@ import { NOMES_TEMA, dataBr } from "../formato";
 import type { Metrica } from "../metricas";
 import { hrefRota } from "../rota";
 import type { Governo, Indicador, Resumo } from "../tipos";
+import { MarcadorGoverno } from "./Arte";
 import { Duelo, FraseDestaque, montarDuelo } from "./Duelo";
 import { MiniGrafico } from "./MiniGrafico";
 import { useVisivel } from "./Movimento";
@@ -42,9 +43,7 @@ export function Cartao({ ind, resumos, governos, metrica, janela, destacar, mini
               <b>Trajetória por {["mensal", "trimestre_movel", "trimestral"].includes(ind.periodicidade) ? "mês" : "ano"} do mandato</b>
               {governos.map((g) => (
                 <span key={g.id}>
-                  <svg width="26" height="10" aria-hidden="true">
-                    <line x1="1" x2="25" y1="5" y2="5" stroke={g.estilo.cor} strokeWidth="2.4" strokeDasharray={g.estilo.traco === "tracejado" ? "6 3" : undefined} />
-                  </svg>
+                  <MarcadorGoverno cor={g.estilo.cor} traco={g.estilo.traco} tamanho={11} />
                   {g.nome}
                 </span>
               ))}

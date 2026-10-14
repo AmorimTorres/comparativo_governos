@@ -47,7 +47,7 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
                 return (
                   <th scope="col" key={g.id} style={{ borderTopColor: g.estilo.cor }}>
                     <span className="th-gov">
-                      <MarcadorGoverno cor={g.estilo.cor} marcador={g.estilo.marcador} tamanho={12} />
+                      <MarcadorGoverno cor={g.estilo.cor} traco={g.estilo.traco} tamanho={12} />
                       {g.nome}
                     </span>
                     <span className="th-janela">

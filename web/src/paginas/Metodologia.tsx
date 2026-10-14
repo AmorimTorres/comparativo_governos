@@ -131,8 +131,8 @@ export function Metodologia({ dados }: { dados: Dados }) {
         <ul>
           {dados.governos.map((g) => (
             <li key={g.id}>
-              <MarcadorGoverno cor={g.estilo.cor} marcador={g.estilo.marcador} tamanho={12} /> <strong>{g.nome_completo}</strong>: {dataBr(g.inicio)} a{" "}
-              {g.em_curso ? `${dataBr(g.fim)} (fim previsto; em curso)` : dataBr(g.fim)}. Linha {g.estilo.traco}, marcador {g.estilo.marcador}.
+              <MarcadorGoverno cor={g.estilo.cor} traco={g.estilo.traco} tamanho={12} /> <strong>{g.nome_completo}</strong>: {dataBr(g.inicio)} a{" "}
+              {g.em_curso ? `${dataBr(g.fim)} (fim previsto; em curso)` : dataBr(g.fim)}. Nos gráficos, linha {g.estilo.traco} com pontos em losango.
             </li>
           ))}
         </ul>

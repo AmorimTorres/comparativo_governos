@@ -10,7 +10,7 @@
       "estilo": {
         "cor": "#012672",
         "traco": "solido",
-        "marcador": "circulo"
+        "marcador": "losango"
       }
     },
     {
@@ -23,7 +23,7 @@
       "estilo": {
         "cor": "#946800",
         "traco": "tracejado",
-        "marcador": "quadrado"
+        "marcador": "losango"
       }
     }
   ],

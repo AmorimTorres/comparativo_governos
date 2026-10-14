@@ -10,7 +10,7 @@ import condensedUrl from "@fontsource/barlow-condensed/files/barlow-condensed-la
 export interface LadoExportavel {
   governo: string; // nome do governo
   cor: string;
-  marcador: string;
+  traco: string; // sólido, tracejado ou pontilhado (o marcador do governo)
   valorTexto: string; // número principal já formatado (ex.: "12,5%")
   janela: string; // período coberto (ex.: "jan/2019–ago/2022")
   parcial: boolean; // mandato incompleto
@@ -70,11 +70,12 @@ function quebrar(texto: string, n: number): string[] {
 
 const ESTRELA = "0,-9 2.1,-2.9 8.6,-2.8 3.4,1.1 5.3,7.3 0,3.6 -5.3,7.3 -3.4,1.1 -8.6,-2.8 -2.1,-2.9";
 
-function marcadorSvg(m: string, cor: string, x: number, y: number, s: number): string {
-  if (m === "quadrado") return `<rect x="${x - s / 2}" y="${y - s / 2}" width="${s}" height="${s}" fill="${cor}"/>`;
-  if (m === "triangulo") return `<polygon points="${x},${y - s / 2} ${x + s / 2},${y + s / 2} ${x - s / 2},${y + s / 2}" fill="${cor}"/>`;
-  if (m === "losango") return `<polygon points="${x},${y - s / 2} ${x + s / 2},${y} ${x},${y + s / 2} ${x - s / 2},${y}" fill="${cor}"/>`;
-  return `<circle cx="${x}" cy="${y}" r="${s / 2}" fill="${cor}"/>`;
+function marcadorSvg(traco: string, cor: string, xFim: number, y: number, h: number): string {
+  // Mesmo marcador do painel: traço do gráfico terminando no losango.
+  const d = h * 0.45;
+  const xl = xFim - d;
+  const tr = traco === "tracejado" ? ` stroke-dasharray="${h * 0.38} ${h * 0.3}"` : "";
+  return `<line x1="${xl - d - h * 1.6}" x2="${xl - d}" y1="${y}" y2="${y}" stroke="${cor}" stroke-width="${h * 0.24}" stroke-linecap="round"${tr}/><polygon points="${xl},${y - d} ${xl + d},${y} ${xl},${y + d} ${xl - d},${y}" fill="${cor}"/>`;
 }
 
 // Geometria (1080×1350): losango com topo em y=150, base em y=1150 e largura
@@ -135,7 +136,7 @@ export async function svgCartao(c: CartaoExportavel): Promise<string> {
       : "";
     return `
       <g>
-        ${marcadorSvg(l.marcador, l.cor, cx - largRotulo / 2 - 22, 620, 22)}
+        ${marcadorSvg(l.traco, l.cor, cx - largRotulo / 2 - 12, 620, 22)}
         <text x="${cx}" y="632" text-anchor="middle" font-family="CondX" font-weight="600" font-size="36" letter-spacing="1.5" fill="#012672">${esc(rotulo)}</text>
         ${globo}
         <text x="${cx}" y="812" text-anchor="middle" font-family="AntonX" font-size="${tam}" fill="${corNumero}">${esc(l.valorTexto)}</text>

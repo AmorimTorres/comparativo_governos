@@ -96,7 +96,7 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
                 </span>
               )}
               <span className="lado-quem">
-                <MarcadorGoverno cor={g.estilo.cor} marcador={g.estilo.marcador} />
+                <MarcadorGoverno cor={g.estilo.cor} traco={g.estilo.traco} />
                 {g.nome}
               </span>
               <Numero v={v} ind={ind} ativo={ativo} inicio={ef === "inicio_fim"} />
