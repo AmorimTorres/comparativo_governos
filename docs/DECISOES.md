@@ -134,3 +134,12 @@ Até aqui o tema tinha só a mortalidade infantil. Os candidatos foram escolhido
 ## Revisões de dados pelas fontes
 
 Registre aqui quando um teste de `tests/test_valores_conhecidos.py` falhar por revisão oficial (data, indicador, valor antigo → novo, fonte).
+
+## Tipografia: Reel (Adobe Fonts)
+
+- Títulos e números em `reel-medium`; rótulos em `reel-short` (kit `jgs6nnl`, carregado em `web/index.html`).
+- As faces "Reel Titulo" e "Reel Rotulo" (`web/src/estilos/reel.css`) usam os arquivos do kit com `size-adjust` e `ascent/descent-override` para repetir a altura das maiúsculas e as métricas da Anton e da Barlow Condensed. Assim nenhum tamanho, espaçamento vertical ou alinhamento do layout precisou mudar, e se o kit falhar o navegador cai nas fontes anteriores sem desalinhar.
+- Espaçamento entre letras: +0,03em nos rótulos e +0,01em nos títulos em relação aos valores anteriores (o Reel é mais estreito).
+- Textos cinza (contagem de indicadores) continuam em Barlow Condensed; o texto corrido continua em Barlow.
+- O domínio de produção precisa estar autorizado no kit do Adobe Fonts.
+- A imagem exportada (compartilhar) continua com Anton e Barlow embutidas, porque as fontes do kit não podem ser embutidas no arquivo.

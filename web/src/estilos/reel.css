@@ -1,0 +1,44 @@
+/* Reel (Adobe Fonts, kit jgs6nnl) com as métricas das fontes que substitui.
+
+   No Reel as maiúsculas ocupam só 52% (Medium) e 40% (Short) do corpo, contra
+   86% na Anton e 70% na Barlow Condensed. Estas faces usam os mesmos arquivos
+   do kit (o <link> do kit em index.html continua carregando e contabilizando o
+   uso) e corrigem tamanho e alinhamento vertical:
+   - size-adjust iguala a altura das maiúsculas à da fonte substituída;
+   - ascent/descent-override (divididos pelo size-adjust, que também os escala)
+     repetem as métricas dela, então a linha de base e a altura das linhas não
+     mudam e o layout fica idêntico.
+   Se o kit não responder (domínio não autorizado, rede), o navegador cai na
+   Anton / Barlow Condensed sem desalinhar nada. */
+
+@font-face {
+  /* reel-medium 400 com as métricas da Anton */
+  font-family: "Reel Titulo";
+  src: url("https://use.typekit.net/af/f3951e/000000000000000077623a15/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/f3951e/000000000000000077623a15/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff");
+  font-weight: 400 700; font-style: normal; font-display: swap;
+  size-adjust: 165.81%; ascent-override: 71.17%; descent-override: 19.90%; line-gap-override: 0%;
+}
+
+@font-face {
+  /* reel-medium 900 com as métricas da Anton */
+  font-family: "Reel Titulo";
+  src: url("https://use.typekit.net/af/fcf5f0/000000000000000077623a16/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2"), url("https://use.typekit.net/af/fcf5f0/000000000000000077623a16/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff");
+  font-weight: 800 900; font-style: normal; font-display: swap;
+  size-adjust: 165.81%; ascent-override: 71.17%; descent-override: 19.90%; line-gap-override: 0%;
+}
+
+@font-face {
+  /* reel-short 400 com as métricas da Barlow Condensed 600 */
+  font-family: "Reel Rotulo";
+  src: url("https://use.typekit.net/af/208d0c/000000000000000077623a12/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/208d0c/000000000000000077623a12/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff");
+  font-weight: 400 700; font-style: normal; font-display: swap;
+  size-adjust: 175.0%; ascent-override: 57.14%; descent-override: 11.43%; line-gap-override: 0%;
+}
+
+@font-face {
+  /* reel-short 900 com as métricas da Barlow Condensed 600 */
+  font-family: "Reel Rotulo";
+  src: url("https://use.typekit.net/af/abcab8/000000000000000077623a13/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2"), url("https://use.typekit.net/af/abcab8/000000000000000077623a13/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff");
+  font-weight: 800 900; font-style: normal; font-display: swap;
+  size-adjust: 175.0%; ascent-override: 57.14%; descent-override: 11.43%; line-gap-override: 0%;
+}
