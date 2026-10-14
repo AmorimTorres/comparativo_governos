@@ -33,11 +33,11 @@ export function montarDuelo(ind: Indicador, resumos: Resumo[], governos: Governo
     .filter((x): x is { g: Governo; r: Resumo } => Boolean(x.r))
     .map(({ g, r }) => ({ g, r, v: valorCartao(r, ind, metrica, janela) }));
   const janelaDesc = janela && lados[0]?.r.n_janela_comum ? lados[0].r.janela_comum : "período disponível de cada governo";
-  const rotulo = `${rotuloMetrica(ef)}${ef === "acumulado" && ind.acumulado === "soma" ? " (soma)" : ""} • ${janelaDesc}`;
+  const rotulo = `${rotuloMetrica(ef)}${ef === "acumulado" && ind.acumulado === "soma" ? " (soma)" : ""}`;
   const d = destaque(ind, lados, metrica);
   const partes = lados.map(({ g, v }) => `${g.nome}: ${v.texto}, ${v.janela}${v.parcial && g.em_curso ? ", mandato em curso (parcial)" : ""}`);
   const textoDestaque = d.tipo === "melhor" ? `Melhor resultado: ${d.nome} (${d.texto}).` : `${d.texto}.`;
-  return { ind, ef, lados, destaque: d, rotulo, janelaDesc, textoBase: `${rotulo}. ${partes.join("; ")}.`, textoDestaque };
+  return { ind, ef, lados, destaque: d, rotulo, janelaDesc, textoBase: `${rotulo} (${janelaDesc}). ${partes.join("; ")}.`, textoDestaque };
 }
 
 /** Formatação do número grande: prefixo, sufixo e casas como no cartão. */

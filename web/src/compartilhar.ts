@@ -38,13 +38,12 @@ export function montarCartaoExportavel(ind: Indicador, resumos: Resumo[], govern
       melhor: destacar && d.tipo === "melhor" && d.governo === g.id,
     };
   }) as CartaoExportavel["lados"];
-  const r0 = resumos.find((x) => x.n_janela_comum > 0);
-  const janelaDesc = janela && r0 ? r0.janela_comum : "período disponível de cada governo";
+
   const unidadeNota = ef === "acumulado" && ind.acumulado === "composto" ? "" : ind.unidade.startsWith("R$") ? ` (${ind.unidade})` : "";
   return {
     titulo: ind.nome,
     tema: NOMES_TEMA[ind.tema] ?? ind.tema,
-    metrica: `${rotuloMetrica(ef)}${unidadeNota} • ${janelaDesc}`,
+    metrica: `${rotuloMetrica(ef)}${unidadeNota}`,
     lados,
     fonte: `${ind.fonte_orgao} · ${ind.fonte_tabela_ou_serie}`,
     atualizacao: dataBr(ind.coletado_em),
