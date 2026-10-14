@@ -82,12 +82,12 @@ Decisões:
 
 ### 2026-10-13 · Títulos dos indicadores de violência contra mulheres
 
-Os títulos passaram a dizer de onde vem cada número, para o público não confundir os três:
+Os títulos passaram a dizer o que cada número conta, para o público não confundir os quatro:
 
-- "Casos registrados como feminicídio" (antes "Feminicídios"): deixa claro que é o registro policial.
-- "Mulheres assassinadas (dados da polícia)": todas as vítimas mulheres, qualquer que seja a classificação.
-- "Mulheres assassinadas a cada 100 mil (dados da saúde)" (antes "Homicídios de mulheres"): atestados de óbito, em taxa.
-- "% dos assassinatos de mulheres registrados como feminicídio" (antes "Mortes de mulheres registradas como feminicídio").
+- **"Casos registrados como feminicídio"** (antes "Feminicídios"): deixa claro que é o registro policial.
+- **"Total de mulheres assassinadas"**: todas as vítimas mulheres de crimes intencionais, qualquer que seja a classificação (Sinesp).
+- **"De cada 100 mil mulheres, quantas foram assassinadas por ano"** (antes "Homicídios de mulheres"): taxa anual pelos atestados de óbito (SIM). A pergunta no título explica o número. Exemplo: 3,56 = média de 2019–2021, cerca de 3.800 mulheres por ano.
+- **"% dos assassinatos de mulheres registrados como feminicídio"**: passou de complementar para o núcleo (sem estrela), ao lado dos feminicídios, porque explica o número deles.
 
 ## Pendências
 

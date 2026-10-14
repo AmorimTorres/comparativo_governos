@@ -714,7 +714,7 @@ indicadores:
       Desde 2015 a parcela das mulheres assassinadas registrada como feminicídio sobe quase todo ano, nos dois governos (veja o indicador
       "% dos assassinatos de mulheres registrados como feminicídio"). Por isso, mais feminicídios registrados podem significar melhor classificação, e
       não mais violência, e o painel não aponta melhor resultado neste indicador. Para comparar a violência letal contra mulheres, use
-      "Mulheres assassinadas (dados da polícia)" e "Mulheres assassinadas a cada 100 mil (dados da saúde)", que não dependem da classificação. Os dados são enviados pelas
+      "Total de mulheres assassinadas" (polícia) e "De cada 100 mil mulheres, quantas foram assassinadas por ano" (saúde), que não dependem da classificação. Os dados são enviados pelas
       secretarias estaduais e podem ser revistos.
     quebra_metodologica: "não (mudança gradual de classificação)"
     nivel_geografico: Brasil
@@ -729,8 +729,8 @@ indicadores:
     grupo: feminicidios
     camada: nucleo
     ordem: 21
-    nome: Mulheres assassinadas a cada 100 mil (dados da saúde)
-    descricao_curta: Quantas mulheres foram mortas por agressão a cada 100 mil mulheres, contadas pelos atestados de óbito do Ministério da Saúde, e não pelos boletins de ocorrência.
+    nome: De cada 100 mil mulheres, quantas foram assassinadas por ano
+    descricao_curta: Mulheres mortas por agressão em cada ano, para cada 100 mil mulheres do país, segundo os atestados de óbito do Ministério da Saúde (e não os boletins de ocorrência). Ajusta pelo crescimento da população.
     unidade: por 100 mil mulheres
     periodicidade: anual
     sentido_desejavel: menor_melhor
@@ -753,7 +753,7 @@ indicadores:
     grupo: feminicidios
     camada: nucleo
     ordem: 21
-    nome: Mulheres assassinadas (dados da polícia)
+    nome: Total de mulheres assassinadas
     descricao_curta: Todas as mulheres mortas em crimes intencionais registrados pelas polícias estaduais, somando os casos registrados como feminicídio e como homicídio comum.
     unidade: vítimas
     periodicidade: mensal
@@ -775,8 +775,8 @@ indicadores:
   - indicator_id: feminicidio_parcela
     tema: seguranca
     grupo: feminicidios
-    camada: reserva
-    ordem: 122
+    camada: nucleo
+    ordem: 23
     nome: "% dos assassinatos de mulheres registrados como feminicídio"
     descricao_curta: De cada 100 mulheres assassinadas, quantas a polícia registrou como feminicídio. Mostra como a forma de registrar mudou, e não quanta violência houve.
     unidade: "% das mulheres assassinadas"
@@ -801,7 +801,7 @@ indicadores:
     tema: seguranca
     grupo: latrocinios
     camada: nucleo
-    ordem: 23
+    ordem: 24
     nome: Latrocínios
     descricao_curta: Vítimas de roubo seguido de morte registradas pelas polícias estaduais, por mês.
     unidade: vítimas
