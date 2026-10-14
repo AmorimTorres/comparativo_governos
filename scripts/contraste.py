@@ -15,7 +15,7 @@ PARES = [
     ("identidade.azul_marinho", "identidade.amarelo", 4.5, "número e título no losango"),
     ("identidade.branco", "identidade.verde_escuro", 4.5, "texto branco pequeno sobre verde"),
     ("identidade.branco", "identidade.verde", 3.0, "texto branco grande (>= 24px) sobre o verde claro"),
-    ("identidade.amarelo", "identidade.verde_escuro", 3.0, "título amarelo grande sobre o verde escuro da abertura"),
+    ("identidade.amarelo", "identidade.verde", 3.0, "título amarelo grande sobre o verde claro da abertura"),
     ("identidade.branco", "identidade.azul_marinho", 4.5, "barra de fonte"),
     ("identidade.amarelo", "identidade.azul_marinho", 4.5, "rótulo amarelo na barra de fonte"),
     ("dados.governo_a", "superficie.off_white", 4.5, "linha e rótulo do governo A"),
@@ -29,7 +29,10 @@ PARES = [
 
 # Pares abaixo do mínimo aceitos conscientemente pelo mantenedor: aparecem como
 # AVISO e não reprovam a verificação. Remover daqui assim que forem corrigidos.
-EXCECOES: dict[tuple[str, str], str] = {}
+EXCECOES: dict[tuple[str, str], str] = {
+    ("identidade.amarelo", "identidade.verde"): "14/10/2026: título amarelo da abertura sobre o verde claro #009C37 (2,7:1), "
+    "mantido por escolha do mantenedor (cor da identidade); correção possível: fundo em #0A6B2A (4,9:1).",
+}
 
 
 def _lum(h: str) -> float:

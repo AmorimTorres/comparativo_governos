@@ -2,7 +2,10 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
 async function semViolacoes(page: import("@playwright/test").Page) {
-  const r = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  // Exceção aceita pelo mantenedor em 14/10/2026 (docs/DECISOES.md e
+  // scripts/contraste.py): título amarelo e frase de apoio da abertura sobre o
+  // verde claro #009C37 ficam abaixo do contraste mínimo, por escolha de cor.
+  const r = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).exclude("#titulo-heroi > .amarelo").exclude(".heroi-apoio").analyze();
   const graves = r.violations.filter((v) => v.impact === "serious" || v.impact === "critical");
   expect(graves.map((v) => `${v.id}: ${v.nodes.length} nós`)).toEqual([]);
 }
