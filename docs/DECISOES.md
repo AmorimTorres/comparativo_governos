@@ -91,6 +91,11 @@ Os títulos passaram a dizer o que cada número conta, para o público não conf
 
 - "De cada 100 mil mulheres, quantas foram assassinadas por ano" saiu da home a pedido e virou indicador complementar. Continua na análise da página de feminicídios e em "Incluir indicadores complementares".
 
+### 2026-10-14 · Remoção da etiqueta visual "PARCIAL" e expansão da Metodologia
+
+- **Etiqueta visual removida da home e dos cartões:** O selo/pill visual "PARCIAL" que acompanhava Lula 3 foi retirado dos cartões e do herói para eliminar ruído e sobrecarga gráfica, já que o mandato em andamento é um fato de conhecimento público.
+- **Discussão aprofundada na Metodologia:** A seção `#/metodologia` passou a discorrer minuciosamente sobre o tratamento dos números parciais do governo Lula 3 (janela comum equivalente, preservação de sazonalidade, exclusão de dados incompletos das médias, métricas de variação e defasagens oficiais).
+
 ## Pendências
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).

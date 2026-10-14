@@ -101,7 +101,6 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
               </span>
               <Numero v={v} ind={ind} ativo={ativo} inicio={ef === "inicio_fim"} />
               <span className="lado-ref">
-                {v.parcial && g.em_curso && <span className="pill-parcial">PARCIAL</span>}
                 {ef === "inicio_fim" ? <span>{variacaoTexto(v, ind)}</span> : v.periodoRef && <span>em {rotuloCurto(v.periodoRef, ind.periodicidade)}</span>}
               </span>
               {mostrarJanela && <span className="lado-janela">{v.janela}</span>}

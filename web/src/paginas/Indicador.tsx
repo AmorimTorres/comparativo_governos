@@ -49,7 +49,6 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
                     <span className="th-gov">
                       <MarcadorGoverno cor={g.estilo.cor} marcador={g.estilo.marcador} tamanho={12} />
                       {g.nome}
-                      {g.em_curso && <span className="pill-parcial">PARCIAL</span>}
                     </span>
                     <span className="th-janela">
                       {J ? r.periodo_coberto_janela_comum : r.periodo_coberto} · {J ? r.n_janela_comum : r.n_observacoes} obs.

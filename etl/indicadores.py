@@ -16,7 +16,7 @@ from typing import Callable
 import pandas as pd
 
 from etl.comum import NaoEncontrado, hoje
-from etl.fontes import anp, bcb, fao, ibge_ftp, inep, inpe, ipeadata, mds, sidra, sinesp, tabnet
+from etl.fontes import anp, bcb, fao, ibge_ftp, inep, inpe, ipeadata, mds, oms, siconfi, sidra, sinesp, tabnet
 from etl.transforma.deflacao import deflacionar, indice_mensal
 
 REGISTRO: dict[str, Callable[[], pd.DataFrame]] = {}
@@ -720,3 +720,130 @@ def resultado_primario():
 @indicador("balanca_comercial")
 def balanca_comercial():
     return _bcb_mensal(22707)
+
+# ------------------------------------------------------------ saúde: novos indicadores
+MAT = "sim/cnv/mat10br.def"
+SIH = "sih/cnv/qibr.def"
+
+
+def _anuais_tabnet(df: pd.DataFrame) -> pd.Series:
+    rot, col = df.columns[0], df.columns[1]
+    d = df[df[rot].str.fullmatch(r"\d{4}")]
+    return pd.Series(d[col].to_numpy(), index=d[rot].astype(int))
+
+
+def _sim_anual(selecoes: dict) -> tuple[pd.Series, int, object]:
+    """Óbitos por ano de óbito (residência), sem o ano em curso, e o último ano final."""
+    df, b = tabnet.consultar(OBT, "Ano_do_Óbito", "--Não-Ativa--", "Óbitos_p/Residênc", _arquivos("obtbr", OBT), selecoes)
+    final, _ = _notas_prelim(b)
+    s = _anuais_tabnet(df)
+    return s[s.index < pd.Timestamp(hoje()).year], final, b
+
+
+@indicador("mortalidade_materna")
+def mortalidade_materna():
+    ob, bo = tabnet.consultar(MAT, "Ano_do_Óbito", "--Não-Ativa--", "Óbitos_maternos", _arquivos("matbr", MAT))
+    nv, bn = tabnet.consultar(NV, "Ano_do_nascimento", "--Não-Ativa--", "Nascim_p/resid.mãe", _arquivos("nvbr", NV))
+    fo, _ = _notas_prelim(bo)
+    fn = tabnet.ultimo_ano_final(bn)
+    o, n = _anuais_tabnet(ob), _anuais_tabnet(nv)
+    ano_atual = pd.Timestamp(hoje()).year
+    anos = sorted(a for a in set(o.index) & set(n.index) if a < ano_atual)
+    taxa = [round(o[a] / n[a] * 100_000, 1) for a in anos]
+    out = _anual(anos, taxa, bo.url, bo.coletado_em)
+    out["observacao"] = [
+        f"{int(o[a]):,} óbitos maternos; {int(n[a]):,} nascidos vivos".replace(",", ".") + ("; dado preliminar" if a > min(fo, fn) else "")
+        for a in anos
+    ]
+    return out
+
+
+@indicador("obitos_dengue")
+def obitos_dengue():
+    # CID-10 A90 e A91 (até 2023) e A97 (desde a atualização da CID): o TabNet lista as três.
+    cats = [r for _, r in tabnet.opcoes(OBT, "SCategoria_CID-10") if "engue" in r]
+    s, final, b = _sim_anual({"SCategoria_CID-10": tabnet.valores(OBT, "SCategoria_CID-10", cats)})
+    out = _anual(s.index, s.to_numpy(), b.url, b.coletado_em)
+    out["observacao"] = ["dado preliminar" if a > final else "" for a in s.index]
+    return out
+
+
+@indicador("suicidios_taxa")
+def suicidios_taxa():
+    grupos = [r for _, r in tabnet.opcoes(OBT, "SGrupo_CID-10") if "autoprovocadas" in r.lower()]
+    s, final, b = _sim_anual({"SGrupo_CID-10": tabnet.valores(OBT, "SGrupo_CID-10", grupos)})
+    pop, _ = ibge_ftp.projecao_populacao_brasil()
+    p = pop.set_index("ano")["populacao"]
+    anos = [a for a in s.index if a in p.index]
+    out = _anual(anos, [round(s[a] / p[a] * 100_000, 2) for a in anos], b.url, b.coletado_em)
+    out["observacao"] = [
+        f"{int(s[a]):,} óbitos; população projetada {int(p[a]):,}".replace(",", ".") + ("; dado preliminar" if a > final else "")
+        for a in anos
+    ]
+    return out
+
+
+def _wuenic(codigo: str) -> pd.DataFrame:
+    df, b, revisao = oms.serie_pais(codigo)
+    df = df[df["ano"] >= 2012]
+    out = _anual(df["ano"], df["valor"], b.url, b.coletado_em)
+    out["observacao"] = f"estimativa OMS/UNICEF (WUENIC), revisão de {revisao[8:10]}/{revisao[5:7]}/{revisao[:4]}"
+    return out
+
+
+@indicador("vacina_dtp3")
+def vacina_dtp3():
+    return _wuenic("WHS4_100")
+
+
+@indicador("vacina_sarampo")
+def vacina_sarampo():
+    return _wuenic("WHS8_110")
+
+
+@indicador("cirurgias_eletivas")
+def cirurgias_eletivas():
+    arq = sorted(v for v, _ in tabnet.opcoes(SIH, "Arquivos") if re.fullmatch(r"qibr\d{4}\.dbf", v) and int(v[4:6]) >= 15)
+    sel = {
+        "SCaráter_atendimento": tabnet.valores(SIH, "SCaráter_atendimento", ["Eletivo"]),
+        "SGrupo_procedimento": tabnet.valores(SIH, "SGrupo_procedimento", ["04 Procedimentos cirurgicos"]),
+    }
+    df, b = tabnet.consultar(SIH, "Ano/mês_processamento", "--Não-Ativa--", "Internações", arq, sel)
+    d = tabnet.linhas_ano_mes(df)
+    datas = [dt.date(int(a), int(m), 1) for a, m in zip(d["ano"], d["mes"])]
+    out = _mensal(datas, d["valor"], b.url, b.coletado_em)
+    recentes = set(sorted(datas)[-6:])
+    out["observacao"] = ["últimos seis meses: sujeito a atualização (nota do SIH)" if x in recentes else "" for x in datas]
+    return out
+
+
+@indicador("gasto_federal_saude")
+def gasto_federal_saude():
+    """Despesa empenhada da União na função Saúde (RREO, Anexo 2), em reais de hoje."""
+    linhas, coleta, url = [], None, siconfi.URL
+    # Desde 2017 o RREO separa as despesas intraorçamentárias e usa o mesmo rótulo de coluna.
+    for ano in range(2017, pd.Timestamp(hoje()).year):
+        try:
+            df, b = siconfi.rreo_uniao(ano, "RREO-Anexo 02")
+        except NaoEncontrado:
+            continue
+        coleta, url = b.coletado_em, b.url
+        sel = df[
+            (df["conta"].str.strip().str.lower() == "saúde")
+            & (df["cod_conta"] == "RREO2TotalDespesas")
+            & (df["coluna"].str.startswith("DESPESAS EMPENHADAS ATÉ O BIMESTRE"))
+        ]
+        if len(sel) != 1:
+            raise ValueError(f"RREO {ano}: esperado 1 valor de Saúde empenhado, achei {len(sel)}")
+        linhas.append((ano, float(sel["valor"].iloc[0])))
+    a = pd.DataFrame(linhas, columns=["ano", "nominal"])
+    # Deflator: média anual do IPCA, levada ao último mês disponível.
+    s, base, _ = indice_mensal("IPCA")
+    media = s.groupby(s.index.year).mean()
+    a["real"] = a["nominal"] * s.iloc[-1] / a["ano"].map(media) / 1e9
+    out = _anual(a["ano"], a["real"].round(1), url, coleta)
+    out["observacao"] = [
+        ("R$ " + f"{n / 1e9:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".") + f" bi nominais empenhados; IPCA médio do ano levado a {base}")
+        for n in a["nominal"]
+    ]
+    return out

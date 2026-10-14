@@ -15,7 +15,7 @@ eventos:
     data_fim: 2022-05-22
     evento: Emergência de saúde pública nacional pela COVID-19
     categoria: saude
-    indicadores_afetados: [desemprego, pib_anual, pib_trimestral, caged_saldo, rendimento_real, informalidade, extrema_pobreza, pobreza, gini, covid_obitos, mortalidade_infantil, ideb_anos_iniciais, ideb_anos_finais, ideb_ensino_medio, divida_bruta, resultado_primario, bolsa_familia_beneficio_real]
+    indicadores_afetados: [desemprego, pib_anual, pib_trimestral, caged_saldo, rendimento_real, informalidade, extrema_pobreza, pobreza, gini, covid_obitos, mortalidade_infantil, ideb_anos_iniciais, ideb_anos_finais, ideb_ensino_medio, divida_bruta, resultado_primario, bolsa_familia_beneficio_real, mortalidade_materna, cirurgias_eletivas, vacina_sarampo, vacina_dtp3, gasto_federal_saude]
     fonte_url: https://bvsms.saude.gov.br/bvs/saudelegis/gm/2020/prt0188_04_02_2020.html ; https://bvsms.saude.gov.br/bvs/saudelegis/gm/2022/prt0913_22_04_2022.html
     descricao: Declarada pela Portaria MS 188, de 3/2/2020, e encerrada pela Portaria GM/MS 913, de 22/4/2022, que entrou em vigor 30 dias após a publicação.
 
@@ -23,7 +23,7 @@ eventos:
     data_fim: ""
     evento: OMS caracteriza a COVID-19 como pandemia
     categoria: saude
-    indicadores_afetados: [desemprego, pib_trimestral, caged_saldo, covid_obitos, ipca_mensal]
+    indicadores_afetados: [desemprego, pib_trimestral, caged_saldo, covid_obitos, ipca_mensal, cirurgias_eletivas]
     fonte_url: https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/oms-classifica-coronavirus-como-pandemia ; https://www.paho.org/pt/covid19/historico-da-pandemia-covid-19
     descricao: A Organização Mundial da Saúde passou a classificar a COVID-19 como pandemia.
 
@@ -164,3 +164,43 @@ eventos:
     indicadores_afetados: [feminicidios, feminicidio_parcela, mulheres_assassinadas]
     fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14994.htm
     descricao: O "pacote antifeminicídio" tornou o feminicídio um crime autônomo (art. 121-A do Código Penal), com pena de 20 a 40 anos, e agravou penas de outros crimes contra a mulher.
+
+  - data_inicio: 2023-02-03
+    data_fim: ""
+    evento: Programa Nacional de Redução das Filas
+    categoria: politica_publica
+    indicadores_afetados: [cirurgias_eletivas]
+    fonte_url: https://bvsms.saude.gov.br/bvs/saudelegis/gm/2023/prt0090_06_02_2023.html
+    descricao: A Portaria GM/MS 90/2023 criou o Programa Nacional de Redução das Filas de Cirurgias Eletivas, Exames Complementares e Consultas Especializadas, com recursos federais para os planos estaduais.
+
+  - data_inicio: 2023-02-27
+    data_fim: ""
+    evento: Movimento Nacional pela Vacinação
+    categoria: politica_publica
+    indicadores_afetados: [vacina_sarampo, vacina_dtp3]
+    fonte_url: https://www.paho.org/pt/noticias/28-2-2023-brasil-lanca-movimento-nacional-para-ampliar-vacinacao
+    descricao: O Ministério da Saúde lançou o Movimento Nacional pela Vacinação para aumentar as coberturas vacinais (registro da OPAS).
+
+  - data_inicio: 2023-07-04
+    data_fim: ""
+    evento: OMM declara início do El Niño
+    categoria: clima
+    indicadores_afetados: [obitos_dengue]
+    fonte_url: https://wmo.int/media/news/world-meteorological-organization-declares-onset-of-el-nino-conditions
+    descricao: A Organização Meteorológica Mundial declarou condições de El Niño no Pacífico tropical pela primeira vez em sete anos, com calor e chuvas acima do normal em várias regiões.
+
+  - data_inicio: 2024-02-02
+    data_fim: ""
+    evento: Centro de Operações de Emergências para a dengue
+    categoria: saude
+    indicadores_afetados: [obitos_dengue]
+    fonte_url: https://bvsms.saude.gov.br/bvs/saudelegis/gm/2024/prt3140_02_02_2024.html
+    descricao: A Portaria GM/MS 3.140/2024 instituiu o Centro de Operações de Emergências de Saúde Pública para Dengue e outras Arboviroses, durante a maior epidemia de dengue da série.
+
+  - data_inicio: 2024-11-12
+    data_fim: ""
+    evento: Brasil volta a ser certificado livre do sarampo
+    categoria: saude
+    indicadores_afetados: [vacina_sarampo]
+    fonte_url: https://www.paho.org/pt/noticias/12-11-2024-opas-verifica-que-brasil-e-mais-uma-vez-um-pais-livre-do-sarampo
+    descricao: A OPAS verificou que o Brasil voltou a ser livre do sarampo. Um surto iniciado em 2018 tinha retomado a transmissão endêmica no país em 2019, segundo a própria OPAS.

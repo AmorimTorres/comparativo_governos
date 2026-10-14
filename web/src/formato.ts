@@ -28,6 +28,7 @@ export function sufixoCurto(ind: Indicador, ehAcumuladoComposto = false): string
   const u = ind.unidade;
   if (u.startsWith("%")) return "%";
   if (u.startsWith("km²")) return "km²";
+  if (u.startsWith("R$ bi")) return "bi";
   if (u.startsWith("R$")) return "";
   return "";
 }
@@ -46,6 +47,7 @@ export function valorComUnidade(v: number | null, ind: Indicador, qualificador =
   if (ehAcumuladoComposto) return `${q}${n}%`;
   const u = ind.unidade;
   if (u.startsWith("%")) return `${q}${n}%`;
+  if (u.startsWith("R$ bi")) return `${q}R$ ${n} bi`;
   if (u.startsWith("R$")) return `${q}R$ ${n}`;
   return `${q}${n} ${u.replace(/\s*\(.*\)$/, "")}`;
 }

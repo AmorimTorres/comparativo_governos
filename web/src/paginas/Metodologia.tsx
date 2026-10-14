@@ -41,7 +41,9 @@ export function Metodologia({ dados }: { dados: Dados }) {
         <ul>
           <li>Só dados de órgãos oficiais, baixados por um programa que registra a URL, a data de coleta e o hash de cada arquivo. Nenhum número é digitado à mão.</li>
           <li>Mesma série, mesma métrica e mesma janela de tempo para os dois governos.</li>
-          <li>O mandato de Lula 3 está em curso: tudo dele é marcado como parcial.</li>
+          <li>
+            O mandato de Lula 3 está em curso: todos os seus números refletem o período já apurado pelas fontes oficiais. Para manter a interface limpa e focada na leitura dos dados, o painel não exibe etiquetas visuais repetitivas em cada cartão; a condição de mandato em curso é tratada com rigor metodológico (como o uso de janelas comuns equivalentes), conforme detalhado na seção específica abaixo.
+          </li>
           <li>
             Melhor resultado por dado, sem placar geral. Quando a direção desejável é consensual (por exemplo, menos desemprego ou mais renda), uma estrela
             marca o governo com o melhor número naquela métrica e naquela janela. Indicadores sem consenso sobre a direção (preço da gasolina, salário mínimo,
@@ -62,6 +64,58 @@ export function Metodologia({ dados }: { dados: Dados }) {
           <li>
             O governo Lula 3 está em curso: a estrela dele vale para o período já coberto e pode mudar até o fim do mandato. Não há contagem de estrelas,
             porque os indicadores têm pesos, causas e defasagens diferentes.
+          </li>
+        </ul>
+
+        <h2>Números parciais do governo Lula 3: metodologia e cuidados</h2>
+        <p>
+          O governo Jair Bolsonaro cumpriu o mandato de 4 anos completos (1º de janeiro de 2019 a 31 de dezembro de 2022, totalizando 48 meses). Já o
+          governo Lula 3 iniciou seu mandato em 1º de janeiro de 2023 e está <strong>em curso</strong>, com término previsto para 31 de dezembro de 2026.
+          Portanto, qualquer dado, média, taxa acumulada ou variação calculada para o governo Lula reflete necessariamente um intervalo <strong>parcial</strong> —
+          o período decorrido e já divulgado pelas instituições públicas até a data da última coleta.
+        </p>
+        <p>
+          Optou-se por <strong>não estampar etiquetas visuais como “PARCIAL” na página inicial e nos cartões</strong> porque o fato de o mandato estar em andamento
+          é de conhecimento público e estruturante do projeto. A presença repetida dessa etiqueta em cada cartão adicionava ruído e sobrecarga gráfica.
+          O rigor ao comparar um mandato concluído com outro em andamento não depende de avisos cosméticos, mas de salvaguardas estatísticas e metodológicas
+          concretas:
+        </p>
+        <ul>
+          <li>
+            <strong>Janela comum (ligada por padrão):</strong> o painel nunca compara os 48 meses consolidados de Bolsonaro com o intervalo menor de Lula. Se há dados
+            disponíveis de 44 meses do governo Lula 3 para determinado indicador, o comparador restringe o cálculo rigorosamente aos <strong>44 primeiros meses do governo
+            Bolsonaro</strong> e aos <strong>44 primeiros meses do governo Lula</strong>. Isso equaliza o tempo de gestão decorrido e elimina assimetrias de duração.
+          </li>
+          <li>
+            <strong>Preservação de sazonalidade:</strong> como ambos os mandatos começaram em janeiro, a janela comum alinha os mesmos meses do calendário civil
+            ao longo de cada ano de gestão (por exemplo, os meses 1 a 44 cobrem exatamente de janeiro do 1º ano a agosto do 4º ano em ambos os governos). Isso preserva
+            a sazonalidade intrínseca de variáveis econômicas e sociais, como contratações temporárias de fim de ano, períodos de entressafra agrícola ou despesas fiscais periódicas.
+          </li>
+          <li>
+            <strong>Exclusão de períodos incompletos das médias:</strong> anos correntes não consolidados (como o PIB do ano em curso) e meses abertos ou preliminares
+            (como focos de queimadas do mês em andamento ou meses recentes do SIM e do Sinesp que ainda aguardam fechamento das secretarias estaduais)
+            ficam <strong>fora do cálculo de médias e resumos</strong>. Nos gráficos de cada indicador, esses pontos aparecem com marcadores vazados para indicar dado preliminar.
+          </li>
+          <li>
+            <strong>Métrica de variação (início → fim):</strong> na comparação de início ao fim, o painel avalia a variação líquida gerada no período
+            (diferença entre o último ponto apurado e o ponto inicial), e não o patamar absoluto recebido. Essa abordagem evita atribuir mérito ou demérito
+            ao governo atual pelo ponto de partida herdado da administração anterior.
+          </li>
+          <li>
+            <strong>Defasagens desiguais entre temas:</strong> indicadores mensais de alta frequência (inflação pelo IPCA, taxa de desocupação da PNAD Contínua,
+            saldo de empregos formais do Novo Caged) cobrem praticamente todo o período percorrido pela gestão atual. Por outro lado, estatísticas estruturais de apuração anual
+            (como pobreza extrema pelo SIS/IBGE, mortalidade infantil consolidada, IDEB bienal e indicadores de subalimentação da FAO) possuem defasagem oficial de publicação de
+            1 a 2 anos, cobrindo um número menor de anos de Lula 3 em relação à série histórica completa de Bolsonaro.
+          </li>
+          <li>
+            <strong>Revisões periódicas das fontes oficiais:</strong> institutos oficiais revisam rotineiramente dados recentes à medida que novas notificações e declarações
+            são processadas (como as revisões do PIB e as reponderações da PNAD pelo IBGE, ou o fechamento das bases do DATASUS). O sistema de coleta automatizada
+            reavalia essas séries semanalmente, registrando o histórico de cada versão.
+          </li>
+          <li>
+            <strong>Resultados e destaques em evolução contínua:</strong> qualquer destaque de melhor resultado (estrela) concedido ao governo Lula 3 descreve
+            o quadro apurado até o momento na métrica e janela selecionadas. Esses números não constituem um veredito definitivo de mandato e continuam evoluindo mês a mês
+            até o término formal do mandato em 31 de dezembro de 2026.
           </li>
         </ul>
 

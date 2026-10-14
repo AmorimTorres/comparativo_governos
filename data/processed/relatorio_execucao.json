@@ -1,5 +1,5 @@
 {
-  "executado_em": "2026-10-13T22:21:01",
+  "executado_em": "2026-10-13T23:55:26",
   "data_coleta": "2026-10-13",
   "indicadores_ok": [
     "analfabetismo",
@@ -8,6 +8,7 @@
     "bolsa_familia_familias",
     "caged_saldo",
     "cambio",
+    "cirurgias_eletivas",
     "covid_obitos",
     "desemprego",
     "deter_amazonia",
@@ -35,7 +36,9 @@
     "ipca_mensal",
     "latrocinios",
     "mortalidade_infantil",
+    "mortalidade_materna",
     "mulheres_assassinadas",
+    "obitos_dengue",
     "pib_anual",
     "pib_trimestral",
     "pobreza",
@@ -46,8 +49,13 @@
     "roubo_veiculos",
     "salario_minimo_real",
     "selic_meta",
-    "subalimentacao_fao"
+    "subalimentacao_fao",
+    "suicidios_taxa",
+    "vacina_dtp3",
+    "vacina_sarampo"
   ],
-  "falhas": {},
+  "falhas": {
+    "gasto_federal_saude": "ValueError: RREO 2015: esperado 1 valor de Saúde empenhado, achei 0"
+  },
   "problemas_validacao": []
 }

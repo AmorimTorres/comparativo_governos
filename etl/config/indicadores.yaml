@@ -620,6 +620,175 @@ indicadores:
     casas_decimais: 1
     inicio_serie: 2012-01-01
 
+  - indicator_id: mortalidade_materna
+    tema: saude
+    grupo: mortalidade_materna
+    camada: nucleo
+    ordem: 26
+    nome: Mortalidade materna
+    descricao_curta: Mulheres que morreram na gravidez, no parto ou até 42 dias depois, por 100 mil nascidos vivos.
+    unidade: por 100 mil nascidos vivos
+    periodicidade: anual
+    sentido_desejavel: menor_melhor
+    fonte_orgao: Ministério da Saúde (DATASUS)
+    fonte_tabela_ou_serie: SIM, óbitos maternos (por residência), e SINASC, nascidos vivos (por residência da mãe), via TabNet
+    url_fonte: http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sim/cnv/mat10br.def
+    url_api: http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/mat10br.def
+    metodologia_resumo: Razão de mortalidade materna calculada direto dos registros (óbitos maternos no ano divididos pelos nascidos vivos no ano, vezes 100 mil), como a mortalidade infantil do painel.
+    ressalvas: Não aplica o fator de correção de subnotificação usado nas estimativas oficiais do Ministério da Saúde, por isso fica abaixo delas. Em 2020 e 2021 a COVID-19 matou muitas gestantes e puérperas, o que explica o pico; veja os eventos de contexto. Os anos preliminares são marcados conforme a nota do DATASUS.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: ""
+    metrica_padrao: media
+    casas_decimais: 1
+    inicio_serie: 2012-01-01
+
+  - indicator_id: vacina_sarampo
+    tema: saude
+    grupo: vacinacao
+    camada: nucleo
+    ordem: 27
+    nome: Vacinação contra o sarampo (1ª dose)
+    descricao_curta: Bebês de 1 ano que receberam a primeira dose da vacina contra o sarampo (tríplice viral), em % do total.
+    unidade: "% das crianças de 1 ano"
+    periodicidade: anual
+    sentido_desejavel: maior_melhor
+    fonte_orgao: OMS e UNICEF (WUENIC)
+    fonte_tabela_ou_serie: Estimativas OMS/UNICEF de cobertura vacinal nacional (WUENIC), indicador MCV1, pela API do Global Health Observatory (WHS8_110)
+    url_fonte: https://www.who.int/teams/immunization-vaccines-and-biologicals/immunization-analysis-and-insights/global-monitoring/immunization-coverage/who-unicef-estimates-of-national-immunization-coverage
+    url_api: https://ghoapi.azureedge.net/api/WHS8_110
+    metodologia_resumo: Estimativa anual feita pela OMS e pelo UNICEF a partir dos dados oficiais enviados pelo Brasil, de pesquisas e de outras fontes. A série inteira é revista a cada julho com o mesmo método, o que permite comparar anos.
+    ressalvas: O sistema brasileiro de registro de vacinas mudou em 2023 (do SI-PNI para a RNDS), e as coberturas publicadas pelo Ministério da Saúde não são comparáveis entre os dois sistemas; por isso o painel usa a estimativa harmonizada da OMS/UNICEF. A estimativa é arredondada para o ponto percentual e pode mudar na revisão do ano seguinte.
+    quebra_metodologica: "não (série harmonizada pela OMS/UNICEF)"
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: ""
+    metrica_padrao: media
+    casas_decimais: 0
+    inicio_serie: 2012-01-01
+
+  - indicator_id: vacina_dtp3
+    tema: saude
+    grupo: vacinacao
+    camada: nucleo
+    ordem: 28
+    nome: Vacinação infantil completa (pentavalente, 3 doses)
+    descricao_curta: Bebês de 1 ano que tomaram as três doses da vacina contra difteria, tétano e coqueluche (pentavalente), em % do total.
+    unidade: "% das crianças de 1 ano"
+    periodicidade: anual
+    sentido_desejavel: maior_melhor
+    fonte_orgao: OMS e UNICEF (WUENIC)
+    fonte_tabela_ou_serie: Estimativas OMS/UNICEF de cobertura vacinal nacional (WUENIC), indicador DTP3, pela API do Global Health Observatory (WHS4_100)
+    url_fonte: https://www.who.int/teams/immunization-vaccines-and-biologicals/immunization-analysis-and-insights/global-monitoring/immunization-coverage/who-unicef-estimates-of-national-immunization-coverage
+    url_api: https://ghoapi.azureedge.net/api/WHS4_100
+    metodologia_resumo: A terceira dose da vacina contra difteria, tétano e coqueluche (DTP3) é o indicador internacional padrão de vacinação de rotina completa no primeiro ano de vida. Estimativa anual da OMS e do UNICEF, revista a cada julho com o mesmo método.
+    ressalvas: Mesma ressalva da vacina contra o sarampo sobre a mudança de sistema em 2023. A estimativa é arredondada para o ponto percentual e pode mudar na revisão do ano seguinte.
+    quebra_metodologica: "não (série harmonizada pela OMS/UNICEF)"
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: ""
+    metrica_padrao: media
+    casas_decimais: 0
+    inicio_serie: 2012-01-01
+
+  - indicator_id: cirurgias_eletivas
+    tema: saude
+    grupo: cirurgias_eletivas
+    camada: nucleo
+    ordem: 29
+    nome: Cirurgias eletivas no SUS
+    descricao_curta: Internações para cirurgias marcadas (não urgentes) pagas pelo SUS, por mês. É a fila das cirurgias andando.
+    unidade: internações
+    periodicidade: mensal
+    sentido_desejavel: maior_melhor
+    fonte_orgao: Ministério da Saúde (DATASUS)
+    fonte_tabela_ou_serie: SIH/SUS, procedimentos hospitalares por local de internação, grupo 04 (procedimentos cirúrgicos), caráter de atendimento eletivo, por mês de processamento, via TabNet
+    url_fonte: http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sih/cnv/qibr.def
+    url_api: http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sih/cnv/qibr.def
+    metodologia_resumo: Soma nacional das internações aprovadas (AIH) com procedimento principal cirúrgico e caráter eletivo, pelo mês em que o SUS processou a conta.
+    ressalvas: O mês de processamento pode ser posterior ao da cirurgia. Em 2020 e 2021 as cirurgias eletivas foram suspensas ou adiadas por causa da COVID-19, o que formou fila. Não inclui cirurgias de planos de saúde nem as feitas só em ambulatório.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: soma
+    metrica_padrao: acumulado
+    casas_decimais: 0
+    inicio_serie: 2015-01-01
+
+  - indicator_id: obitos_dengue
+    tema: saude
+    grupo: dengue
+    camada: nucleo
+    ordem: 30
+    nome: Mortes por dengue
+    descricao_curta: Pessoas que morreram de dengue no ano, segundo os atestados de óbito.
+    unidade: óbitos
+    periodicidade: anual
+    sentido_desejavel: menor_melhor
+    fonte_orgao: Ministério da Saúde (DATASUS)
+    fonte_tabela_ou_serie: SIM, óbitos por residência com causa básica dengue (CID-10 A90, A91 e A97), via TabNet
+    url_fonte: http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sim/cnv/obt10br.def
+    url_api: http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/obt10br.def
+    metodologia_resumo: Soma dos óbitos com causa básica dengue no ano. O ano em curso fica de fora.
+    ressalvas: Epidemias de dengue dependem muito do clima (calor e chuva) e do sorotipo em circulação; 2024 teve a maior epidemia da série, durante o El Niño de 2023–2024. Os anos preliminares são marcados conforme a nota do DATASUS.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: soma
+    metrica_padrao: acumulado
+    casas_decimais: 0
+    inicio_serie: 2012-01-01
+
+  - indicator_id: suicidios_taxa
+    tema: saude
+    grupo: suicidios
+    camada: nucleo
+    ordem: 31
+    nome: Suicídios
+    descricao_curta: Mortes por suicídio por 100 mil habitantes, segundo os atestados de óbito.
+    unidade: por 100 mil habitantes
+    periodicidade: anual
+    sentido_desejavel: menor_melhor
+    fonte_orgao: Ministério da Saúde (SIM/DATASUS) e IBGE
+    fonte_tabela_ou_serie: SIM, óbitos por residência por lesões autoprovocadas intencionalmente (CID-10 X60–X84), via TabNet; população da Projeção da População, revisão 2024
+    url_fonte: http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sim/cnv/obt10br.def
+    url_api: http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/obt10br.def
+    metodologia_resumo: Óbitos por lesões autoprovocadas intencionalmente no ano divididos pela população projetada, vezes 100 mil.
+    ressalvas: A taxa sobe no Brasil há mais de uma década, por muitas causas sociais e de saúde mental. Parte da alta pode vir de melhor registro da causa da morte. Os anos preliminares são marcados conforme a nota do DATASUS.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: ""
+    metrica_padrao: media
+    casas_decimais: 2
+    inicio_serie: 2012-01-01
+
+  - indicator_id: gasto_federal_saude
+    tema: saude
+    grupo: gasto_saude
+    camada: nucleo
+    ordem: 32
+    nome: Gasto federal em saúde
+    descricao_curta: Quanto o governo federal comprometeu no orçamento com saúde no ano (despesa empenhada na função Saúde), em reais de hoje.
+    unidade: R$ bi (a preços do último mês do IPCA)
+    periodicidade: anual
+    sentido_desejavel: neutro
+    motivo_sem_destaque: "Gasto é escolha de política e inclui despesas extraordinárias (COVID em 2020–2021): o painel não aponta melhor"
+    fonte_orgao: Tesouro Nacional (SICONFI)
+    fonte_tabela_ou_serie: RREO da União, Anexo 2 (despesas por função), função Saúde, despesas empenhadas no ano (6º bimestre), pela API de dados abertos do Tesouro; deflacionado pelo IPCA médio do ano
+    url_fonte: https://siconfi.tesouro.gov.br/siconfi/pages/public/consulta_finbra_rreo/finbra_rreo_list.jsf
+    url_api: https://apidatalake.tesouro.gov.br/ords/siconfi/tt/rreo
+    metodologia_resumo: Despesa empenhada da União na função Saúde no ano fechado, sem as operações intraorçamentárias, convertida para reais do último mês do IPCA pela média do índice no ano.
+    ressalvas: Empenho é o compromisso de gasto, não o pagamento. Inclui os créditos extraordinários da pandemia em 2020 e 2021. A partir de 2023 o piso constitucional da saúde voltou a ser calculado sobre a receita (fim do teto de gastos). O ano em curso fica de fora.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: ""
+    metrica_padrao: media
+    casas_decimais: 1
+    inicio_serie: 2017-01-01
+
   - indicator_id: covid_obitos
     tema: saude
     grupo: covid

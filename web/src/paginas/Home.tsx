@@ -73,7 +73,7 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
             {b && (
               <li>
                 <MarcadorGoverno cor={b.estilo.cor} marcador={b.estilo.marcador} tamanho={12} />
-                <strong>{b.nome}</strong> desde {mesAno(b.inicio)} <span className="pill-parcial">PARCIAL</span>
+                <strong>{b.nome}</strong> desde {mesAno(b.inicio)}
               </li>
             )}
             {destacar && (
@@ -175,7 +175,7 @@ export function Home({ dados, params }: { dados: Dados; params: URLSearchParams 
           todo valor dele é <strong>parcial</strong>. Quando há consenso sobre a direção desejável (menos desemprego, mais renda), a estrela marca o governo
           com o melhor resultado <em>naquele dado</em>, na métrica e na janela escolhidas. Não há placar geral: os indicadores têm pesos, causas e defasagens
           diferentes, e choques externos, como a pandemia em 2020–2021 e as secas e enchentes de 2023–2024, aparecem como eventos de contexto nos gráficos.
-          Veja <a href={hrefRota("metodologia")}>como cada dado é atribuído a cada governo</a>.
+          Veja <a href={hrefRota("metodologia")}>como cada dado é atribuído a cada governo e o tratamento dos números parciais</a>.
         </p>
 
         <form className="controles" role="search" aria-label="Filtrar indicadores" onSubmit={(e) => e.preventDefault()} id="indicadores">

@@ -7,12 +7,12 @@ async function semViolacoes(page: import("@playwright/test").Page) {
   expect(graves.map((v) => `${v.id}: ${v.nodes.length} nós`)).toEqual([]);
 }
 
-test("home mostra cartões com período e rótulo parcial", async ({ page }) => {
+test("home mostra cartões com período e sem rótulo parcial visual", async ({ page }) => {
   await page.goto("./");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(/dois governos/i);
   const cartao = page.locator("article.cartao").first();
   await expect(cartao).toBeVisible();
-  await expect(cartao).toContainText("PARCIAL");
+  await expect(cartao.locator(".pill-parcial")).toHaveCount(0);
   await expect(cartao).toContainText("Fonte");
   await semViolacoes(page);
 });

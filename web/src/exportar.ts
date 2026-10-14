@@ -137,7 +137,6 @@ export async function svgCartao(c: CartaoExportavel): Promise<string> {
       <g>
         ${marcadorSvg(l.marcador, l.cor, cx - largRotulo / 2 - 22, 620, 22)}
         <text x="${cx}" y="632" text-anchor="middle" font-family="CondX" font-weight="600" font-size="36" letter-spacing="1.5" fill="#012672">${esc(rotulo)}</text>
-        ${l.parcial ? `<rect x="${cx - 62}" y="644" width="124" height="34" fill="#012672"/><text x="${cx}" y="670" text-anchor="middle" font-family="CondX" font-weight="600" font-size="24" letter-spacing="3" fill="#FEDD02">PARCIAL</text>` : ""}
         ${globo}
         <text x="${cx}" y="812" text-anchor="middle" font-family="AntonX" font-size="${tam}" fill="${corNumero}">${esc(l.valorTexto)}</text>
         ${janela.map((t, i) => `<text x="${cx}" y="${864 + i * 28}" text-anchor="middle" font-family="BarlowX" font-weight="500" font-size="${janela.length > 1 ? 24 : 27}" fill="#012672">${esc(t)}</text>`).join("")}
