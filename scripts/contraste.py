@@ -14,8 +14,8 @@ TOKENS = Path(__file__).resolve().parent.parent / "design" / "tokens.json"
 PARES = [
     ("identidade.azul_marinho", "identidade.amarelo", 4.5, "número e título no losango"),
     ("identidade.branco", "identidade.verde_escuro", 4.5, "texto branco pequeno sobre verde"),
-    ("identidade.branco", "identidade.verde", 3.0, "texto branco grande (>= 24px) sobre verde da arte"),
-    ("identidade.amarelo", "identidade.verde", 3.0, "display amarelo grande sobre verde"),
+    ("identidade.branco", "identidade.verde", 3.0, "texto branco grande (>= 24px) sobre o verde claro"),
+    ("identidade.amarelo", "identidade.verde_escuro", 3.0, "título amarelo grande sobre o verde escuro da abertura"),
     ("identidade.branco", "identidade.azul_marinho", 4.5, "barra de fonte"),
     ("identidade.amarelo", "identidade.azul_marinho", 4.5, "rótulo amarelo na barra de fonte"),
     ("dados.governo_a", "superficie.off_white", 4.5, "linha e rótulo do governo A"),
@@ -29,10 +29,7 @@ PARES = [
 
 # Pares abaixo do mínimo aceitos conscientemente pelo mantenedor: aparecem como
 # AVISO e não reprovam a verificação. Remover daqui assim que forem corrigidos.
-EXCECOES = {
-    ("identidade.amarelo", "identidade.verde"): "14/10/2026: título amarelo da abertura sobre o verde #009C37 (2,7:1), "
-    "mantido a pedido do mantenedor para avaliar no ar; alternativa registrada: fundo da abertura em #0A6B2A (4,9:1).",
-}
+EXCECOES: dict[tuple[str, str], str] = {}
 
 
 def _lum(h: str) -> float:

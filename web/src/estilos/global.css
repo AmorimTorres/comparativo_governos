@@ -85,7 +85,8 @@ button { font: inherit; }
 .botao.contorno { background: transparent; border-color: #fff; color: #fff; }
 
 /* ---------- herói (home) ---------- */
-.heroi { position: relative; overflow: hidden; background: var(--identidade-verde); color: var(--identidade-branco); }
+/* Verde escuro atrás do título: amarelo 4,9:1 e branco 6,7:1 (no verde claro seriam 2,7:1 e 3,6:1). */
+.heroi { position: relative; overflow: hidden; background: var(--identidade-verde-escuro); color: var(--identidade-branco); }
 .heroi-grade { position: relative; display: grid; gap: 22px; padding-top: 22px; padding-bottom: 30px; }
 @media (min-width: 940px) {
   .heroi-grade { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); align-items: center; gap: 40px; padding-top: 34px; padding-bottom: 40px; }
@@ -99,7 +100,7 @@ button { font: inherit; }
   font-size: min(clamp(40px, 6.2vw, 74px), calc(100cqi / 6.1)); line-height: 0.98; margin: 14px 0 10px; letter-spacing: 0.015em;
 }
 .heroi-titulo .amarelo { color: var(--identidade-amarelo); display: block; }
-.heroi-apoio { /* branco sobre #009C37 é 3,6:1: só passa como texto grande (≥ 18,66 px em peso 600) */
+.heroi-apoio { /* branco sobre o verde escuro da abertura: 6,7:1 */
   font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase;
   letter-spacing: 0.07em; font-size: clamp(19px, calc(100cqi / 22.2), 21px); line-height: 1.2; margin: 0 0 16px;
 }
@@ -117,6 +118,9 @@ button { font: inherit; }
   position: relative; container-type: inline-size; background: var(--identidade-verde-escuro); color: #fff;
   padding: 16px clamp(12px, 3cqi, 28px) 20px; text-align: center; box-shadow: var(--sombra);
 }
+/* Na abertura o fundo também é verde escuro: o destaque e a etiqueta ganham um tom mais fechado para se destacarem. */
+.heroi .palco { background: #07501F; }
+.heroi-texto .kicker { background: rgba(0, 0, 0, 0.28); }
 .palco .estrelas-arco { display: block; width: min(74%, 420px); height: auto; margin: 0 auto 6px; }
 .palco .kicker { background: rgba(0, 0, 0, 0.28); }
 .palco-kicker { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 0; }
