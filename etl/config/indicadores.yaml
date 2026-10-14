@@ -727,8 +727,8 @@ indicadores:
   - indicator_id: homicidios_mulheres_taxa
     tema: seguranca
     grupo: feminicidios
-    camada: nucleo
-    ordem: 21
+    camada: reserva
+    ordem: 121
     nome: De cada 100 mil mulheres, quantas foram assassinadas por ano
     descricao_curta: Mulheres mortas por agressão em cada ano, para cada 100 mil mulheres do país, segundo os atestados de óbito do Ministério da Saúde (e não os boletins de ocorrência). Ajusta pelo crescimento da população.
     unidade: por 100 mil mulheres

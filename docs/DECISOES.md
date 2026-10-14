@@ -89,6 +89,8 @@ Os títulos passaram a dizer o que cada número conta, para o público não conf
 - **"De cada 100 mil mulheres, quantas foram assassinadas por ano"** (antes "Homicídios de mulheres"): taxa anual pelos atestados de óbito (SIM). A pergunta no título explica o número. Exemplo: 3,56 = média de 2019–2021, cerca de 3.800 mulheres por ano.
 - **"% dos assassinatos de mulheres registrados como feminicídio"**: passou de complementar para o núcleo (sem estrela), ao lado dos feminicídios, porque explica o número deles.
 
+- "De cada 100 mil mulheres, quantas foram assassinadas por ano" saiu da home a pedido e virou indicador complementar. Continua na análise da página de feminicídios e em "Incluir indicadores complementares".
+
 ## Pendências
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).
