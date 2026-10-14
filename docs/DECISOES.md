@@ -91,6 +91,33 @@ Os títulos passaram a dizer o que cada número conta, para o público não conf
 
 - "De cada 100 mil mulheres, quantas foram assassinadas por ano" saiu da home a pedido e virou indicador complementar. Continua na análise da página de feminicídios e em "Incluir indicadores complementares".
 
+## 2026-10-13 · Novo layout (branch feat/update-dashboard-layout)
+
+Layout refeito a partir de `referencias_design/`, só no visual. Lógica, dados, estado e animações não mudaram.
+
+**Tipografia.** Kit do Adobe Fonts `jgs6nnl`, carregado no `index.html`:
+
+- `reel-medium` 400 nos títulos e 900 nos números.
+- `reel-short` 400 nos rótulos.
+- Fallback local: Anton e Barlow Condensed.
+- No Reel, as maiúsculas ocupam só 41% (Short) e 52% (Medium) do corpo. Por isso os tamanhos subiram cerca de 1,7× e 1,3×.
+- A variável `--ajuste-reel` (0,28em somado ao respiro de baixo) centraliza a caixa-alta em pílulas e etiquetas.
+
+**Duelo.**
+
+- O losango alongado é dividido ao meio: metade A em azul-marinho com texto branco, metade B em amarelo com texto azul.
+- O melhor resultado ganha a etiqueta retangular "★ MELHOR". O "globo" azul saiu.
+- Os governos aparecem pela inicial (B, L) em `reel-medium` 900. Os gráficos continuam com marcador ● e ■, traço e rótulo direto.
+
+**Topo.** Verde vivo da referência, navegação ativa em amarelo, legenda em caixas brancas e botões menores.
+
+**Diferenças em relação à referência, mantidas de propósito:**
+
+- **Verde do topo:** `#00923A` no lugar de `#009C37`. Com `#009C37`, o amarelo do título fica com 2,68:1 e reprova o mínimo de 3:1.
+- **Kicker "Dados oficiais":** 24px, para contar como texto grande sobre o verde.
+- **Selo PARCIAL no número de Lula 3 e linha de métrica e janela** ("Média • meses 1–44 do mandato"): continuam no duelo, porque são princípios do painel.
+- **Sem "Card sorteado" visível:** o rótulo segue só para leitores de tela.
+
 ## Pendências
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).

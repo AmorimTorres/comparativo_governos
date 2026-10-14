@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Estrela, MarcadorGoverno } from "../componentes/Arte";
+import { Estrela, InicialGoverno } from "../componentes/Arte";
 import { Cartao } from "../componentes/Cartao";
 import { Duelo, FraseDestaque, montarDuelo } from "../componentes/Duelo";
 import { semMovimento } from "../componentes/Movimento";
@@ -58,41 +58,48 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
     <section className="heroi sobre-verde" aria-labelledby="titulo-heroi">
       <div className="conteudo heroi-grade">
         <div className="heroi-texto">
-          <span className="kicker">Dados oficiais • 2019–{new Date().getFullYear()}</span>
+          <span className="heroi-kicker">Dados oficiais . 2019–{new Date().getFullYear()}</span>
           <h1 className="heroi-titulo" id="titulo-heroi">
             Dois governos, <span className="amarelo">os mesmos indicadores</span>
           </h1>
-          <p className="heroi-apoio">Mesma série, mesma métrica, mesma janela de tempo</p>
+          <p className="heroi-apoio">Mesma série, métrica e janela de tempo</p>
           <ul className="legenda" aria-label="Como ler os cartões">
             {a && (
               <li>
-                <MarcadorGoverno cor={a.estilo.cor} marcador={a.estilo.marcador} tamanho={12} />
-                <strong>{a.nome}</strong> {mesAno(a.inicio)}–{mesAno(a.fim)}
+                <InicialGoverno nome={a.nome} />
+                <strong>{a.nome}</strong>
+                <span className="legenda-periodo">
+                  {mesAno(a.inicio)}–{mesAno(a.fim)}
+                </span>
               </li>
             )}
             {b && (
               <li>
-                <MarcadorGoverno cor={b.estilo.cor} marcador={b.estilo.marcador} tamanho={12} />
-                <strong>{b.nome}</strong> desde {mesAno(b.inicio)} <span className="pill-parcial">PARCIAL</span>
+                <InicialGoverno nome={b.nome} />
+                <strong>{b.nome}</strong>
+                <span className="legenda-periodo">
+                  desde {mesAno(b.inicio)}
+                  <span className="sr-only"> (mandato em curso: valores parciais)</span>
+                </span>
               </li>
             )}
             {destacar && (
               <li>
-                <Estrela tamanho={15} />
+                <Estrela tamanho={18} />
                 <strong>Melhor resultado</strong>
               </li>
             )}
           </ul>
-          <button type="button" className="botao amarelo" onClick={() => document.getElementById("indicadores")?.scrollIntoView({ behavior: semMovimento() ? "auto" : "smooth" })}>
-            Ver os {nucleo.length} indicadores ↓
+          <button type="button" className="botao amarelo botao-cta" onClick={() => document.getElementById("indicadores")?.scrollIntoView({ behavior: semMovimento() ? "auto" : "smooth" })}>
+            Ver os {nucleo.length} indicadores <span className="seta-botao" aria-hidden="true">↓</span>
           </button>
         </div>
 
         <div className="palco" aria-labelledby="palco-nome">
           <EstrelasArco />
           <p className="palco-kicker">
-            <span className="kicker">Card sorteado</span>
-            <span className="kicker">{NOMES_TEMA[sorteado.tema]}</span>
+            <span className="sr-only">Card sorteado: </span>
+            {NOMES_TEMA[sorteado.tema]}
           </p>
           <h2 className="palco-nome" id="palco-nome">
             <a href={hrefRota("indicador", sorteado.indicator_id)}>{sorteado.nome}</a>
@@ -104,12 +111,12 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
             {sorteado.nome}. {duelo.textoBase} {destacar && duelo.textoDestaque}
           </p>
           <div className="palco-acoes">
-            <a className="botao amarelo" href={hrefRota("indicador", sorteado.indicator_id)}>
-              Ver gráfico e fontes →
+            <a className="botao amarelo botao-pequeno" href={hrefRota("indicador", sorteado.indicator_id)}>
+              Ver gráfico e fontes <span className="seta-botao" aria-hidden="true">→</span>
             </a>
-            <button type="button" className="botao contorno" onClick={() => atualizarParams({ h: sortear(nucleo.map((i) => i.indicator_id), sorteado.indicator_id) })}>
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 7h11l-3-3m3 3-3 3M20 17H9l3-3m-3 3 3 3" fill="none" stroke="currentColor" strokeWidth="2" />
+            <button type="button" className="botao contorno botao-pequeno" onClick={() => atualizarParams({ h: sortear(nucleo.map((i) => i.indicator_id), sorteado.indicator_id) })}>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 4v14m0 0-3-3m3 3 3-3M17 20V6m0 0-3 3m3-3 3 3" fill="none" stroke="currentColor" strokeWidth="2.4" />
               </svg>
               Sortear outro
             </button>

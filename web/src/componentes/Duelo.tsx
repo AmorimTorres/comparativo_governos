@@ -6,7 +6,7 @@ import type { CSSProperties } from "react";
 import { numero, prefixoCurto, rotuloCurto, sufixoCurto } from "../formato";
 import { type Destaque, type Metrica, type MetricaEfetiva, type ValorCartao, destaque, metricaEfetiva, rotuloMetrica, valorCartao, variacaoTexto } from "../metricas";
 import type { Governo, Indicador, Resumo } from "../tipos";
-import { Estrela, LosangoAlongado, MarcadorGoverno } from "./Arte";
+import { Estrela, InicialGoverno, LosangoAlongado } from "./Arte";
 import { Contador } from "./Movimento";
 
 export interface Lado {
@@ -85,10 +85,10 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
     <div className={`duelo${ativo ? " visivel" : ""}`} aria-hidden="true">
       <LosangoAlongado />
       <div className="duelo-lados">
-        {lados.map(({ g, v }) => {
+        {lados.map(({ g, v }, k) => {
           const melhor = destacar && d.tipo === "melhor" && d.governo === g.id;
           return (
-            <div key={g.id} className={`lado${melhor ? " melhor" : ""}`}>
+            <div key={g.id} className={`lado ${k === 0 ? "lado-a" : "lado-b"}${melhor ? " melhor" : ""}`}>
               {melhor && (
                 <span className="selo-melhor">
                   <Estrela tamanho={13} />
@@ -96,7 +96,7 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
                 </span>
               )}
               <span className="lado-quem">
-                <MarcadorGoverno cor={g.estilo.cor} marcador={g.estilo.marcador} />
+                <InicialGoverno nome={g.nome} />
                 {g.nome}
               </span>
               <Numero v={v} ind={ind} ativo={ativo} inicio={ef === "inicio_fim"} />
@@ -128,7 +128,14 @@ export function FraseDestaque({ d, ind, destacar }: { d: Destaque; ind: Indicado
       ) : (
         <span>{d.texto}</span>
       )}
-      {direcao && d.tipo !== "sem_direcao" && <span className="direcao">{direcao}</span>}
+      {direcao && d.tipo !== "sem_direcao" && (
+        <span className="direcao">
+          <span className="direcao-seta" aria-hidden="true">
+            {direcao.charAt(0)}
+          </span>
+          <span className="direcao-texto">{direcao.slice(1)}</span>
+        </span>
+      )}
     </p>
   );
 }

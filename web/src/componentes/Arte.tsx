@@ -73,14 +73,29 @@ export function Estrela({ tamanho = 14 }: { tamanho?: number }) {
 }
 
 /** Losango alongado (hexágono com pontas laterais) com contorno paralelo:
- * versão da forma da arte que deixa espaço para números grandes. */
+ * versão da forma da arte que deixa espaço para números grandes. O
+ * preenchimento é dividido ao meio: metade A (esquerda) e metade B (direita),
+ * com as cores definidas no CSS (.metade-a, .metade-b). */
 export function LosangoAlongado({ ponta = 7 }: { ponta?: number }) {
   const p = ponta;
   const i = 2.2; // recuo do preenchimento em relação ao contorno
+  const topo = i * 2.6;
+  const base = 100 - i * 2.6;
   return (
     <svg className="fundo-losango" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-      <polygon points={`${p},0.8 ${100 - p},0.8 99.6,50 ${100 - p},99.2 ${p},99.2 0.4,50`} fill="none" stroke="#FEDD02" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-      <polygon points={`${p + i * 0.6},${i * 2.6} ${100 - p - i * 0.6},${i * 2.6} ${100 - i},50 ${100 - p - i * 0.6},${100 - i * 2.6} ${p + i * 0.6},${100 - i * 2.6} ${i},50`} fill="#FEDD02" />
+      <polygon className="contorno" points={`${p},0.8 ${100 - p},0.8 99.6,50 ${100 - p},99.2 ${p},99.2 0.4,50`} fill="none" vectorEffect="non-scaling-stroke" />
+      <polygon className="metade-a" points={`${p + i * 0.6},${topo} 50,${topo} 50,${base} ${p + i * 0.6},${base} ${i},50`} />
+      <polygon className="metade-b" points={`50,${topo} ${100 - p - i * 0.6},${topo} ${100 - i},50 ${100 - p - i * 0.6},${base} 50,${base}`} />
     </svg>
+  );
+}
+
+/** Inicial do governo em selo tipográfico (B, L…), usada na legenda e no
+ * duelo. Herda a cor do texto ao redor. */
+export function InicialGoverno({ nome }: { nome: string }) {
+  return (
+    <span className="inicial-governo" aria-hidden="true">
+      {nome.trim().charAt(0).toUpperCase()}
+    </span>
   );
 }

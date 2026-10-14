@@ -1,6 +1,6 @@
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { AnaliseFeminicidio } from "../componentes/AnaliseFeminicidio";
-import { Estrela, MarcadorGoverno } from "../componentes/Arte";
+import { Estrela, InicialGoverno } from "../componentes/Arte";
 import { Duelo, FraseDestaque, montarDuelo } from "../componentes/Duelo";
 import { Grafico } from "../componentes/Grafico";
 import { compartilhar } from "../compartilhar";
@@ -47,7 +47,7 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
                 return (
                   <th scope="col" key={g.id} style={{ borderTopColor: g.estilo.cor }}>
                     <span className="th-gov">
-                      <MarcadorGoverno cor={g.estilo.cor} marcador={g.estilo.marcador} tamanho={12} />
+                      <InicialGoverno nome={g.nome} />
                       {g.nome}
                       {g.em_curso && <span className="pill-parcial">PARCIAL</span>}
                     </span>
