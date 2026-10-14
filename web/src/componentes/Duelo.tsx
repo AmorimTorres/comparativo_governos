@@ -103,13 +103,23 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
               <span className="lado-ref">
                 {ef === "inicio_fim" ? <span>{variacaoTexto(v, ind)}</span> : v.periodoRef && <span>em {rotuloCurto(v.periodoRef, ind.periodicidade)}</span>}
               </span>
-              {mostrarJanela && <span className="lado-janela">{v.janela}</span>}
+              {/* espaço não separável mantém a altura padrão do losango quando a linha sai */}
+              {mostrarJanela && <span className="lado-janela">{janelaCurta(v) || "\u00a0"}</span>}
             </div>
           );
         })}
       </div>
     </div>
   );
+}
+
+/** Janela de cobertura no losango. As de triênios (FAO: "triênios 2018-2020 a
+ * 2019-2021") não cabem no lado: se o cartão já mostra o período de referência
+ * ("em 2019–2021"), a linha sai; senão vira só o intervalo de anos ("2018–2021"). */
+function janelaCurta(v: ValorCartao): string {
+  const t = /^triênios (\d{4})-\d{4} a \d{4}-(\d{4})$/.exec(v.janela);
+  if (!t) return v.janela;
+  return v.periodoRef ? "" : `${t[1]}–${t[2]}`;
 }
 
 /** Frase do destaque, para o rodapé do cartão e o cabeçalho do indicador. */
