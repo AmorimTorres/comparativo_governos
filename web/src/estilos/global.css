@@ -142,13 +142,11 @@ button { font: inherit; }
   padding: clamp(14px, 3.4cqi, 26px) 4px clamp(8px, 2cqi, 16px); border-radius: clamp(14px, 4cqi, 32px); min-width: 0;
 }
 .lado.melhor { background: var(--identidade-azul-marinho); color: #fff; }
-.lado.melhor .marcador * { stroke: #fff; stroke-width: 1.6px; }
-.lado.melhor .marcador [fill="#012672" i] { fill: #fff; } /* marcador azul sobre o globo azul */
 .lado-quem {
   font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
   font-size: clamp(13px, 3.6cqi, 22px); display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; line-height: 1.1;
 }
-.lado-quem .marcador { height: 0.72em; width: auto; }
+.lado-quem .marcador { height: 1.1em; width: auto; }
 /* Tamanho padrão do número em todos os cartões: a linha tem sempre a altura de
    um número de até 6 caracteres; os mais longos encolhem dentro dela, sem mudar
    a altura do losango nem dos lados. */

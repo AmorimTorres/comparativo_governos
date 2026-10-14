@@ -56,15 +56,25 @@ export function Losango({
 /** Marcador do governo: o mesmo traço do gráfico (sólido ou tracejado, na cor
  * do governo) terminando no losango da identidade, que também marca os pontos
  * das linhas. Liga legenda, cartões, tabelas e gráficos sem depender só da cor. */
+/** Marcador do governo: o traço do gráfico (sólido ou tracejado) terminando
+ * no losango, dentro de uma cápsula branca própria. Como a cápsula leva o
+ * próprio fundo, o marcador é idêntico sobre o amarelo, o azul do "Melhor" e o
+ * branco das legendas. tamanho = altura do traço com o losango. */
 export function MarcadorGoverno({ cor, traco, tamanho = 10 }: { cor: string; traco: string; tamanho?: number }) {
   const h = tamanho;
-  const w = h * 2.6;
+  const px = h * 0.6; // respiro lateral dentro da cápsula
+  const py = h * 0.35; // respiro vertical
+  const wi = h * 2.6; // largura do traço com o losango
+  const W = wi + 2 * px;
+  const H = h + 2 * py;
   const d = h * 0.45; // meia-diagonal do losango
-  const xl = w - d - 0.5;
+  const xl = px + wi - d - 0.5;
+  const cy = H / 2;
   return (
-    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} className="marcador" aria-hidden="true">
-      <line x1={1} x2={xl - d} y1={h / 2} y2={h / 2} stroke={cor} strokeWidth={Math.max(2, h * 0.24)} strokeLinecap="round" strokeDasharray={traco === "tracejado" ? `${h * 0.38} ${h * 0.3}` : traco === "pontilhado" ? `1 ${h * 0.3}` : undefined} />
-      <polygon points={`${xl},${h / 2 - d} ${xl + d},${h / 2} ${xl},${h / 2 + d} ${xl - d},${h / 2}`} fill={cor} />
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} className="marcador" aria-hidden="true">
+      <rect x={0.5} y={0.5} width={W - 1} height={H - 1} rx={(H - 1) / 2} fill="#fff" stroke="#D8D4C6" strokeWidth={1} />
+      <line x1={px + 1} x2={xl - d} y1={cy} y2={cy} stroke={cor} strokeWidth={Math.max(2, h * 0.24)} strokeLinecap="round" strokeDasharray={traco === "tracejado" ? `${h * 0.38} ${h * 0.3}` : traco === "pontilhado" ? `1 ${h * 0.3}` : undefined} />
+      <polygon points={`${xl},${cy - d} ${xl + d},${cy} ${xl},${cy + d} ${xl - d},${cy}`} fill={cor} />
     </svg>
   );
 }

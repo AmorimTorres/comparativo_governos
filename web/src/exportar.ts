@@ -75,7 +75,10 @@ function marcadorSvg(traco: string, cor: string, xFim: number, y: number, h: num
   const d = h * 0.45;
   const xl = xFim - d;
   const tr = traco === "tracejado" ? ` stroke-dasharray="${h * 0.38} ${h * 0.3}"` : "";
-  return `<line x1="${xl - d - h * 1.6}" x2="${xl - d}" y1="${y}" y2="${y}" stroke="${cor}" stroke-width="${h * 0.24}" stroke-linecap="round"${tr}/><polygon points="${xl},${y - d} ${xl + d},${y} ${xl},${y + d} ${xl - d},${y}" fill="${cor}"/>`;
+  // Cápsula branca atrás, como no painel.
+  const x0 = xl - d - h * 1.6 - h * 0.6;
+  const capsula = `<rect x="${x0}" y="${y - h * 0.85}" width="${xFim + h * 0.6 - x0}" height="${h * 1.7}" rx="${h * 0.85}" fill="#fff" stroke="#D8D4C6" stroke-width="1.5"/>`;
+  return `${capsula}<line x1="${xl - d - h * 1.6}" x2="${xl - d}" y1="${y}" y2="${y}" stroke="${cor}" stroke-width="${h * 0.24}" stroke-linecap="round"${tr}/><polygon points="${xl},${y - d} ${xl + d},${y} ${xl},${y + d} ${xl - d},${y}" fill="${cor}"/>`;
 }
 
 // Geometria (1080×1350): losango com topo em y=150, base em y=1150 e largura
@@ -136,7 +139,7 @@ export async function svgCartao(c: CartaoExportavel): Promise<string> {
       : "";
     return `
       <g>
-        ${marcadorSvg(l.traco, l.cor, cx - largRotulo / 2 - 12, 620, 22)}
+        ${marcadorSvg(l.traco, l.cor, cx - largRotulo / 2 - 22, 620, 22)}
         <text x="${cx}" y="632" text-anchor="middle" font-family="CondX" font-weight="600" font-size="36" letter-spacing="1.5" fill="#012672">${esc(rotulo)}</text>
         ${globo}
         <text x="${cx}" y="812" text-anchor="middle" font-family="AntonX" font-size="${tam}" fill="${corNumero}">${esc(l.valorTexto)}</text>

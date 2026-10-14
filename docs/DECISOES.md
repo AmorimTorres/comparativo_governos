@@ -143,3 +143,8 @@ Registre aqui quando um teste de `tests/test_valores_conhecidos.py` falhar por r
 - Textos cinza (contagem de indicadores) continuam em Barlow Condensed; o texto corrido continua em Barlow.
 - O domínio de produção precisa estar autorizado no kit do Adobe Fonts.
 - A imagem exportada (compartilhar) continua com Anton e Barlow embutidas, porque as fontes do kit não podem ser embutidas no arquivo.
+
+## Marcador dos governos em cápsula branca
+
+- O marcador (traço do gráfico terminando no losango) agora fica dentro de uma cápsula branca com contorno fino. Com fundo próprio, ele é idêntico sobre o amarelo, sobre o azul do lado "Melhor", nas legendas brancas e na imagem exportada. Antes, no lado "Melhor", o marcador era repintado de branco para não sumir no azul.
+- Alternativas avaliadas: inicial em círculo, nome em etiqueta colorida e só o nome nos cartões. A cápsula foi escolhida por manter a ligação direta entre o cartão e as linhas dos gráficos.
