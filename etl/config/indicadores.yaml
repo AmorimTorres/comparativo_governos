@@ -716,30 +716,6 @@ indicadores:
     casas_decimais: 0
     inicio_serie: 2015-01-01
 
-  - indicator_id: obitos_dengue
-    tema: saude
-    grupo: dengue
-    camada: nucleo
-    ordem: 30
-    nome: Mortes por dengue
-    descricao_curta: Pessoas que morreram de dengue no ano, segundo os atestados de óbito.
-    unidade: óbitos
-    periodicidade: anual
-    sentido_desejavel: menor_melhor
-    fonte_orgao: Ministério da Saúde (DATASUS)
-    fonte_tabela_ou_serie: SIM, óbitos por residência com causa básica dengue (CID-10 A90, A91 e A97), via TabNet
-    url_fonte: http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sim/cnv/obt10br.def
-    url_api: http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/obt10br.def
-    metodologia_resumo: Soma dos óbitos com causa básica dengue no ano. O ano em curso fica de fora.
-    ressalvas: Epidemias de dengue dependem muito do clima (calor e chuva) e do sorotipo em circulação; 2024 teve a maior epidemia da série, durante o El Niño de 2023–2024. Os anos preliminares são marcados conforme a nota do DATASUS.
-    quebra_metodologica: não
-    nivel_geografico: Brasil
-    regra_atribuicao: centro
-    acumulado: soma
-    metrica_padrao: acumulado
-    casas_decimais: 0
-    inicio_serie: 2012-01-01
-
   - indicator_id: suicidios_taxa
     tema: saude
     grupo: suicidios

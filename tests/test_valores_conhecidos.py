@@ -133,11 +133,6 @@ def test_mortalidade_materna_2021(series):
     assert "3.030 óbitos maternos" in s["observacao"].iloc[0]
 
 
-def test_obitos_dengue_2024(series):
-    # TabNet SIM, causa básica dengue (A90, A91, A97): 6.741 óbitos em 2024.
-    assert valor(series, "obitos_dengue", "2024") == 6741
-
-
 def test_vacinas_wuenic_2021(series):
     # WUENIC (revisão de 14/07/2026): DTP3 68% e MCV1 73% em 2021.
     assert valor(series, "vacina_dtp3", "2021") == 68

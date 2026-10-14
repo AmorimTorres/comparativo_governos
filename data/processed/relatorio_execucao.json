@@ -1,6 +1,6 @@
 {
-  "executado_em": "2026-10-13T23:56:04",
-  "data_coleta": "2026-10-13",
+  "executado_em": "2026-10-14T08:38:13",
+  "data_coleta": "2026-10-14",
   "indicadores_ok": [
     "analfabetismo",
     "balanca_comercial",
@@ -39,7 +39,6 @@
     "mortalidade_infantil",
     "mortalidade_materna",
     "mulheres_assassinadas",
-    "obitos_dengue",
     "pib_anual",
     "pib_trimestral",
     "pobreza",

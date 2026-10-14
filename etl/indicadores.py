@@ -758,16 +758,6 @@ def mortalidade_materna():
     return out
 
 
-@indicador("obitos_dengue")
-def obitos_dengue():
-    # CID-10 A90 e A91 (até 2023) e A97 (desde a atualização da CID): o TabNet lista as três.
-    cats = [r for _, r in tabnet.opcoes(OBT, "SCategoria_CID-10") if "engue" in r]
-    s, final, b = _sim_anual({"SCategoria_CID-10": tabnet.valores(OBT, "SCategoria_CID-10", cats)})
-    out = _anual(s.index, s.to_numpy(), b.url, b.coletado_em)
-    out["observacao"] = ["dado preliminar" if a > final else "" for a in s.index]
-    return out
-
-
 @indicador("suicidios_taxa")
 def suicidios_taxa():
     grupos = [r for _, r in tabnet.opcoes(OBT, "SGrupo_CID-10") if "autoprovocadas" in r.lower()]

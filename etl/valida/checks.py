@@ -44,7 +44,6 @@ FAIXAS = {
     "vacina_sarampo": (40, 100),
     "vacina_dtp3": (40, 100),
     "cirurgias_eletivas": (30_000, 450_000),
-    "obitos_dengue": (20, 12_000),
     "suicidios_taxa": (2, 15),
     "gasto_federal_saude": (80, 600),
     "mulheres_assassinadas": (100, 600),

@@ -98,7 +98,7 @@ Os títulos passaram a dizer o que cada número conta, para o público não conf
 
 ## 2026-10-13 · Saúde: sete novos indicadores
 
-Até aqui o tema tinha só a mortalidade infantil. Os candidatos foram escolhidos por relevância política e apelo público e testados com download real. Todos entraram:
+Até aqui o tema tinha só a mortalidade infantil. Os candidatos foram escolhidos por relevância política e apelo público e testados com download real:
 
 | Indicador | Fonte | Sentido | Observação |
 |---|---|---|---|
@@ -106,15 +106,16 @@ Até aqui o tema tinha só a mortalidade infantil. Os candidatos foram escolhido
 | Vacinação contra o sarampo (MCV1) | OMS/UNICEF, WUENIC (API GHO) | maior é melhor | Ver nota abaixo |
 | Vacinação infantil completa (DTP3) | OMS/UNICEF, WUENIC (API GHO) | maior é melhor | Ver nota abaixo |
 | Cirurgias eletivas no SUS | SIH (TabNet), grupo 04, caráter eletivo, mês de processamento | maior é melhor | Pausa da COVID; Programa de Redução das Filas em 2023 |
-| Mortes por dengue | SIM, CID A90/A91/A97 | menor é melhor | Epidemia de 2024 durante o El Niño |
 | Suicídios por 100 mil | SIM, X60–X84 | menor é melhor | Tendência de alta desde 2012 |
 | Gasto federal em saúde | RREO da União, Anexo 2, função Saúde, empenhado, IPCA médio (API SICONFI) | neutro | Desde 2017; escolha de política, com créditos da COVID |
 
 - **Vacinação.** Antes descartada: a cobertura do Ministério da Saúde muda de sistema em 2023 (SI-PNI → RNDS). Agora entra pela estimativa WUENIC, que a OMS e o UNICEF revisam com o mesmo método para toda a série. A data da revisão vai na `observacao` de cada ano.
 - **Gasto federal em saúde.** Começa em 2017: antes disso o RREO não separa as despesas intraorçamentárias e usa outro rótulo de coluna.
-- **Eventos novos, com fonte oficial:** Portaria GM/MS 90/2023 (filas), Movimento Nacional pela Vacinação (OPAS, 2023), início do El Niño (OMM, jul/2023), COE Dengue (Portaria GM/MS 3.140/2024) e recertificação do Brasil como livre do sarampo (OPAS, nov/2024).
+- **Eventos novos, com fonte oficial:** Portaria GM/MS 90/2023 (filas), Movimento Nacional pela Vacinação (OPAS, 2023) e recertificação do Brasil como livre do sarampo (OPAS, nov/2024).
 - **Eventos da COVID** passaram a afetar também os novos indicadores ligados à pandemia.
 - **Unidade "R$ bi":** o site exibe valores em bilhões de reais com sufixo "bi" (`web/src/formato.ts`).
+
+- **Mortes por dengue:** chegou a entrar, mas saiu a pedido em 14/10/2026, junto com os eventos do El Niño e do COE Dengue.
 
 ## Pendências
 
