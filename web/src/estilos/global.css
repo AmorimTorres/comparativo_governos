@@ -86,10 +86,6 @@ button { font: inherit; }
 
 /* ---------- herói (home) ---------- */
 .heroi { position: relative; overflow: hidden; background: var(--identidade-verde); color: var(--identidade-branco); }
-.heroi::before {
-  content: ""; position: absolute; width: 1100px; height: 640px; left: -420px; top: -40px;
-  background: rgba(255, 220, 4, 0.08); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-}
 .heroi-grade { position: relative; display: grid; gap: 22px; padding-top: 22px; padding-bottom: 30px; }
 @media (min-width: 940px) {
   .heroi-grade { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); align-items: center; gap: 40px; padding-top: 34px; padding-bottom: 40px; }
