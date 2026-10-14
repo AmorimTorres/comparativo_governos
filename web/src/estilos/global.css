@@ -237,6 +237,7 @@ label.pequeno, .pequeno { font-size: 14px; color: var(--texto-secundario); }
 .cartao:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
 .cartao-cabeca { padding: 12px 14px 4px; }
 .cartao-cabeca .kicker { font-size: 12px; padding: 2px 7px; background: rgba(0, 0, 0, 0.28); }
+.cartao-nome, .palco-nome, .cabecalho-ind h1 { text-wrap: balance; }
 .cartao-nome { font-family: var(--fonte-display); text-transform: uppercase; font-weight: 400; font-size: clamp(23px, 7.6cqi, 44px); line-height: 1.02; margin-top: 7px; padding-right: 40px; }
 .cartao-metrica { font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: clamp(13px, 2.4cqi, 16px); line-height: 1.25; margin: 5px 0 0; }
 .cartao .duelo { margin: 6px 6px 10px; flex: 1; display: flex; flex-direction: column; justify-content: center; }

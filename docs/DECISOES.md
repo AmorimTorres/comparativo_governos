@@ -72,13 +72,22 @@ Na janela comum, os feminicídios registrados no Sinesp eram menores no governo 
 Decisões:
 
 - **Feminicídios sem estrela.** `sentido_desejavel` passa a `neutro`, com `motivo_sem_destaque` explicando que o registro não é comparável entre períodos. É o mesmo critério que levou a descartar a cobertura vacinal.
-- **Dois indicadores comparáveis, com estrela.** "Mulheres assassinadas" (Sinesp, feminicídio + homicídio doloso de mulheres, mensal) e "Homicídios de mulheres" (SIM, taxa por 100 mil mulheres, anual).
-- **Um indicador de qualidade do registro, sem estrela.** "Mortes de mulheres registradas como feminicídio" (% por ano, complementar).
+- **Dois indicadores comparáveis, com estrela.** "Mulheres assassinadas (dados da polícia)" (Sinesp, feminicídio + homicídio doloso de mulheres, mensal) e "Mulheres assassinadas a cada 100 mil (dados da saúde)" (SIM, taxa por 100 mil mulheres, anual).
+- **Um indicador de qualidade do registro, sem estrela.** "% dos assassinatos de mulheres registrados como feminicídio" (por ano, complementar).
 - **Análise na página de feminicídios**, com gráfico e texto calculados das séries.
 - **Eventos de contexto:** Lei 13.104/2015 e Lei 14.994/2024 (planalto.gov.br).
 - **Verificação de que as categorias do Sinesp não se sobrepõem.** Somar feminicídio e homicídio doloso não conta ninguém duas vezes: a soma fica próxima do total de homicídios de mulheres do SIM. Se o homicídio doloso já incluísse os feminicídios, a soma ficaria muito acima.
 - **Cache do Sinesp passou para a versão v3**, com a coluna de vítimas mulheres.
 - **Nova coluna `motivo_sem_destaque` no catálogo:** é o texto opcional mostrado no lugar da estrela.
+
+### 2026-10-13 · Títulos dos indicadores de violência contra mulheres
+
+Os títulos passaram a dizer de onde vem cada número, para o público não confundir os três:
+
+- "Casos registrados como feminicídio" (antes "Feminicídios"): deixa claro que é o registro policial.
+- "Mulheres assassinadas (dados da polícia)": todas as vítimas mulheres, qualquer que seja a classificação.
+- "Mulheres assassinadas a cada 100 mil (dados da saúde)" (antes "Homicídios de mulheres"): atestados de óbito, em taxa.
+- "% dos assassinatos de mulheres registrados como feminicídio" (antes "Mortes de mulheres registradas como feminicídio").
 
 ## Pendências
 

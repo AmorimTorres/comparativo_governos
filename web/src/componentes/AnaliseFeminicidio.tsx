@@ -55,7 +55,7 @@ function opcao(anos: Ano[], governos: Governo[]): OpcaoGrafico {
       confine: true,
       formatter: (ps: Array<{ dataIndex: number }>) => {
         const a = anos[ps[0].dataIndex];
-        return `<b>${a.ano}</b><br>Mulheres assassinadas: <b>${numero(a.mulheres, 0)}</b><br>Registradas como feminicídio: <b>${numero(a.feminicidios, 0)}</b>${a.parcela !== null ? `<br>Parcela: <b>${numero(a.parcela, 1)}%</b>` : ""}`;
+        return `<b>${a.ano}</b><br>Mulheres assassinadas (total): <b>${numero(a.mulheres, 0)}</b><br>Registradas como feminicídio: <b>${numero(a.feminicidios, 0)}</b>${a.parcela !== null ? `<br>Parcela: <b>${numero(a.parcela, 1)}%</b>` : ""}`;
       },
     },
     xAxis: { type: "category", data: rot, axisLabel: { color: "#5B5B5B", fontFamily: FONTE } },
@@ -65,7 +65,7 @@ function opcao(anos: Ano[], governos: Governo[]): OpcaoGrafico {
     ],
     series: [
       {
-        name: "Mulheres assassinadas",
+        name: "Mulheres assassinadas (total)",
         type: "bar",
         data: anos.map((a) => a.mulheres),
         barMaxWidth: 44,
@@ -163,7 +163,7 @@ export function AnaliseFeminicidio({ dados, governos, metrica, janela, destacar 
           <Grafico opcao={opcao(anos, governos)} descricao={descricao} id="grafico-analise" />
           <p className="legenda-analise" aria-hidden="true">
             <span>
-              <i style={{ background: "#D8D4C6", borderColor: "#8A877C" }} /> Mulheres assassinadas
+              <i style={{ background: "#D8D4C6", borderColor: "#8A877C" }} /> Mulheres assassinadas (total)
             </span>
             <span>
               <i style={{ background: "#0B6B2C", borderColor: "#0B6B2C" }} /> Registradas como feminicídio

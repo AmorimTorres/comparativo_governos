@@ -86,8 +86,8 @@ const meiaLargura = (y: number) => 520 * (1 - Math.abs(y - CY) / 500);
 
 export async function svgCartao(c: CartaoExportavel): Promise<string> {
   const css = await fontes();
-  // Título: até 2 linhas; reduz a fonte se o nome for longo.
-  // Título: 1 linha (80 px, até 17 caracteres) ou 2 linhas (64 px, até 18).
+  // Título: 1 linha (80 px, até 17 caracteres), 2 linhas (64 px, até 18; ou
+  // 54 px, até 22) ou 3 linhas (46 px, até 26).
   let tamTitulo = 80;
   let titulo = quebrar(c.titulo.toUpperCase(), 17);
   if (titulo.length > 1) {
@@ -98,8 +98,13 @@ export async function svgCartao(c: CartaoExportavel): Promise<string> {
     tamTitulo = 54;
     titulo = quebrar(c.titulo.toUpperCase(), 22);
   }
-  if (titulo.length > 2) titulo = [titulo[0], titulo.slice(1).join(" ").slice(0, 21) + "…"];
-  const yTitulo = titulo.length === 1 ? [565] : [512, 512 + tamTitulo * 1.05];
+  if (titulo.length > 2) {
+    // Nomes longos (ex.: "Mulheres assassinadas a cada 100 mil (dados da saúde)"): 3 linhas de 46 px.
+    tamTitulo = 46;
+    titulo = quebrar(c.titulo.toUpperCase(), 26);
+  }
+  if (titulo.length > 3) titulo = [titulo[0], titulo[1], titulo.slice(2).join(" ").slice(0, 25) + "…"];
+  const yTitulo = titulo.length === 1 ? [565] : titulo.length === 2 ? [512, 512 + tamTitulo * 1.05] : [478, 527, 576];
   const estrelas = [
     [0.222, 0.125],
     [0.14, 0.155],
