@@ -71,7 +71,7 @@ def sis_pobreza(edicao: int = SIS_EDICAO) -> tuple[pd.DataFrame, Bruto]:
 
 
 def projecao_populacao_brasil() -> tuple[pd.DataFrame, Bruto]:
-    """População total do Brasil por ano (Projeção da População, revisão 2024)."""
+    """População total e feminina do Brasil por ano (Projeção da População, revisão 2024)."""
     bruto = obter("ibge_projecao", "projecoes_2024_tab4_indicadores.xlsx", URL_PROJECAO, timeout=600)
     wb = openpyxl.load_workbook(io.BytesIO(bruto.conteudo), read_only=True, data_only=True)
     ws = wb[wb.sheetnames[0]]
@@ -82,5 +82,5 @@ def projecao_populacao_brasil() -> tuple[pd.DataFrame, Bruto]:
                 cab = list(row)
             continue
         if row and row[cab.index("SIGLA")] == "BR":
-            linhas.append({"ano": int(row[0]), "populacao": float(row[cab.index("POP_T")])})
+            linhas.append({"ano": int(row[0]), "populacao": float(row[cab.index("POP_T")]), "populacao_mulheres": float(row[cab.index("POP_M")])})
     return pd.DataFrame(linhas), bruto

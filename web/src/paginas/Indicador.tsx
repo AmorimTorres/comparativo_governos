@@ -1,4 +1,5 @@
 import { type ReactNode, useEffect, useMemo, useState } from "react";
+import { AnaliseFeminicidio } from "../componentes/AnaliseFeminicidio";
 import { Estrela, MarcadorGoverno } from "../componentes/Arte";
 import { Duelo, FraseDestaque, montarDuelo } from "../componentes/Duelo";
 import { Grafico } from "../componentes/Grafico";
@@ -267,6 +268,8 @@ export function PaginaIndicador({ dados, id, params }: { dados: Dados; id: strin
             ))}
           </nav>
         )}
+
+        {ind.indicator_id === "feminicidios" && <AnaliseFeminicidio dados={dados} governos={governos} metrica={metrica} janela={janela} destacar={destacar} />}
 
         <div className="controles">
           <div className="chips" role="group" aria-label="Visão do gráfico">

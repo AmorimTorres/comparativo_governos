@@ -702,19 +702,99 @@ indicadores:
     descricao_curta: Vítimas de feminicídio registradas pelas polícias estaduais, por mês.
     unidade: vítimas
     periodicidade: mensal
-    sentido_desejavel: menor_melhor
+    sentido_desejavel: neutro
+    motivo_sem_destaque: "Registro em consolidação: não comparável entre períodos (veja a análise na página)"
     fonte_orgao: Ministério da Justiça e Segurança Pública (Sinesp)
     fonte_tabela_ou_serie: Sinesp VDE (Validador de Dados Estatísticos), evento "Feminicídio", total de vítimas
     url_fonte: https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados-nacionais-1/base-de-dados-e-notas-metodologicas-dos-gestores-estaduais-sinesp-vde-2022-e-2023
     url_api: https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/dnsp-base-de-dados/
     metodologia_resumo: Soma nacional das vítimas informadas pelos gestores estaduais ao Sinesp, por mês de referência.
-    ressalvas: Os dados são enviados pelas secretarias estaduais e podem ser revistos. A tipificação do feminicídio passou a ser mais usada ao longo do tempo, o que pode elevar os registros sem aumento real.
+    ressalvas: >-
+      O feminicídio só existe como tipo penal desde a Lei 13.104/2015, e a classificação dos casos ainda está se consolidando nas polícias.
+      Desde 2015 a parcela das mulheres assassinadas registrada como feminicídio sobe quase todo ano, nos dois governos (veja o indicador
+      "Mortes de mulheres registradas como feminicídio"). Por isso, mais feminicídios registrados podem significar melhor classificação, e
+      não mais violência, e o painel não aponta melhor resultado neste indicador. Para comparar a violência letal contra mulheres, use
+      "Mulheres assassinadas" (Sinesp) e "Homicídios de mulheres" (SIM), que não dependem da classificação. Os dados são enviados pelas
+      secretarias estaduais e podem ser revistos.
     quebra_metodologica: "não (mudança gradual de classificação)"
     nivel_geografico: Brasil
     regra_atribuicao: centro
     acumulado: soma
     metrica_padrao: acumulado
     casas_decimais: 0
+    inicio_serie: 2015-01-01
+
+  - indicator_id: homicidios_mulheres_taxa
+    tema: seguranca
+    grupo: feminicidios
+    camada: nucleo
+    ordem: 21
+    nome: Homicídios de mulheres
+    descricao_curta: Mulheres mortas por agressão, por 100 mil mulheres, segundo as declarações de óbito.
+    unidade: por 100 mil mulheres
+    periodicidade: anual
+    sentido_desejavel: menor_melhor
+    fonte_orgao: Ministério da Saúde (SIM/DATASUS) e IBGE
+    fonte_tabela_ou_serie: SIM, óbitos por residência de mulheres por agressões (CID-10 X85–Y09) e intervenções legais (Y35–Y36), via TabNet; população feminina da Projeção da População, revisão 2024
+    url_fonte: http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sim/cnv/obt10br.def
+    url_api: http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/obt10br.def
+    metodologia_resumo: Óbitos de mulheres por agressão no ano, divididos pela população feminina projetada pelo IBGE e multiplicados por 100 mil. Vem da declaração de óbito (saúde), e não do boletim de ocorrência, por isso não depende de a polícia classificar o caso como feminicídio.
+    ressalvas: Inclui todas as mulheres mortas por agressão, com ou sem motivação de gênero. Os anos mais recentes são preliminares e costumam subir um pouco quando o SIM fecha a base. O ano em curso fica de fora.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: ""
+    metrica_padrao: media
+    casas_decimais: 2
+    inicio_serie: 2012-01-01
+
+  - indicator_id: mulheres_assassinadas
+    tema: seguranca
+    grupo: feminicidios
+    camada: nucleo
+    ordem: 21
+    nome: Mulheres assassinadas
+    descricao_curta: Mulheres vítimas de feminicídio ou de homicídio doloso registradas pelas polícias estaduais, por mês.
+    unidade: vítimas
+    periodicidade: mensal
+    sentido_desejavel: menor_melhor
+    fonte_orgao: Ministério da Justiça e Segurança Pública (Sinesp)
+    fonte_tabela_ou_serie: Sinesp VDE, eventos "Feminicídio" e "Homicídio doloso", vítimas do sexo feminino
+    url_fonte: https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados-nacionais-1/base-de-dados-e-notas-metodologicas-dos-gestores-estaduais-sinesp-vde-2022-e-2023
+    url_api: https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/dnsp-base-de-dados/
+    metodologia_resumo: Soma nacional das vítimas mulheres de feminicídio e de homicídio doloso, que o Sinesp registra como eventos separados. Somar os dois tira o efeito da classificação; o total fica próximo do número de homicídios de mulheres do SIM.
+    ressalvas: Não inclui latrocínio nem lesão corporal seguida de morte. Os dados são enviados pelas secretarias estaduais e podem ser revistos; meses com menos de 27 UFs informando ficam fora das somas.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: soma
+    metrica_padrao: acumulado
+    casas_decimais: 0
+    inicio_serie: 2015-01-01
+
+  - indicator_id: feminicidio_parcela
+    tema: seguranca
+    grupo: feminicidios
+    camada: reserva
+    ordem: 122
+    nome: Mortes de mulheres registradas como feminicídio
+    descricao_curta: Parcela das mulheres assassinadas (feminicídio + homicídio doloso) que a polícia registrou como feminicídio, por ano.
+    unidade: "% das mulheres assassinadas"
+    periodicidade: anual
+    sentido_desejavel: neutro
+    motivo_sem_destaque: "Mede a classificação dos casos, não a violência: o painel não aponta melhor"
+    fonte_orgao: Ministério da Justiça e Segurança Pública (Sinesp)
+    fonte_tabela_ou_serie: Sinesp VDE, eventos "Feminicídio" e "Homicídio doloso", vítimas do sexo feminino
+    url_fonte: https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados-nacionais-1/base-de-dados-e-notas-metodologicas-dos-gestores-estaduais-sinesp-vde-2022-e-2023
+    url_api: https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/dnsp-base-de-dados/
+    metodologia_resumo: Vítimas mulheres de feminicídio divididas pelo total de mulheres assassinadas (feminicídio + homicídio doloso) no ano.
+    ressalvas: Indicador de qualidade do registro, não de violência. Quando ele sobe, mais casos passam a ser reconhecidos como feminicídio, e a série de feminicídios cresce mesmo que o número de mulheres mortas não mude.
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: ""
+    metrica_padrao: media
+    casas_decimais: 1
     inicio_serie: 2015-01-01
 
   - indicator_id: latrocinios

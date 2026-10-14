@@ -62,6 +62,24 @@ Mudanças de experiência:
 - O site é publicado na Vercel como projeto estático único, com raiz em `web/` (`web/vercel.json`). O GitHub Pages foi removido.
 - As dependências do Python ficam em `requirements-etl.txt`, e não em `requirements.txt`. Com o nome padrão, a Vercel detectava o repositório como uma aplicação Python e sugeria dois serviços. O Python só roda na coleta (`make data` e GitHub Actions), nunca na Vercel.
 
+## 2026-10-13 · Feminicídios: registro em consolidação
+
+Na janela comum, os feminicídios registrados no Sinesp eram menores no governo Bolsonaro. A análise dos próprios dados mostrou por quê:
+
+- **O registro mudou.** Os feminicídios registrados sobem quase todo ano desde 2015, inclusive em 2019–2022. Ao mesmo tempo, a parcela das mulheres assassinadas (feminicídio + homicídio doloso, vítimas mulheres) classificada como feminicídio passou de cerca de 16% em 2015 para mais de 40% em 2025. Em 2015, só 15 UFs registraram algum feminicídio; desde 2019, todas as 27.
+- **O total de mulheres mortas não acompanhou a alta.** A soma das duas categorias e os homicídios de mulheres no SIM ficaram estáveis ou caíram no mesmo período.
+
+Decisões:
+
+- **Feminicídios sem estrela.** `sentido_desejavel` passa a `neutro`, com `motivo_sem_destaque` explicando que o registro não é comparável entre períodos. É o mesmo critério que levou a descartar a cobertura vacinal.
+- **Dois indicadores comparáveis, com estrela.** "Mulheres assassinadas" (Sinesp, feminicídio + homicídio doloso de mulheres, mensal) e "Homicídios de mulheres" (SIM, taxa por 100 mil mulheres, anual).
+- **Um indicador de qualidade do registro, sem estrela.** "Mortes de mulheres registradas como feminicídio" (% por ano, complementar).
+- **Análise na página de feminicídios**, com gráfico e texto calculados das séries.
+- **Eventos de contexto:** Lei 13.104/2015 e Lei 14.994/2024 (planalto.gov.br).
+- **Verificação de que as categorias do Sinesp não se sobrepõem.** Somar feminicídio e homicídio doloso não conta ninguém duas vezes: a soma fica próxima do total de homicídios de mulheres do SIM. Se o homicídio doloso já incluísse os feminicídios, a soma ficaria muito acima.
+- **Cache do Sinesp passou para a versão v3**, com a coluna de vítimas mulheres.
+- **Nova coluna `motivo_sem_destaque` no catálogo:** é o texto opcional mostrado no lugar da estrela.
+
 ## Pendências
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).

@@ -100,3 +100,26 @@ def test_homicidios_2019_contagem(series):
     s = series[(series["indicator_id"] == "homicidios_taxa") & (series["periodo"] == "2019")]
     # TabNet SIM: 44.033 agressões + 1.470 intervenções legais (dado final).
     assert "45.503 óbitos" in s["observacao"].iloc[0]
+
+
+def test_homicidios_mulheres_2019_contagem(series):
+    s = series[(series["indicator_id"] == "homicidios_mulheres_taxa") & (series["periodo"] == "2019")]
+    # TabNet SIM (consulta de 13/10/2026): mulheres, X85–Y09 + Y35–Y36, por residência, dado final.
+    assert "3.737 óbitos de mulheres" in s["observacao"].iloc[0]
+
+
+def test_mulheres_assassinadas_soma_feminicidio_e_homicidio(series):
+    # Sinesp VDE 2019, vítimas do sexo feminino: 1.322 feminicídios + 2.611 homicídios dolosos.
+    s = series[(series["indicator_id"] == "mulheres_assassinadas") & (series["periodo"].str.startswith("2019"))]
+    assert len(s) == 12
+    assert s["valor"].sum() == 1322 + 2611
+
+
+def test_parcela_feminicidio_sobe_desde_2015(series):
+    s = series[(series["indicator_id"] == "feminicidio_parcela") & (series["parcial"].astype(str) != "True")]
+    v = s.set_index("periodo")["valor"]
+    # 2015 fica de fora (só 26 UFs informaram homicídio doloso). 2016: 780 de 3.767 (20,7%);
+    # a parcela de 2025 passa de 40%.
+    assert "2015" not in v.index
+    assert v["2016"] == pytest.approx(20.7, abs=0.05)
+    assert v["2025"] > 40

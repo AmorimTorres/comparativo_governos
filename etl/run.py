@@ -33,6 +33,7 @@ COLUNAS_CATALOGO = [
     "quebra_metodologica", "nivel_geografico",
     # extras
     "grupo", "camada", "ordem", "regra_atribuicao", "acumulado", "metrica_padrao", "casas_decimais",
+    "motivo_sem_destaque",
     "ultimo_periodo", "coletado_em",
 ]
 

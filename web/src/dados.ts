@@ -35,6 +35,7 @@ async function carregar(): Promise<Dados> {
     ...(l as unknown as Indicador),
     ordem: Number(l.ordem),
     casas_decimais: Number(l.casas_decimais),
+    motivo_sem_destaque: l.motivo_sem_destaque ?? "",
   }));
   const resumos: Resumo[] = csvParse(res).map((l) => ({
     ...(l as unknown as Resumo),

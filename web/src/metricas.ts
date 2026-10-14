@@ -172,7 +172,7 @@ function diferencaTexto(vMelhor: number, vOutro: number, ind: Indicador, compost
 
 export function destaque(ind: Indicador, valores: { g: Governo; v: ValorCartao }[], m: Metrica): Destaque {
   if (ind.camada === "contexto") return { tipo: "sem_direcao", texto: "Contexto: sem comparação de desempenho" };
-  if (ind.sentido_desejavel === "neutro") return { tipo: "sem_direcao", texto: "Sem direção consensual: o painel não aponta melhor" };
+  if (ind.sentido_desejavel === "neutro") return { tipo: "sem_direcao", texto: ind.motivo_sem_destaque || "Sem direção consensual: o painel não aponta melhor" };
   if (valores.length < 2) return { tipo: "indefinido", texto: "Sem dados dos dois governos" };
   const menorMelhor = ind.sentido_desejavel === "menor_melhor";
   const ef = metricaEfetiva(m, ind);

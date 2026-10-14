@@ -24,6 +24,7 @@ export interface Indicador {
   acumulado: "" | "composto" | "soma";
   metrica_padrao: "media" | "acumulado" | "fim";
   casas_decimais: number;
+  motivo_sem_destaque: string; // por que o painel não aponta melhor resultado (opcional)
   ultimo_periodo: string;
   coletado_em: string;
 }

@@ -28,11 +28,12 @@ def _num(x) -> float:
 
 def mensal_brasil(ano: int, eventos: set[str]) -> tuple[pd.DataFrame, Bruto]:
     """Soma nacional por mês e evento: colunas total (ocorrências),
-    total_vitima (vítimas) e n_ufs (UFs com registro no mês)."""
+    total_vitima (vítimas), vitimas_mulheres (vítimas do sexo feminino) e
+    n_ufs (UFs com registro no mês)."""
     # Anos antigos mudam pouco: reaproveita cópia de até 30 dias.
     antigo = ano < dt.date.today().year - 1
     bruto = obter("mj_sinesp", f"bancovde-{ano}.xlsx", URL.format(ano=ano), timeout=600, reaproveitar_dias=30 if antigo else None)
-    cache = DIR_INTERIM / "mj_sinesp" / f"bancovde-{ano}-v2-{hashlib.sha256(bruto.conteudo).hexdigest()[:16]}.csv"
+    cache = DIR_INTERIM / "mj_sinesp" / f"bancovde-{ano}-v3-{hashlib.sha256(bruto.conteudo).hexdigest()[:16]}.csv"
     if cache.exists():
         df = pd.read_csv(cache)
         return df[df["evento"].isin(eventos)].reset_index(drop=True), bruto
@@ -42,6 +43,7 @@ def mensal_brasil(ano: int, eventos: set[str]) -> tuple[pd.DataFrame, Bruto]:
     i_ev, i_dt = cab.index("evento"), cab.index("data_referencia")
     i_tot, i_vit = cab.index("total"), cab.index("total_vitima")
     i_uf = cab.index("uf")
+    i_fem = cab.index("feminino")
     soma: dict[tuple, list[float]] = {}
     ufs: dict[tuple, set] = {}
     for r in it:
@@ -53,13 +55,14 @@ def mensal_brasil(ano: int, eventos: set[str]) -> tuple[pd.DataFrame, Bruto]:
         except (TypeError, ValueError):
             d = pd.Timestamp(ref).date()
         chave = (r[i_ev], d.year, d.month)
-        acc = soma.setdefault(chave, [0.0, 0.0])
+        acc = soma.setdefault(chave, [0.0, 0.0, 0.0])
         acc[0] += _num(r[i_tot] if len(r) > i_tot else None)
         acc[1] += _num(r[i_vit] if len(r) > i_vit else None)
+        acc[2] += _num(r[i_fem] if len(r) > i_fem else None)
         ufs.setdefault(chave, set()).add(r[i_uf])
     df = pd.DataFrame(
         [
-            {"evento": k[0], "ano": k[1], "mes": k[2], "total": v[0], "total_vitima": v[1], "n_ufs": len(ufs[k])}
+            {"evento": k[0], "ano": k[1], "mes": k[2], "total": v[0], "total_vitima": v[1], "vitimas_mulheres": v[2], "n_ufs": len(ufs[k])}
             for k, v in soma.items()
         ]
     )

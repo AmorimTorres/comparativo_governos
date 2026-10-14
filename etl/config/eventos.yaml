@@ -148,3 +148,19 @@ eventos:
     fonte_url: https://www.ibge.gov.br/novo-portal-destaques/44067-pnad-continua-reponderacao-em-2025.html
     descricao: O IBGE recalculou os pesos de toda a série da PNAD Contínua com as estimativas populacionais derivadas do Censo 2022. Os dados deste painel já usam a série reponderada.
     exibir_no_grafico: false
+
+  - data_inicio: 2015-03-09
+    data_fim: ""
+    evento: Lei do Feminicídio (Lei 13.104/2015)
+    categoria: metodologia
+    indicadores_afetados: [feminicidios, feminicidio_parcela, mulheres_assassinadas]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13104.htm
+    descricao: Criou o feminicídio como qualificadora do homicídio e o incluiu entre os crimes hediondos. Antes dela, esses casos eram registrados como homicídio.
+
+  - data_inicio: 2024-10-09
+    data_fim: ""
+    evento: Feminicídio vira crime autônomo (Lei 14.994/2024)
+    categoria: metodologia
+    indicadores_afetados: [feminicidios, feminicidio_parcela, mulheres_assassinadas]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14994.htm
+    descricao: O "pacote antifeminicídio" tornou o feminicídio um crime autônomo (art. 121-A do Código Penal), com pena de 20 a 40 anos, e agravou penas de outros crimes contra a mulher.

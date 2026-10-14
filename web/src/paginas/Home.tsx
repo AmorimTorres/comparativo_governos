@@ -79,7 +79,7 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
             {destacar && (
               <li>
                 <Estrela tamanho={15} />
-                <strong>Melhor resultado</strong> onde há consenso sobre a direção
+                <strong>Melhor resultado</strong>
               </li>
             )}
           </ul>

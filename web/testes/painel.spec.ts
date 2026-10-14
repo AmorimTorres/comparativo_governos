@@ -68,6 +68,19 @@ test("página do indicador tem gráfico, fonte e CSV", async ({ page }) => {
   await semViolacoes(page);
 });
 
+test("feminicídios: sem estrela no registro, análise e indicadores comparáveis", async ({ page }) => {
+  await page.goto("./#/i/feminicidios");
+  await expect(page.locator(".palco-ind .lado.melhor")).toHaveCount(0);
+  await expect(page.locator(".palco-ind")).toContainText("Registro em consolidação");
+  const analise = page.locator(".analise");
+  await expect(analise).toContainText("Entenda este número");
+  await expect(analise.locator("#grafico-analise svg")).toBeVisible();
+  await expect(analise.locator("article.cartao")).toHaveCount(2);
+  await expect(analise.locator("#t-mulheres_assassinadas")).toBeVisible();
+  await expect(analise.locator("#t-homicidios_mulheres_taxa")).toBeVisible();
+  await semViolacoes(page);
+});
+
 test("compartilhar gera PNG 1080×1350", async ({ page, isMobile }) => {
   test.skip(isMobile, "no celular o botão abre o compartilhamento nativo");
   await page.goto("./#/i/ipca_mensal");

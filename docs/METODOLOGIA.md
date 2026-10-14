@@ -83,6 +83,6 @@ Os indicadores descrevem o que aconteceu em cada período. Muitos dependem de fa
 - O governo Lula 3 está em curso; médias e acumulados mudam até o fim do mandato.
 - Dados anuais têm defasagem: pobreza (SIS) até 2024; mortalidade infantil e homicídios com 2025 preliminar.
 - As fontes revisam dados (PIB, PNAD reponderada em 2021 e 2025, FAO a cada edição, dados preliminares do SIM). Vale a versão da data de coleta, registrada em cada linha (`coletado_em`).
-- O Sinesp depende das secretarias estaduais e de mudanças na classificação de crimes (feminicídio, por exemplo).
+- O Sinesp depende das secretarias estaduais e de mudanças na classificação de crimes. No feminicídio, a classificação ainda está se consolidando: a parcela das mulheres assassinadas registrada como feminicídio sobe ano a ano (indicador `feminicidio_parcela`). Por isso o painel não aponta melhor resultado nos feminicídios registrados e compara a violência letal contra mulheres por `mulheres_assassinadas` (Sinesp, feminicídio + homicídio doloso) e `homicidios_mulheres_taxa` (SIM).
 - A categoria B34 do SIM inclui, além da COVID-19 (B34.2), outras viroses não especificadas; o valor de 2019 serve de linha de base.
 - Indicadores nacionais escondem diferenças regionais e entre grupos sociais.

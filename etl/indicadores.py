@@ -496,6 +496,27 @@ def homicidios_taxa():
     return out
 
 
+@indicador("homicidios_mulheres_taxa")
+def homicidios_mulheres_taxa():
+    sel = _homicidio_selecoes()
+    sel["SSexo"] = tabnet.valores(OBT, "SSexo", ["Fem"])
+    df, b = tabnet.consultar(OBT, "Ano_do_Óbito", "--Não-Ativa--", "Óbitos_p/Residênc", _arquivos("obtbr", OBT), sel)
+    final, _ = _notas_prelim(b)
+    rot, col = df.columns[0], df.columns[1]
+    df = df[df[rot].str.fullmatch(r"\d{4}")]
+    df = df.assign(ano=df[rot].astype(int), obitos=df[col])
+    df = df[df["ano"] < pd.Timestamp(hoje()).year]  # ano em curso não tem 12 meses
+    pop, _ = ibge_ftp.projecao_populacao_brasil()
+    df = df.merge(pop, on="ano", how="left")
+    df["taxa"] = df["obitos"] / df["populacao_mulheres"] * 100_000
+    out = _anual(df["ano"], df["taxa"].round(2), b.url, b.coletado_em)
+    out["observacao"] = [
+        f"{int(o):,} óbitos de mulheres; população feminina projetada {int(p):,}".replace(",", ".") + ("; dado preliminar" if a > final else "")
+        for o, p, a in zip(df["obitos"], df["populacao_mulheres"], df["ano"])
+    ]
+    return out
+
+
 @indicador("mortalidade_infantil")
 def mortalidade_infantil():
     ob, bo = tabnet.consultar(INF, "Ano_do_Óbito", "--Não-Ativa--", "Óbitos_p/Residênc", _arquivos("infbr", INF))
@@ -549,6 +570,65 @@ def _sinesp(evento: str, coluna: str):
 @indicador("feminicidios")
 def feminicidios():
     return _sinesp("Feminicídio", "total_vitima")
+
+
+def _sinesp_mulheres() -> tuple[pd.DataFrame, str]:
+    """Vítimas mulheres por mês: feminicídio e homicídio doloso, que o Sinesp
+    registra como eventos separados (a soma bate com o total de homicídios de
+    mulheres do SIM; se um contivesse o outro, ficaria muito abaixo)."""
+    partes, coleta = [], None
+    ano_atual = pd.Timestamp(hoje()).year
+    for ano in range(2015, ano_atual + 1):
+        try:
+            df, b = sinesp.mensal_brasil(ano, {"Feminicídio", "Homicídio doloso"})
+        except NaoEncontrado:
+            continue
+        coleta = b.coletado_em
+        partes.append(df)
+    df = pd.concat(partes, ignore_index=True)
+    p = df.pivot_table(index=["ano", "mes"], columns="evento", values=["vitimas_mulheres", "n_ufs"], aggfunc="sum")
+    out = pd.DataFrame(
+        {
+            "feminicidio": p[("vitimas_mulheres", "Feminicídio")],
+            "homicidio_doloso": p[("vitimas_mulheres", "Homicídio doloso")],
+            "n_ufs": p["n_ufs"].min(axis=1),
+        }
+    ).reset_index().sort_values(["ano", "mes"])
+    return out[out["ano"] >= 2015].reset_index(drop=True), coleta
+
+
+@indicador("mulheres_assassinadas")
+def mulheres_assassinadas():
+    df, coleta = _sinesp_mulheres()
+    datas = [dt.date(int(a), int(m), 1) for a, m in zip(df["ano"], df["mes"])]
+    out = _mensal(datas, df["feminicidio"] + df["homicidio_doloso"], sinesp.URL.format(ano="AAAA"), coleta)
+    completo = df["n_ufs"].to_numpy() >= 27
+    out["parcial"] = ~completo
+    out["entra_no_resumo"] = completo
+    out["observacao"] = [
+        f"{int(f)} feminicídios e {int(h)} homicídios dolosos de mulheres; {int(n)} UFs informaram"
+        for f, h, n in zip(df["feminicidio"], df["homicidio_doloso"], df["n_ufs"])
+    ]
+    return out
+
+
+@indicador("feminicidio_parcela")
+def feminicidio_parcela():
+    """Parcela das mulheres assassinadas registrada como feminicídio, por ano.
+    Mede a classificação dos casos, não a violência."""
+    df, coleta = _sinesp_mulheres()
+    df = df[df["n_ufs"] >= 27]
+    a = df.groupby("ano").agg(feminicidio=("feminicidio", "sum"), homicidio_doloso=("homicidio_doloso", "sum"), meses=("mes", "count")).reset_index()
+    a["pct"] = (a["feminicidio"] / (a["feminicidio"] + a["homicidio_doloso"]) * 100).round(1)
+    out = _anual(a["ano"], a["pct"], sinesp.URL.format(ano="AAAA"), coleta)
+    incompleto = (a["meses"] < 12).to_numpy()
+    out["parcial"] = incompleto
+    out["entra_no_resumo"] = ~incompleto
+    out["observacao"] = [
+        f"{int(f):,} de {int(f + h):,} mulheres assassinadas registradas como feminicídio".replace(",", ".") + (f"; {m} meses" if m < 12 else "")
+        for f, h, m in zip(a["feminicidio"], a["homicidio_doloso"], a["meses"])
+    ]
+    return out
 
 
 @indicador("latrocinios")
