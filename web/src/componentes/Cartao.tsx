@@ -3,7 +3,7 @@ import { NOMES_TEMA, dataBr } from "../formato";
 import type { Metrica } from "../metricas";
 import { hrefRota } from "../rota";
 import type { Governo, Indicador, Resumo } from "../tipos";
-import { MarcadorGoverno } from "./Arte";
+import { MarcadorGoverno, comSetas } from "./Arte";
 import { Duelo, FraseDestaque, montarDuelo } from "./Duelo";
 import { MiniGrafico } from "./MiniGrafico";
 import { useVisivel } from "./Movimento";
@@ -34,7 +34,7 @@ export function Cartao({ ind, resumos, governos, metrica, janela, destacar, mini
           <h3 className="cartao-nome" id={`t-${ind.indicator_id}`}>
             {ind.nome}
           </h3>
-          <p className="cartao-metrica">{dados.rotulo}</p>
+          <p className="cartao-metrica">{comSetas(dados.rotulo)}</p>
         </div>
         <Duelo dados={dados} destacar={destacar} ativo={visivel} />
         <div className="cartao-tendencia">

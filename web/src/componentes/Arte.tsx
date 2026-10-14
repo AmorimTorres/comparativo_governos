@@ -1,6 +1,8 @@
 // Elementos gráficos da identidade, recriados em SVG (sem reaproveitar as artes):
 // losango amarelo com contorno paralelo e seis estrelas vermelhas em arco.
 
+import type { ReactNode } from "react";
+
 const ESTRELA = "0,-9 2.1,-2.9 8.6,-2.8 3.4,1.1 5.3,7.3 0,3.6 -5.3,7.3 -3.4,1.1 -8.6,-2.8 -2.1,-2.9";
 
 export function Estrelas({ largura, y0, escala = 1 }: { largura: number; y0: number; escala?: number }) {
@@ -87,4 +89,47 @@ export function LosangoAlongado({ ponta = 7 }: { ponta?: number }) {
       <polygon points={`${p + i * 0.6},${i * 2.6} ${100 - p - i * 0.6},${i * 2.6} ${100 - i},50 ${100 - p - i * 0.6},${100 - i * 2.6} ${p + i * 0.6},${100 - i * 2.6} ${i},50`} fill="#FEDD02" />
     </svg>
   );
+}
+
+// Seta única do painel: haste e ponta em traço arredondado, no desenho da seta
+// da Barlow ("↑ maior é melhor"). Substitui os caracteres ↑ ↓ → ←, que mudam de
+// desenho conforme a fonte de cada lugar (Anton, Barlow Condensed, Barlow).
+const GIRO = { cima: 0, direita: 90, baixo: 180, esquerda: 270 } as const;
+export type DirecaoSeta = keyof typeof GIRO;
+
+export function Seta({ direcao = "cima" }: { direcao?: DirecaoSeta }) {
+  return (
+    <svg className="seta" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 20.5V4M5.5 10.5 12 4l6.5 6.5" transform={GIRO[direcao] ? `rotate(${GIRO[direcao]} 12 12)` : undefined} />
+    </svg>
+  );
+}
+
+/** Duas setas opostas, no mesmo desenho, para "Sortear outro". */
+export function SetaTroca() {
+  return (
+    <svg className="seta seta-troca" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 7.5h15M14.5 3 19 7.5 14.5 12M20 16.5H5M9.5 12 5 16.5 9.5 21" />
+    </svg>
+  );
+}
+
+const CARACTERE_SETA: Record<string, DirecaoSeta> = { "↑": "cima", "→": "direita", "↓": "baixo", "←": "esquerda" };
+
+/** Troca os caracteres de seta de um texto pela <Seta>. Uma seta entre palavras
+ * ("Início → fim") ganha "até" só para leitores de tela; nas pontas é decorativa. */
+export function comSetas(texto: string): ReactNode {
+  if (!/[↑→↓←]/.test(texto)) return texto;
+  const partes = texto.split(/([↑→↓←])/);
+  return partes.map((parte, i) => {
+    const dir = CARACTERE_SETA[parte];
+    if (!dir) return parte;
+    const meio = partes[i - 1]?.trim() && partes[i + 1]?.trim();
+    return (
+      <span key={i} className="seta-texto">
+        <Seta direcao={dir} />
+        {meio && <span className="sr-only">até</span>}
+      </span>
+    );
+  });
 }

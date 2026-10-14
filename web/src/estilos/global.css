@@ -395,3 +395,11 @@ details summary { cursor: pointer; font-weight: 500; min-height: 36px; display: 
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
+
+/* Seta única do painel (componente Seta): acompanha o tamanho e a cor do texto. */
+.seta {
+  display: inline-block; width: 0.82em; height: 0.82em; vertical-align: -0.08em; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; overflow: visible;
+}
+.seta-troca { width: 1.05em; height: 1.05em; vertical-align: -0.18em; }
+.seta-texto { white-space: nowrap; }

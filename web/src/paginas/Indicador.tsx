@@ -1,6 +1,6 @@
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { AnaliseFeminicidio } from "../componentes/AnaliseFeminicidio";
-import { Estrela, MarcadorGoverno } from "../componentes/Arte";
+import { Estrela, MarcadorGoverno, Seta, comSetas } from "../componentes/Arte";
 import { Duelo, FraseDestaque, montarDuelo } from "../componentes/Duelo";
 import { Grafico } from "../componentes/Grafico";
 import { compartilhar } from "../compartilhar";
@@ -64,7 +64,7 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
               const d = destaque(ind, valores, m);
               return (
                 <tr key={m}>
-                  <th scope="row">{nome}</th>
+                  <th scope="row">{comSetas(nome)}</th>
                   {valores.map(({ g, v }) => {
                     const melhor = destacar && d.tipo === "melhor" && d.governo === g.id;
                     let principal: string;
@@ -83,7 +83,7 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
                             <Estrela tamanho={13} /> Melhor
                           </span>
                         )}
-                        <span className="valor-celula">{principal}</span>
+                        <span className="valor-celula">{comSetas(principal)}</span>
                         {detalhe && <span className="detalhe-celula">{detalhe}</span>}
                       </td>
                     );
@@ -96,7 +96,7 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
       </div>
       <p className="pequeno" style={{ marginTop: 6 }}>
         {destacar && DIRECAO[ind.sentido_desejavel]
-          ? `Direção desejável: ${DIRECAO[ind.sentido_desejavel]}. Em "Início → fim", a estrela vai para a variação mais favorável; o valor inicial reflete também o governo anterior. Empates na precisão exibida ficam sem estrela.`
+          ? comSetas(`Direção desejável: ${DIRECAO[ind.sentido_desejavel]}. Em "Início → fim", a estrela vai para a variação mais favorável; o valor inicial reflete também o governo anterior. Empates na precisão exibida ficam sem estrela.`)
           : destacar
             ? "Sem direção consensual para este indicador: o painel não aponta melhor."
             : ""}{" "}
@@ -222,7 +222,7 @@ export function PaginaIndicador({ dados, id, params }: { dados: Dados; id: strin
       <section className="cabecalho-ind sobre-verde" aria-labelledby="titulo-ind">
         <div className="conteudo">
           <a className="voltar" href={hrefRota("home")}>
-            ← Todos os indicadores
+            <Seta direcao="esquerda" /> Todos os indicadores
           </a>
           <div style={{ marginTop: 10 }}>
             <span className="kicker">
@@ -235,11 +235,11 @@ export function PaginaIndicador({ dados, id, params }: { dados: Dados; id: strin
             <div className="segmentos claro" role="group" aria-label="Métrica dos números e da imagem">
               {metricasValidas.map((m) => (
                 <button key={m} type="button" className="segmento" aria-pressed={metrica === m} title={AJUDA_METRICA[m]} onClick={() => atualizarParams({ m: m === "padrao" ? undefined : m })}>
-                  {NOMES_METRICA[m]}
+                  {comSetas(NOMES_METRICA[m])}
                 </button>
               ))}
             </div>
-            <p className="palco-metrica">{duelo.rotulo}</p>
+            <p className="palco-metrica">{comSetas(duelo.rotulo)}</p>
             <Duelo dados={duelo} destacar={destacar} ativo={ativo} />
             <FraseDestaque d={duelo.destaque} ind={ind} destacar={destacar} />
             <p className="sr-only" aria-live="polite">

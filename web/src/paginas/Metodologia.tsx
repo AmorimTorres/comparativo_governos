@@ -1,4 +1,4 @@
-import { MarcadorGoverno } from "../componentes/Arte";
+import { MarcadorGoverno, comSetas } from "../componentes/Arte";
 import { NOMES_PERIODICIDADE, NOMES_TEMA, dataBr, mesAno } from "../formato";
 import { hrefRota } from "../rota";
 import type { Dados } from "../tipos";
@@ -57,7 +57,7 @@ export function Metodologia({ dados }: { dados: Dados }) {
           <li>A comparação usa exatamente os números exibidos: mesma métrica, mesma janela (a janela comum, por padrão) e mesma precisão. Números iguais na precisão exibida contam como empate, sem estrela.</li>
           <li>
             Em <strong>pico</strong> e <strong>vale</strong>, vale a mesma direção do indicador: se menor é melhor, o pico mais baixo e o vale mais baixo
-            ganham a estrela. Em <strong>início → fim</strong>, ganha a variação mais favorável, porque o valor inicial de cada mandato reflete também o
+            ganham a estrela. Em <strong>{comSetas("início → fim")}</strong>, ganha a variação mais favorável, porque o valor inicial de cada mandato reflete também o
             governo anterior.
           </li>
           <li>Valores abaixo do limite de divulgação (como “menos de 2,5%” da FAO) só decidem quando o outro valor está no limite ou acima dele.</li>
@@ -97,7 +97,7 @@ export function Metodologia({ dados }: { dados: Dados }) {
             ficam <strong>fora do cálculo de médias e resumos</strong>. Nos gráficos de cada indicador, esses pontos aparecem com marcadores vazados para indicar dado preliminar.
           </li>
           <li>
-            <strong>Métrica de variação (início → fim):</strong> na comparação de início ao fim, o painel avalia a variação líquida gerada no período
+            <strong>{comSetas("Métrica de variação (início → fim):")}</strong> na comparação de início ao fim, o painel avalia a variação líquida gerada no período
             (diferença entre o último ponto apurado e o ponto inicial), e não o patamar absoluto recebido. Essa abordagem evita atribuir mérito ou demérito
             ao governo atual pelo ponto de partida herdado da administração anterior.
           </li>
@@ -169,7 +169,7 @@ export function Metodologia({ dados }: { dados: Dados }) {
         <ul>
           <li><strong>Média do mandato:</strong> média simples das observações do período.</li>
           <li><strong>Acumulado:</strong> para variações percentuais (inflação, PIB), a composição das variações; para fluxos (empregos, área desmatada, focos, vítimas), a soma.</li>
-          <li><strong>Início → fim:</strong> primeira e última observação do período.</li>
+          <li><strong>{comSetas("Início → fim:")}</strong> primeira e última observação do período.</li>
           <li><strong>Pico e vale:</strong> maior e menor valor do período, com a data.</li>
           <li>
             <strong>Janela comum</strong> (ligada por padrão): compara só os meses ou anos do mandato que existem para os dois governos. Por exemplo, se há dados de

@@ -6,7 +6,7 @@ import type { CSSProperties } from "react";
 import { numero, prefixoCurto, rotuloCurto, sufixoCurto } from "../formato";
 import { type Destaque, type Metrica, type MetricaEfetiva, type ValorCartao, destaque, metricaEfetiva, rotuloMetrica, valorCartao, variacaoTexto } from "../metricas";
 import type { Governo, Indicador, Resumo } from "../tipos";
-import { Estrela, LosangoAlongado, MarcadorGoverno } from "./Arte";
+import { Estrela, LosangoAlongado, MarcadorGoverno, Seta, comSetas } from "./Arte";
 import { Contador } from "./Movimento";
 
 export interface Lado {
@@ -62,7 +62,7 @@ function Numero({ v, ind, ativo, inicio }: { v: ValorCartao; ind: Indicador; ati
       <span className="numero" style={{ "--n": txt.length + (f.suf ? 1 : 0) + 1 } as CSSProperties}>
         {v.qualificadorInicio}
         {ini === null ? "—" : <Contador valor={ini} formatar={f.formatar} ativo={ativo} />}
-        <span className="seta-num">→</span>
+        <span className="seta-num"><Seta direcao="direita" /></span>
         {v.qualificador}
         <Contador valor={v.valor} formatar={f.formatar} ativo={ativo} />
         {f.suf && <small>{f.suf}</small>}
@@ -132,7 +132,7 @@ function janelaCurta(v: ValorCartao, ind: Indicador, padrao: boolean): string {
 /** Frase do destaque, para o rodapé do cartão e o cabeçalho do indicador. */
 export function FraseDestaque({ d, ind, destacar }: { d: Destaque; ind: Indicador; destacar: boolean }) {
   if (!destacar) return null;
-  const direcao = ind.sentido_desejavel === "menor_melhor" ? "↓ menor é melhor" : ind.sentido_desejavel === "maior_melhor" ? "↑ maior é melhor" : "";
+  const direcao = ind.sentido_desejavel === "menor_melhor" ? comSetas("↓ menor é melhor") : ind.sentido_desejavel === "maior_melhor" ? comSetas("↑ maior é melhor") : "";
   return (
     <p className={`frase-destaque ${d.tipo}`}>
       {d.tipo === "melhor" ? (
