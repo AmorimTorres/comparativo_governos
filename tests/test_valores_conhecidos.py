@@ -123,3 +123,39 @@ def test_parcela_feminicidio_sobe_desde_2015(series):
     assert "2015" not in v.index
     assert v["2016"] == pytest.approx(20.7, abs=0.05)
     assert v["2025"] > 40
+
+
+# ---- saúde (consultas de 13/10/2026) ----
+
+def test_mortalidade_materna_2021(series):
+    s = series[(series["indicator_id"] == "mortalidade_materna") & (series["periodo"] == "2021")]
+    # TabNet SIM, óbitos maternos por residência: 3.030 em 2021 (pico da COVID-19).
+    assert "3.030 óbitos maternos" in s["observacao"].iloc[0]
+
+
+def test_obitos_dengue_2024(series):
+    # TabNet SIM, causa básica dengue (A90, A91, A97): 6.741 óbitos em 2024.
+    assert valor(series, "obitos_dengue", "2024") == 6741
+
+
+def test_vacinas_wuenic_2021(series):
+    # WUENIC (revisão de 14/07/2026): DTP3 68% e MCV1 73% em 2021.
+    assert valor(series, "vacina_dtp3", "2021") == 68
+    assert valor(series, "vacina_sarampo", "2021") == 73
+
+
+def test_cirurgias_eletivas_2019(series):
+    # TabNet SIH, grupo 04, caráter eletivo, por mês de processamento: 2.089.807 em 2019.
+    s = series[(series["indicator_id"] == "cirurgias_eletivas") & (series["periodo"].str.startswith("2019"))]
+    assert len(s) == 12 and s["valor"].sum() == 2_089_807
+
+
+def test_suicidios_2019_contagem(series):
+    s = series[(series["indicator_id"] == "suicidios_taxa") & (series["periodo"] == "2019")]
+    assert "13.520 óbitos" in s["observacao"].iloc[0]
+
+
+def test_gasto_federal_saude_2025_nominal(series):
+    s = series[(series["indicator_id"] == "gasto_federal_saude") & (series["periodo"] == "2025")]
+    # RREO da União 2025, Anexo 2, função Saúde, empenhado até o 6º bimestre: R$ 238,6 bi.
+    assert "R$ 238,6 bi nominais" in s["observacao"].iloc[0]

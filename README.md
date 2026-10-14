@@ -13,7 +13,7 @@ etl/                      pipeline em Python
   config/governos.yaml    mandatos e estilo visual de cada governo (constante única)
   config/indicadores.yaml catálogo: metadados, fonte, metodologia e ressalvas
   config/eventos.yaml     eventos de contexto, cada um com fonte oficial
-  fontes/                 um coletor por fonte (SIDRA, BCB, IPEADATA, INPE, ANP, TabNet, Sinesp, MDS, FAO, IBGE FTP, INEP)
+  fontes/                 um coletor por fonte (SIDRA, BCB, IPEADATA, INPE, ANP, TabNet, Sinesp, MDS, FAO, IBGE FTP, INEP, OMS, SICONFI)
   indicadores.py          monta a série de cada indicador
   transforma/             atribuição a governos, deflação e resumos
   valida/checks.py        validações automáticas
@@ -48,7 +48,7 @@ make web-dev
 
 - `make venv` cria o ambiente Python. Se o `python3` do sistema for anterior ao 3.11, indique outro: `make venv PYTHON=python3.13`.
 - `make data` baixa as fontes e gera `data/processed`. A primeira execução leva de 20 a 30 minutos e baixa cerca de 830 MB (a maior parte em focos de queimadas, DETER e Sinesp).
-- `make test` roda 49 testes: valores conferidos nas fontes, estrutura, regras de atribuição e contraste WCAG.
+- `make test` roda 55 testes: valores conferidos nas fontes, estrutura, regras de atribuição e contraste WCAG.
 - `make web-dev` abre o site em modo de desenvolvimento.
 
 Para gerar o site estático em `web/dist`, rode `make web`. Os testes de ponta a ponta (Playwright e axe, no desktop e no celular) rodam com `cd web && npx playwright install chromium && npm run test:e2e`.

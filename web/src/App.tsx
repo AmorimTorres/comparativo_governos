@@ -70,7 +70,7 @@ export function App() {
       <footer className="rodape barra-fonte sobre-azul">
         <div className="conteudo">
           <span className="rotulo">Fontes</span>
-          IBGE, Banco Central, INPE, ANP, MTE, MDS, Ministério da Saúde, MJSP, INEP e FAO. Só dados oficiais, com URL e data de coleta registradas.
+          IBGE, Banco Central, Tesouro Nacional, INPE, ANP, MTE, MDS, Ministério da Saúde, MJSP, INEP, FAO e OMS/UNICEF. Só dados oficiais, com URL e data de coleta registradas.
           {dados?.executadoEm && <> Dados atualizados em {dataBr(dados.executadoEm)}.</>}{" "}
           <a href={hrefRota("metodologia")}>Metodologia, limitações e dados abertos</a>.
         </div>

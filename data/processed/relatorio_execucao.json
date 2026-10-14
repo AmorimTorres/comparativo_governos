@@ -1,5 +1,5 @@
 {
-  "executado_em": "2026-10-13T23:55:26",
+  "executado_em": "2026-10-13T23:56:04",
   "data_coleta": "2026-10-13",
   "indicadores_ok": [
     "analfabetismo",
@@ -20,6 +20,7 @@
     "feminicidios",
     "focos_queimadas",
     "gasolina_real",
+    "gasto_federal_saude",
     "gini",
     "glp_real",
     "homicidios_mensal",
@@ -54,8 +55,6 @@
     "vacina_dtp3",
     "vacina_sarampo"
   ],
-  "falhas": {
-    "gasto_federal_saude": "ValueError: RREO 2015: esperado 1 valor de Saúde empenhado, achei 0"
-  },
+  "falhas": {},
   "problemas_validacao": []
 }

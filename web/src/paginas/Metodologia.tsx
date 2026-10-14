@@ -12,8 +12,8 @@ const MANTENEDOR = {
 
 const DESCARTADOS: Array<[string, string]> = [
   [
-    "Cobertura vacinal (PNI)",
-    "O sistema de registro mudou exatamente na troca de governo: o TabNet do SI-PNI vai até 2022 e, de 2023 em diante, só existe o painel da RNDS, com outra base e outros denominadores. Não há série única comparável.",
+    "Cobertura vacinal do Ministério da Saúde (PNI)",
+    "O sistema de registro mudou exatamente na troca de governo: o TabNet do SI-PNI vai até 2022 e, de 2023 em diante, só existe o painel da RNDS, com outra base e outros denominadores. Por isso o painel usa a estimativa da OMS e do UNICEF (WUENIC), que revê a série inteira com o mesmo método.",
   ],
   ["Segurança alimentar do IBGE (EBIA)", "Não há dado oficial do IBGE entre 2019 e 2022 (só a POF 2017–2018 e a PNAD Contínua de 2023 e 2024)."],
   ["Pesquisa VIGISAN (Rede PENSSAN)", "Pesquisa não governamental. Pode ser citada como referência, mas não entra como série do painel."],

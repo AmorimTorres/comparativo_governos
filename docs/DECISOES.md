@@ -96,10 +96,30 @@ Os títulos passaram a dizer o que cada número conta, para o público não conf
 - **Etiqueta visual removida da home e dos cartões:** O selo/pill visual "PARCIAL" que acompanhava Lula 3 foi retirado dos cartões e do herói para eliminar ruído e sobrecarga gráfica, já que o mandato em andamento é um fato de conhecimento público.
 - **Discussão aprofundada na Metodologia:** A seção `#/metodologia` passou a discorrer minuciosamente sobre o tratamento dos números parciais do governo Lula 3 (janela comum equivalente, preservação de sazonalidade, exclusão de dados incompletos das médias, métricas de variação e defasagens oficiais).
 
+## 2026-10-13 · Saúde: sete novos indicadores
+
+Até aqui o tema tinha só a mortalidade infantil. Os candidatos foram escolhidos por relevância política e apelo público e testados com download real. Todos entraram:
+
+| Indicador | Fonte | Sentido | Observação |
+|---|---|---|---|
+| Mortalidade materna | SIM + SINASC (TabNet) | menor é melhor | Pico da COVID em 2020–2021 |
+| Vacinação contra o sarampo (MCV1) | OMS/UNICEF, WUENIC (API GHO) | maior é melhor | Ver nota abaixo |
+| Vacinação infantil completa (DTP3) | OMS/UNICEF, WUENIC (API GHO) | maior é melhor | Ver nota abaixo |
+| Cirurgias eletivas no SUS | SIH (TabNet), grupo 04, caráter eletivo, mês de processamento | maior é melhor | Pausa da COVID; Programa de Redução das Filas em 2023 |
+| Mortes por dengue | SIM, CID A90/A91/A97 | menor é melhor | Epidemia de 2024 durante o El Niño |
+| Suicídios por 100 mil | SIM, X60–X84 | menor é melhor | Tendência de alta desde 2012 |
+| Gasto federal em saúde | RREO da União, Anexo 2, função Saúde, empenhado, IPCA médio (API SICONFI) | neutro | Desde 2017; escolha de política, com créditos da COVID |
+
+- **Vacinação.** Antes descartada: a cobertura do Ministério da Saúde muda de sistema em 2023 (SI-PNI → RNDS). Agora entra pela estimativa WUENIC, que a OMS e o UNICEF revisam com o mesmo método para toda a série. A data da revisão vai na `observacao` de cada ano.
+- **Gasto federal em saúde.** Começa em 2017: antes disso o RREO não separa as despesas intraorçamentárias e usa outro rótulo de coluna.
+- **Eventos novos, com fonte oficial:** Portaria GM/MS 90/2023 (filas), Movimento Nacional pela Vacinação (OPAS, 2023), início do El Niño (OMM, jul/2023), COE Dengue (Portaria GM/MS 3.140/2024) e recertificação do Brasil como livre do sarampo (OPAS, nov/2024).
+- **Eventos da COVID** passaram a afetar também os novos indicadores ligados à pandemia.
+- **Unidade "R$ bi":** o site exibe valores em bilhões de reais com sufixo "bi" (`web/src/formato.ts`).
+
 ## Pendências
 
 - Validar o Novo CAGED por amostragem nos microdados do PDET (`ftp.mtps.gov.br`; arquivos 7z de cerca de 50 MB por mês).
-- Taxa de abandono escolar (INEP) e gasto federal em saúde (Tesouro, COFOG): fontes verificadas, ainda não implementadas.
+- Taxa de abandono escolar (INEP): fonte verificada, ainda não implementada.
 
 ## Revisões de dados pelas fontes
 
