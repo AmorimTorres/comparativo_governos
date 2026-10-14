@@ -148,3 +148,11 @@ Registre aqui quando um teste de `tests/test_valores_conhecidos.py` falhar por r
 
 - O marcador (traço do gráfico terminando no losango) agora fica dentro de uma cápsula branca com contorno fino. Com fundo próprio, ele é idêntico sobre o amarelo, sobre o azul do lado "Melhor", nas legendas brancas e na imagem exportada. Antes, no lado "Melhor", o marcador era repintado de branco para não sumir no azul.
 - Alternativas avaliadas: inicial em círculo, nome em etiqueta colorida e só o nome nos cartões. A cápsula foi escolhida por manter a ligação direta entre o cartão e as linhas dos gráficos.
+
+## Selo "Melhor" em faixa vermelha
+
+- A etiqueta branca "Melhor" ficou parecida com a cápsula do marcador dos governos. Passou a ser uma faixa vermelha com estrela amarela, presa ao quadro azul do lado vencedor.
+- Quadros largos (abertura, cartões grandes, página do indicador no computador): faixa em pé na lateral esquerda. Quadros estreitos (cartões da grade, celular): faixa deitada no topo, porque na lateral ela tomava a largura e encostava na data. A troca é por container query (420 px de largura do losango).
+- Os dois lados reservam o espaço da faixa, então os números continuam alinhados e o losango tem a mesma altura em todos os cartões.
+- Frase do destaque: estrela amarela num círculo vermelho. Legenda da abertura: "Melhor resultado" em pílula vermelha.
+- A etiqueta branca da tabela da página do indicador não mudou.

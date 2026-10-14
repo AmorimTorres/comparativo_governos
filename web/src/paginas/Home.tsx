@@ -77,7 +77,7 @@ function Heroi({ dados, governos, metrica, janela, destacar, sorteado }: { dados
               </li>
             )}
             {destacar && (
-              <li>
+              <li className="legenda-melhor">
                 <Estrela tamanho={15} />
                 <strong>Melhor resultado</strong>
               </li>
