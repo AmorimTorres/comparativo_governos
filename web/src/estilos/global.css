@@ -90,14 +90,18 @@ button { font: inherit; }
 @media (min-width: 940px) {
   .heroi-grade { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); align-items: center; gap: 40px; padding-top: 34px; padding-bottom: 40px; }
 }
+/* A coluna do texto é container: "Dois governos," e a frase de apoio são
+   dimensionados para caber cada um numa linha (Anton: "Dois governos," mede
+   ~5,98em; a frase em Barlow Condensed, ~21,9em). */
+.heroi-texto { container-type: inline-size; }
 .heroi-titulo {
   font-family: var(--fonte-display); font-weight: 400; text-transform: uppercase; color: #fff;
-  font-size: clamp(42px, 6.2vw, 78px); line-height: 0.98; margin: 14px 0 10px; letter-spacing: 0.005em;
+  font-size: min(clamp(40px, 6.2vw, 74px), calc(100cqi / 6.1)); line-height: 0.98; margin: 14px 0 10px; letter-spacing: 0.005em;
 }
 .heroi-titulo .amarelo { color: var(--identidade-amarelo); display: block; }
-.heroi-apoio { /* ≥ 24 px: texto grande sobre o verde da arte */
+.heroi-apoio { /* branco sobre o verde da arte: 4,50:1, passa AA mesmo abaixo de texto grande */
   font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.04em; font-size: 24px; line-height: 1.2; margin: 0 0 16px;
+  letter-spacing: 0.04em; font-size: clamp(16px, calc(100cqi / 22.2), 21px); line-height: 1.2; margin: 0 0 16px;
 }
 .legenda { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 7px; align-items: flex-start; }
 .legenda li {
