@@ -156,3 +156,9 @@ Registre aqui quando um teste de `tests/test_valores_conhecidos.py` falhar por r
 - Os dois lados reservam o espaço da faixa, então os números continuam alinhados e o losango tem a mesma altura em todos os cartões.
 - Frase do destaque: estrela amarela num círculo vermelho. Legenda da abertura: "Melhor resultado" em pílula vermelha.
 - A etiqueta branca da tabela da página do indicador não mudou.
+
+## Novas cores e losango sem contorno (14/10/2026)
+
+- Verde claro `#009C37` (antes `#13893B`), verde escuro `#0A6B2A` (antes `#0B6B2C`) e amarelo `#FFDC04` (antes `#FEDD02`), definidos pelo mantenedor.
+- A linha amarela em volta do losango saiu (cartões, abertura e imagem exportada); o amarelo ocupa a área onde ela ficava.
+- Contraste: branco sobre `#009C37` dá 3,6:1, então a frase de apoio da abertura nunca fica abaixo de 19 px (texto grande). O título amarelo da abertura sobre `#009C37` dá 2,7:1, abaixo do mínimo de 3:1; foi publicado assim a pedido, para avaliação, e está como exceção em `scripts/contraste.py`. Correção sugerida: fundo da abertura em `#0A6B2A` (4,9:1).

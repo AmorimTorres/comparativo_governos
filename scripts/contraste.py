@@ -27,6 +27,13 @@ PARES = [
     ("dados.governo_b", "dados.governo_a", 1.5, "distinção mínima de luminância entre governos (além de traço e marcador)"),
 ]
 
+# Pares abaixo do mínimo aceitos conscientemente pelo mantenedor: aparecem como
+# AVISO e não reprovam a verificação. Remover daqui assim que forem corrigidos.
+EXCECOES = {
+    ("identidade.amarelo", "identidade.verde"): "14/10/2026: título amarelo da abertura sobre o verde #009C37 (2,7:1), "
+    "mantido a pedido do mantenedor para avaliar no ar; alternativa registrada: fundo da abertura em #0A6B2A (4,9:1).",
+}
+
 
 def _lum(h: str) -> float:
     h = h.lstrip("#")
@@ -50,9 +57,12 @@ def verificar() -> list[str]:
     falhas = []
     for a, b, minimo, uso in PARES:
         r = razao(cor(tokens, a), cor(tokens, b))
-        status = "ok " if r >= minimo else "FALHA"
+        excecao = EXCECOES.get((a, b))
+        status = "ok " if r >= minimo else ("AVISO" if excecao else "FALHA")
         print(f"{status} {r:5.2f}:1 (mín. {minimo}) {a} sobre {b} — {uso}")
-        if r < minimo:
+        if r < minimo and excecao:
+            print(f"      exceção aceita: {excecao}")
+        elif r < minimo:
             falhas.append(f"{a}/{b}: {r:.2f} < {minimo}")
     return falhas
 

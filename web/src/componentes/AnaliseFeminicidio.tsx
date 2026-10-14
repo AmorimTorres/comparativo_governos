@@ -78,7 +78,7 @@ function opcao(anos: Ano[], governos: Governo[]): OpcaoGrafico {
         data: anos.map((a) => a.feminicidios),
         barGap: "-100%",
         barMaxWidth: 44,
-        itemStyle: { color: "#0B6B2C" },
+        itemStyle: { color: "#0A6B2A" },
       },
       {
         name: "Parcela registrada como feminicídio",
@@ -166,7 +166,7 @@ export function AnaliseFeminicidio({ dados, governos, metrica, janela, destacar 
               <i style={{ background: "#D8D4C6", borderColor: "#8A877C" }} /> Mulheres assassinadas (total)
             </span>
             <span>
-              <i style={{ background: "#0B6B2C", borderColor: "#0B6B2C" }} /> Registradas como feminicídio
+              <i style={{ background: "#0A6B2A", borderColor: "#0A6B2A" }} /> Registradas como feminicídio
             </span>
             <span>
               <i className="linha" /> % registrada como feminicídio

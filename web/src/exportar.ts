@@ -134,8 +134,8 @@ export async function svgCartao(c: CartaoExportavel): Promise<string> {
     const globo = l.melhor
       ? `<rect x="${cx - 160}" y="680" width="320" height="156" rx="28" fill="#012672"/>
         <rect x="${cx - 92}" y="688" width="184" height="32" rx="16" fill="#FFFFFF"/>
-        <polygon points="${ESTRELA}" transform="translate(${cx - 62},704) scale(1.25)" fill="#EA0104" stroke="#FEDD02" stroke-width="0.8"/>
-        <text x="${cx + 14}" y="713" text-anchor="middle" font-family="CondX" font-weight="600" font-size="24" letter-spacing="3" fill="#0B6B2C">MELHOR</text>`
+        <polygon points="${ESTRELA}" transform="translate(${cx - 62},704) scale(1.25)" fill="#EA0104" stroke="#FFDC04" stroke-width="0.8"/>
+        <text x="${cx + 14}" y="713" text-anchor="middle" font-family="CondX" font-weight="600" font-size="24" letter-spacing="3" fill="#0A6B2A">MELHOR</text>`
       : "";
     return `
       <g>
@@ -150,13 +150,11 @@ export async function svgCartao(c: CartaoExportavel): Promise<string> {
   const apoio = quebrar(c.metrica.toUpperCase(), 46).slice(0, 2);
   const apoioLinhas = quebrar(c.metrica.toUpperCase(), 46).length > 1 ? 2 : 1;
   const fonte = quebrar(c.fonte, 72).slice(0, apoioLinhas > 1 ? 1 : 2);
-  const o = 36; // afastamento do contorno
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs><style>${css}</style></defs>
-  <rect width="${W}" height="${H}" fill="#13893B"/>
-  <polygon points="540,${150 - o} ${1060 + o * 1.04},${CY} 540,${1150 + o} ${20 - o * 1.04},${CY}" fill="none" stroke="#FEDD02" stroke-width="3"/>
-  <polygon points="540,150 1060,${CY} 540,1150 20,${CY}" fill="#FEDD02"/>
-  <g fill="#EA0104" stroke="#FEDD02" stroke-width="0.8">${estrelas}</g>
+  <rect width="${W}" height="${H}" fill="#009C37"/>
+  <polygon points="540,150 1060,${CY} 540,1150 20,${CY}" fill="#FFDC04"/>
+  <g fill="#EA0104" stroke="#FFDC04" stroke-width="0.8">${estrelas}</g>
   <text x="48" y="70" font-family="CondX" font-weight="600" font-size="30" letter-spacing="5" fill="#FFFFFF">${esc(`DADOS OFICIAIS • ${c.tema.toUpperCase()}`)}</text>
   ${titulo.map((t, i) => `<text x="540" y="${yTitulo[i]}" text-anchor="middle" font-family="AntonX" font-size="${tamTitulo}" fill="#012672">${esc(t)}</text>`).join("")}
   <line x1="540" y1="605" x2="540" y2="870" stroke="#012672" stroke-width="2" opacity="0.3"/>
@@ -165,7 +163,7 @@ export async function svgCartao(c: CartaoExportavel): Promise<string> {
   ${ladoSvg(c.lados[1], 710)}
   ${apoio.map((t, i) => `<text x="540" y="${1215 + i * 38}" text-anchor="middle" font-family="CondX" font-weight="600" font-size="34" letter-spacing="2" fill="#FFFFFF">${esc(t)}</text>`).join("")}
   <rect y="${apoio.length > 1 ? 1262 : 1240}" width="${W}" height="${apoio.length > 1 ? 88 : 110}" fill="#012672"/>
-  <text x="40" y="${apoio.length > 1 ? 1292 : 1276}" font-family="CondX" font-weight="600" font-size="26" letter-spacing="3" fill="#FEDD02">FONTE</text>
+  <text x="40" y="${apoio.length > 1 ? 1292 : 1276}" font-family="CondX" font-weight="600" font-size="26" letter-spacing="3" fill="#FFDC04">FONTE</text>
   ${fonte.map((t, i) => `<text x="138" y="${(apoio.length > 1 ? 1292 : 1276) + i * 28}" font-family="BarlowX" font-weight="500" font-size="24" fill="#FFFFFF">${esc(t)}</text>`).join("")}
   <text x="40" y="1338" font-family="BarlowX" font-weight="500" font-size="22" fill="#FFFFFF">${esc(`Coleta ${c.atualizacao} · último dado: ${c.ultimoPeriodo} · ${c.url}`)}</text>
 </svg>`;

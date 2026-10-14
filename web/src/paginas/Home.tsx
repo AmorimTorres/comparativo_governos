@@ -31,7 +31,7 @@ function EstrelasArco() {
   ];
   return (
     <svg className="estrelas-arco" viewBox="0 0 400 40" aria-hidden="true">
-      <g fill="#EA0104" stroke="#FEDD02" strokeWidth={0.9}>
+      <g fill="#EA0104" stroke="#FFDC04" strokeWidth={0.9}>
         {pos.flatMap(([x, y], i) => [
           <g key={`e${i}`} transform={`translate(${x * 400},${10 + y * 26})`}>
             <polygon points={PONTOS_ESTRELA} />
