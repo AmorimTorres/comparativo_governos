@@ -154,3 +154,16 @@ def test_gasto_federal_saude_2025_nominal(series):
     s = series[(series["indicator_id"] == "gasto_federal_saude") & (series["periodo"] == "2025")]
     # RREO da União 2025, Anexo 2, função Saúde, empenhado até o 6º bimestre: R$ 238,6 bi.
     assert "R$ 238,6 bi nominais" in s["observacao"].iloc[0]
+
+
+def test_tis_homologadas_por_governo(series):
+    s = series[series["indicator_id"] == "tis_homologadas"].copy()
+    ano = s["periodo"].str[:4]
+    # Nenhum decreto de homologação em 2019–2022; 8 em 2023 (6 em 28/04 e 2 em 05/09),
+    # 5 em 2024 e 7 em 2025, que somam as 20 divulgadas pelo Ministério dos Povos Indígenas.
+    assert s[ano.isin(["2019", "2020", "2021", "2022"])]["valor"].sum() == 0
+    assert s[ano == "2023"]["valor"].sum() == 8
+    assert s[ano == "2024"]["valor"].sum() == 5
+    assert s[ano == "2025"]["valor"].sum() == 7
+    dez24 = s[s["periodo"] == "2024-12"]["observacao"].iloc[0]
+    assert "Morro dos Cavalos (Decreto nº 12.290 de 04/12/2024)" in dez24

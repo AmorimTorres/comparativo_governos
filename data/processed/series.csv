@@ -4659,6 +4659,292 @@ suicidios_taxa,2022,2022-01-01,2022-12-31,7.81,por 100 mil habitantes,BR,bolsona
 suicidios_taxa,2023,2023-01-01,2023-12-31,8.03,por 100 mil habitantes,BR,lula3,,1,False,2026-10-13,http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/obt10br.def,17.002 óbitos; população projetada 211.695.158,,True
 suicidios_taxa,2024,2024-01-01,2024-12-31,7.88,por 100 mil habitantes,BR,lula3,,2,False,2026-10-13,http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/obt10br.def,16.751 óbitos; população projetada 212.583.750,,True
 suicidios_taxa,2025,2025-01-01,2025-12-31,7.72,por 100 mil habitantes,BR,lula3,,3,False,2026-10-13,http://tabnet.datasus.gov.br/cgi/tabcgi.exe?sim/cnv/obt10br.def,16.470 óbitos; população projetada 213.421.037; dado preliminar,,True
+tis_homologadas,2003-01,2003-01-01,2003-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-02,2003-02-01,2003-02-28,6.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Varzinha (Decreto de 10/02/2003); Limão Verde (Decreto de 10/02/2003); Guato (Decreto de 10/02/2003); Kwaza do Rio São Pedro (Decreto de 10/02/2003); Nonoai/Rio da Varzea (Decreto de 10/02/2003); Jaminawa/Envira (Decreto de 10/02/2003),,True
+tis_homologadas,2003-03,2003-03-01,2003-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-04,2003-04-01,2003-04-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-05,2003-05-01,2003-05-31,9.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,"Moskow (Decreto de 30/05/2003); Mbiguaçu (Decreto de 05/05/2003); Itaitinga (Decreto de 05/05/2003); Pataua (Decreto de 05/05/2003); Padre (Decreto de 05/05/2003, altera homologação anterior); Apipica (Decreto de 05/05/2003); Fortaleza do Castanho (Decreto de 05/05/2003); terra indígena (Decreto de 05/05/2003); terra indígena (Decreto de 05/05/2003)",,True
+tis_homologadas,2003-06,2003-06-01,2003-06-30,6.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Cuiu-Cuiu (Decreto de 23/06/2003); Waiwai (Decreto de 23/06/2003); Badjonkore (Decreto de 23/06/2003); Jacamim (Decreto de 23/06/2003); Muriru (Decreto de 23/06/2003); Boqueirão (Decreto de 06/06/2003),,True
+tis_homologadas,2003-07,2003-07-01,2003-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-08,2003-08-01,2003-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-09,2003-09-01,2003-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-10,2003-10-01,2003-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-11,2003-11-01,2003-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2003-12,2003-12-01,2003-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-01,2004-01-01,2004-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-02,2004-02-01,2004-02-29,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Munduruku (Decreto de 25/02/2004),,True
+tis_homologadas,2004-03,2004-03-01,2004-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-04,2004-04-01,2004-04-30,8.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Caieiras Velhas Ii (Decreto de 19/04/2004); Coata-Laranjal (Decreto de 19/04/2004); Porto Praia (Decreto de 19/04/2004); Juma (Decreto de 19/04/2004); Fortaleza do Pataua (Decreto de 19/04/2004); Tenharim do Igarape Preto (Decreto de 19/04/2004); Igarape Grande (Decreto de 19/04/2004); Tupã-Supe (Decreto de 19/04/2004),,True
+tis_homologadas,2004-05,2004-05-01,2004-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-06,2004-06-01,2004-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-07,2004-07-01,2004-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-08,2004-08-01,2004-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-09,2004-09-01,2004-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-10,2004-10-01,2004-10-31,14.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Rio Urubu (Decreto de 27/10/2004); Kumaru do Lago Uala (Decreto de 27/10/2004); Rio Juma (Decreto de 27/10/2004); Lauro Sodre (Decreto de 27/10/2004); Lago Jauari (Decreto de 27/10/2004); Panambizinho (Decreto de 27/10/2004); Tora (Decreto de 27/10/2004); Sepoti (Decreto de 27/10/2004); Parana do Arauato (Decreto de 27/10/2004); Deni (Decreto de 27/10/2004); Krikati (Decreto de 27/10/2004); Nova Esperança do Rio Jandiatuba (Decreto de 27/10/2004); Diahui (Decreto de 27/10/2004); Alto Tarauacá (Decreto de 27/10/2004),,True
+tis_homologadas,2004-11,2004-11-01,2004-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2004-12,2004-12-01,2004-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-01,2005-01-01,2005-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-02,2005-02-01,2005-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-03,2005-03-01,2005-03-31,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Nande Ru Marangatu (Decreto de 28/03/2005),,True
+tis_homologadas,2005-04,2005-04-01,2005-04-30,7.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,São Sebastião (Decreto de 19/04/2005); Awa (Decreto de 19/04/2005); Tabalascada (Decreto de 19/04/2005); Espirito Santo (Decreto de 19/04/2005); Evare I (Decreto de 19/04/2005); Maranduba (Decreto de 19/04/2005); Raposa Serra do Sol (Decreto de 15/04/2005),,True
+tis_homologadas,2005-05,2005-05-01,2005-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-06,2005-06-01,2005-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-07,2005-07-01,2005-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-08,2005-08-01,2005-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-09,2005-09-01,2005-09-30,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Hi Merimã (Decreto de 22/09/2005),,True
+tis_homologadas,2005-10,2005-10-01,2005-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-11,2005-11-01,2005-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2005-12,2005-12-01,2005-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-01,2006-01-01,2006-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-02,2006-02-01,2006-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-03,2006-03-01,2006-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-04,2006-04-01,2006-04-30,5.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Arara do Igarape Humaita (Decreto de 18/04/2006); Barreirinha (Decreto de 18/04/2006); Kuruaya (Decreto de 18/04/2006); Inãwebohona (Decreto de 18/04/2006); Rio Omere (Decreto de 18/04/2006),,True
+tis_homologadas,2006-05,2006-05-01,2006-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-06,2006-06-01,2006-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-07,2006-07-01,2006-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-08,2006-08-01,2006-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-09,2006-09-01,2006-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-10,2006-10-01,2006-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2006-11,2006-11-01,2006-11-30,3.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Maraita (Decreto de 01/11/2006); Cunhã-Sapucaia (Decreto de 01/11/2006); São Francisco do Canimari (Decreto de 01/11/2006),,True
+tis_homologadas,2006-12,2006-12-01,2006-12-31,2.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Toldo Chimbangue Ii (Decreto de 21/12/2006); Entre Serras (Decreto de 19/12/2006),,True
+tis_homologadas,2007-01,2007-01-01,2007-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-02,2007-02-01,2007-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-03,2007-03-01,2007-03-31,2.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Apurinã do Igarape São João (Decreto de 12/03/2007); Imbiriba (Decreto de 12/03/2007),,True
+tis_homologadas,2007-04,2007-04-01,2007-04-30,6.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Palmas (Decreto de 19/04/2007); Entre Serras (Decreto de 19/04/2007); Pankararu (Decreto de 19/04/2007); Wassu-Cocal (Decreto de 19/04/2007); Apyterewa (Decreto de 19/04/2007); Itixi Mitari (Decreto de 19/04/2007),,True
+tis_homologadas,2007-05,2007-05-01,2007-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-06,2007-06-01,2007-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-07,2007-07-01,2007-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-08,2007-08-01,2007-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-09,2007-09-01,2007-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-10,2007-10-01,2007-10-31,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Cantagalo (Decreto de 11/10/2007),,True
+tis_homologadas,2007-11,2007-11-01,2007-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2007-12,2007-12-01,2007-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-01,2008-01-01,2008-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-02,2008-02-01,2008-02-29,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-03,2008-03-01,2008-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-04,2008-04-01,2008-04-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-05,2008-05-01,2008-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-06,2008-06-01,2008-06-30,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Bau (Decreto de 19/06/2008),,True
+tis_homologadas,2008-07,2008-07-01,2008-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-08,2008-08-01,2008-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-09,2008-09-01,2008-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-10,2008-10-01,2008-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-11,2008-11-01,2008-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2008-12,2008-12-01,2008-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-01,2009-01-01,2009-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-02,2009-02-01,2009-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-03,2009-03-01,2009-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-04,2009-04-01,2009-04-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-05,2009-05-01,2009-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-06,2009-06-01,2009-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-07,2009-07-01,2009-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-08,2009-08-01,2009-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-09,2009-09-01,2009-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-10,2009-10-01,2009-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-11,2009-11-01,2009-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2009-12,2009-12-01,2009-12-31,9.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Trombetas Mapuera (Decreto de 21/12/2009); São Domingos do Jacapari e Estação (Decreto de 21/12/2009); Lago do Correio (Decreto de 21/12/2009); Zo'e (Decreto de 21/12/2009); Prosperidade (Decreto de 21/12/2009); Balaio (Decreto de 21/12/2009); Las Casas (Decreto de 21/12/2009); Anaro (Decreto de 21/12/2009); Arrio-Kora (Decreto de 21/12/2009),,True
+tis_homologadas,2010-01,2010-01-01,2010-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-02,2010-02-01,2010-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-03,2010-03-01,2010-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-04,2010-04-01,2010-04-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-05,2010-05-01,2010-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-06,2010-06-01,2010-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-07,2010-07-01,2010-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-08,2010-08-01,2010-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-09,2010-09-01,2010-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-10,2010-10-01,2010-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2010-11,2010-11-01,2010-11-30,2.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Comboios (Decreto de 05/11/2010); Tupiniquim (Decreto de 05/11/2010),,True
+tis_homologadas,2010-12,2010-12-01,2010-12-31,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Apurinã do Igarape Mucuim (Decreto de 31/12/2010),,True
+tis_homologadas,2011-01,2011-01-01,2011-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-02,2011-02-01,2011-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-03,2011-03-01,2011-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-04,2011-04-01,2011-04-30,3.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Saraua (Decreto de 19/04/2011); Barro Alto (Decreto de 19/04/2011); Sapotal (Decreto de 19/04/2011),,True
+tis_homologadas,2011-05,2011-05-01,2011-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-06,2011-06-01,2011-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-07,2011-07-01,2011-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-08,2011-08-01,2011-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-09,2011-09-01,2011-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-10,2011-10-01,2011-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-11,2011-11-01,2011-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2011-12,2011-12-01,2011-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-01,2012-01-01,2012-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-02,2012-02-01,2012-02-29,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-03,2012-03-01,2012-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-04,2012-04-01,2012-04-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-05,2012-05-01,2012-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-06,2012-06-01,2012-06-30,7.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Matintin (Decreto de 05/06/2012); Xipaya (Decreto de 05/06/2012); Santa Cruz da Nova Aliança (Decreto de 05/06/2012); Tenharim Marmelos - Gleba B (Decreto de 05/06/2012); Riozinho do Alto Envira (Decreto de 05/06/2012); Porto Limoeiro (Decreto de 05/06/2012); Lago do Marinheiro (Decreto de 05/06/2012),,True
+tis_homologadas,2012-07,2012-07-01,2012-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-08,2012-08-01,2012-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-09,2012-09-01,2012-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-10,2012-10-01,2012-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-11,2012-11-01,2012-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2012-12,2012-12-01,2012-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-01,2013-01-01,2013-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-02,2013-02-01,2013-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-03,2013-03-01,2013-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-04,2013-04-01,2013-04-30,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Kayabi (Decreto de 24/04/2013),,True
+tis_homologadas,2013-05,2013-05-01,2013-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-06,2013-06-01,2013-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-07,2013-07-01,2013-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-08,2013-08-01,2013-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-09,2013-09-01,2013-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-10,2013-10-01,2013-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-11,2013-11-01,2013-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2013-12,2013-12-01,2013-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-01,2014-01-01,2014-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-02,2014-02-01,2014-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-03,2014-03-01,2014-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-04,2014-04-01,2014-04-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-05,2014-05-01,2014-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-06,2014-06-01,2014-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-07,2014-07-01,2014-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-08,2014-08-01,2014-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-09,2014-09-01,2014-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-10,2014-10-01,2014-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-11,2014-11-01,2014-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2014-12,2014-12-01,2014-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-01,2015-01-01,2015-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-02,2015-02-01,2015-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-03,2015-03-01,2015-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-04,2015-04-01,2015-04-30,3.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Arara da Volta Grande do Xingu (Decreto de 17/04/2015); Mapari (Decreto de 17/04/2015); Setemã (Decreto de 17/04/2015),,True
+tis_homologadas,2015-05,2015-05-01,2015-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-06,2015-06-01,2015-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-07,2015-07-01,2015-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-08,2015-08-01,2015-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-09,2015-09-01,2015-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-10,2015-10-01,2015-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-11,2015-11-01,2015-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2015-12,2015-12-01,2015-12-31,4.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Arary (Decreto de 17/12/2015); Cajuhiri-Atravessado (Decreto de 17/12/2015); Tabocal (Decreto de 17/12/2015); Banawá (Decreto de 17/12/2015),,True
+tis_homologadas,2016-01,2016-01-01,2016-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-02,2016-02-01,2016-02-29,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-03,2016-03-01,2016-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-04,2016-04-01,2016-04-30,3.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Piaçaguera (Decreto de 29/04/2016); Pequizal do Naruvôtu (Decreto de 29/04/2016); Cachoeira Seca (Decreto de 04/04/2016),,True
+tis_homologadas,2016-05,2016-05-01,2016-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-06,2016-06-01,2016-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-07,2016-07-01,2016-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-08,2016-08-01,2016-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-09,2016-09-01,2016-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-10,2016-10-01,2016-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-11,2016-11-01,2016-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2016-12,2016-12-01,2016-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-01,2017-01-01,2017-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-02,2017-02-01,2017-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-03,2017-03-01,2017-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-04,2017-04-01,2017-04-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-05,2017-05-01,2017-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-06,2017-06-01,2017-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-07,2017-07-01,2017-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-08,2017-08-01,2017-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-09,2017-09-01,2017-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-10,2017-10-01,2017-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-11,2017-11-01,2017-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2017-12,2017-12-01,2017-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-01,2018-01-01,2018-01-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-02,2018-02-01,2018-02-28,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-03,2018-03-01,2018-03-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-04,2018-04-01,2018-04-30,1.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Baía dos Guató (Decreto nº 9.356 de 26/04/2018),,True
+tis_homologadas,2018-05,2018-05-01,2018-05-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-06,2018-06-01,2018-06-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-07,2018-07-01,2018-07-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-08,2018-08-01,2018-08-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-09,2018-09-01,2018-09-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-10,2018-10-01,2018-10-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-11,2018-11-01,2018-11-30,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2018-12,2018-12-01,2018-12-31,0.0,terras,BR,outro,,,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-01,2019-01-01,2019-01-31,0.0,terras,BR,bolsonaro,1,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-02,2019-02-01,2019-02-28,0.0,terras,BR,bolsonaro,2,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-03,2019-03-01,2019-03-31,0.0,terras,BR,bolsonaro,3,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-04,2019-04-01,2019-04-30,0.0,terras,BR,bolsonaro,4,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-05,2019-05-01,2019-05-31,0.0,terras,BR,bolsonaro,5,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-06,2019-06-01,2019-06-30,0.0,terras,BR,bolsonaro,6,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-07,2019-07-01,2019-07-31,0.0,terras,BR,bolsonaro,7,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-08,2019-08-01,2019-08-31,0.0,terras,BR,bolsonaro,8,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-09,2019-09-01,2019-09-30,0.0,terras,BR,bolsonaro,9,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-10,2019-10-01,2019-10-31,0.0,terras,BR,bolsonaro,10,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-11,2019-11-01,2019-11-30,0.0,terras,BR,bolsonaro,11,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2019-12,2019-12-01,2019-12-31,0.0,terras,BR,bolsonaro,12,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-01,2020-01-01,2020-01-31,0.0,terras,BR,bolsonaro,13,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-02,2020-02-01,2020-02-29,0.0,terras,BR,bolsonaro,14,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-03,2020-03-01,2020-03-31,0.0,terras,BR,bolsonaro,15,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-04,2020-04-01,2020-04-30,0.0,terras,BR,bolsonaro,16,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-05,2020-05-01,2020-05-31,0.0,terras,BR,bolsonaro,17,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-06,2020-06-01,2020-06-30,0.0,terras,BR,bolsonaro,18,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-07,2020-07-01,2020-07-31,0.0,terras,BR,bolsonaro,19,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-08,2020-08-01,2020-08-31,0.0,terras,BR,bolsonaro,20,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-09,2020-09-01,2020-09-30,0.0,terras,BR,bolsonaro,21,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-10,2020-10-01,2020-10-31,0.0,terras,BR,bolsonaro,22,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-11,2020-11-01,2020-11-30,0.0,terras,BR,bolsonaro,23,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2020-12,2020-12-01,2020-12-31,0.0,terras,BR,bolsonaro,24,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-01,2021-01-01,2021-01-31,0.0,terras,BR,bolsonaro,25,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-02,2021-02-01,2021-02-28,0.0,terras,BR,bolsonaro,26,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-03,2021-03-01,2021-03-31,0.0,terras,BR,bolsonaro,27,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-04,2021-04-01,2021-04-30,0.0,terras,BR,bolsonaro,28,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-05,2021-05-01,2021-05-31,0.0,terras,BR,bolsonaro,29,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-06,2021-06-01,2021-06-30,0.0,terras,BR,bolsonaro,30,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-07,2021-07-01,2021-07-31,0.0,terras,BR,bolsonaro,31,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-08,2021-08-01,2021-08-31,0.0,terras,BR,bolsonaro,32,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-09,2021-09-01,2021-09-30,0.0,terras,BR,bolsonaro,33,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-10,2021-10-01,2021-10-31,0.0,terras,BR,bolsonaro,34,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-11,2021-11-01,2021-11-30,0.0,terras,BR,bolsonaro,35,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2021-12,2021-12-01,2021-12-31,0.0,terras,BR,bolsonaro,36,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-01,2022-01-01,2022-01-31,0.0,terras,BR,bolsonaro,37,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-02,2022-02-01,2022-02-28,0.0,terras,BR,bolsonaro,38,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-03,2022-03-01,2022-03-31,0.0,terras,BR,bolsonaro,39,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-04,2022-04-01,2022-04-30,0.0,terras,BR,bolsonaro,40,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-05,2022-05-01,2022-05-31,0.0,terras,BR,bolsonaro,41,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-06,2022-06-01,2022-06-30,0.0,terras,BR,bolsonaro,42,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-07,2022-07-01,2022-07-31,0.0,terras,BR,bolsonaro,43,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-08,2022-08-01,2022-08-31,0.0,terras,BR,bolsonaro,44,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-09,2022-09-01,2022-09-30,0.0,terras,BR,bolsonaro,45,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-10,2022-10-01,2022-10-31,0.0,terras,BR,bolsonaro,46,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-11,2022-11-01,2022-11-30,0.0,terras,BR,bolsonaro,47,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2022-12,2022-12-01,2022-12-31,0.0,terras,BR,bolsonaro,48,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-01,2023-01-01,2023-01-31,0.0,terras,BR,lula3,1,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-02,2023-02-01,2023-02-28,0.0,terras,BR,lula3,2,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-03,2023-03-01,2023-03-31,0.0,terras,BR,lula3,3,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-04,2023-04-01,2023-04-30,6.0,terras,BR,lula3,4,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,"Tremembé da Barra do Mundaú (Decreto nº 11.506 de 28/04/2023); Avá-Canoeiro (Decreto nº 11.507 de 28/04/2023); Kariri-Xocó (Decreto nº 11.508 de 28/04/2023, altera homologação anterior); Arara do Rio Amônia (Decreto nº 11.504 de 28/04/2023); Rio dos Índios (Decreto nº 11.505 de 28/04/2023); Uneiuxi (Decreto nº 11.503 de 28/04/2023, altera homologação anterior)",,True
+tis_homologadas,2023-05,2023-05-01,2023-05-31,0.0,terras,BR,lula3,5,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-06,2023-06-01,2023-06-30,0.0,terras,BR,lula3,6,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-07,2023-07-01,2023-07-31,0.0,terras,BR,lula3,7,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-08,2023-08-01,2023-08-31,0.0,terras,BR,lula3,8,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-09,2023-09-01,2023-09-30,2.0,terras,BR,lula3,9,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,"Rio Gregório (Decreto nº 11.690 de 05/09/2023, altera homologação anterior); Acapuri de Cima (Decreto nº 11.689 de 05/09/2023)",,True
+tis_homologadas,2023-10,2023-10-01,2023-10-31,0.0,terras,BR,lula3,10,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-11,2023-11-01,2023-11-30,0.0,terras,BR,lula3,11,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2023-12,2023-12-01,2023-12-31,0.0,terras,BR,lula3,12,1,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-01,2024-01-01,2024-01-31,0.0,terras,BR,lula3,13,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-02,2024-02-01,2024-02-29,0.0,terras,BR,lula3,14,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-03,2024-03-01,2024-03-31,0.0,terras,BR,lula3,15,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-04,2024-04-01,2024-04-30,2.0,terras,BR,lula3,16,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Cacique Fontoura (Decreto nº 12.001 de 18/04/2024); Aldeia Velha (Decreto nº 12.000 de 18/04/2024),,True
+tis_homologadas,2024-05,2024-05-01,2024-05-31,0.0,terras,BR,lula3,17,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-06,2024-06-01,2024-06-30,0.0,terras,BR,lula3,18,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-07,2024-07-01,2024-07-31,0.0,terras,BR,lula3,19,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-08,2024-08-01,2024-08-31,0.0,terras,BR,lula3,20,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-09,2024-09-01,2024-09-30,0.0,terras,BR,lula3,21,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-10,2024-10-01,2024-10-31,0.0,terras,BR,lula3,22,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-11,2024-11-01,2024-11-30,0.0,terras,BR,lula3,23,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2024-12,2024-12-01,2024-12-31,3.0,terras,BR,lula3,24,2,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Morro dos Cavalos (Decreto nº 12.290 de 04/12/2024); Potiguara de Monte-Mor (Decreto nº 12.288 de 04/12/2024); Toldo Imbu (Decreto nº 12.289 de 04/12/2024),,True
+tis_homologadas,2025-01,2025-01-01,2025-01-31,0.0,terras,BR,lula3,25,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-02,2025-02-01,2025-02-28,0.0,terras,BR,lula3,26,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-03,2025-03-01,2025-03-31,0.0,terras,BR,lula3,27,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-04,2025-04-01,2025-04-30,0.0,terras,BR,lula3,28,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-05,2025-05-01,2025-05-31,0.0,terras,BR,lula3,29,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-06,2025-06-01,2025-06-30,0.0,terras,BR,lula3,30,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-07,2025-07-01,2025-07-31,0.0,terras,BR,lula3,31,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-08,2025-08-01,2025-08-31,3.0,terras,BR,lula3,32,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,Tremembé de Queimadas (Decreto nº 12.584 de 06/08/2025); Lagoa Encantada (Decreto nº 12.583 de 06/08/2025); Pitaguary (Decreto nº 12.582 de 06/08/2025),,True
+tis_homologadas,2025-09,2025-09-01,2025-09-30,0.0,terras,BR,lula3,33,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-10,2025-10-01,2025-10-31,0.0,terras,BR,lula3,34,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2025-11,2025-11-01,2025-11-30,4.0,terras,BR,lula3,35,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,"Irantxe (Decreto nº 12.723 de 17/11/2025, altera homologação anterior); Uirapuru (Decreto nº 12.721 de 17/11/2025); Kaxuyana-Tunayana (Decreto nº 12.720 de 17/11/2025); Estação Parecis (Decreto nº 12.722 de 17/11/2025)",,True
+tis_homologadas,2025-12,2025-12-01,2025-12-31,0.0,terras,BR,lula3,36,3,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-01,2026-01-01,2026-01-31,0.0,terras,BR,lula3,37,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-02,2026-02-01,2026-02-28,0.0,terras,BR,lula3,38,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-03,2026-03-01,2026-03-31,0.0,terras,BR,lula3,39,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-04,2026-04-01,2026-04-30,0.0,terras,BR,lula3,40,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-05,2026-05-01,2026-05-31,0.0,terras,BR,lula3,41,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-06,2026-06-01,2026-06-30,0.0,terras,BR,lula3,42,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-07,2026-07-01,2026-07-31,0.0,terras,BR,lula3,43,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-08,2026-08-01,2026-08-31,0.0,terras,BR,lula3,44,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-09,2026-09-01,2026-09-30,0.0,terras,BR,lula3,45,4,False,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,,,True
+tis_homologadas,2026-10,2026-10-01,2026-10-31,0.0,terras,BR,lula3,46,4,True,2026-10-14,https://legis.senado.leg.br/dadosabertos/legislacao/lista,mês em andamento,,False
 vacina_dtp3,2012,2012-01-01,2012-12-31,95.0,% das crianças de 1 ano,BR,outro,,,False,2026-10-13,https://ghoapi.azureedge.net/api/WHS4_100?%24filter=SpatialDim+eq+%27BRA%27,"estimativa OMS/UNICEF (WUENIC), revisão de 14/07/2026",,True
 vacina_dtp3,2013,2013-01-01,2013-12-31,97.0,% das crianças de 1 ano,BR,outro,,,False,2026-10-13,https://ghoapi.azureedge.net/api/WHS4_100?%24filter=SpatialDim+eq+%27BRA%27,"estimativa OMS/UNICEF (WUENIC), revisão de 14/07/2026",,True
 vacina_dtp3,2014,2014-01-01,2014-12-31,93.0,% das crianças de 1 ano,BR,outro,,,False,2026-10-13,https://ghoapi.azureedge.net/api/WHS4_100?%24filter=SpatialDim+eq+%27BRA%27,"estimativa OMS/UNICEF (WUENIC), revisão de 14/07/2026",,True

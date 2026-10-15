@@ -12,6 +12,7 @@ from etl.transforma.atribuicao import PERIODICIDADES_MENSAIS, carregar_governos
 # Faixas plausíveis (limites largos de bom senso, não valores esperados).
 FAIXAS = {
     "desemprego": (2, 25),
+    "tis_homologadas": (0, 40),
     "pib_anual": (-15, 15),
     "pib_trimestral": (-15, 15),
     "rendimento_real": (1000, 10000),

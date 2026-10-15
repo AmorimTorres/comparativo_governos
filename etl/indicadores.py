@@ -16,7 +16,7 @@ from typing import Callable
 import pandas as pd
 
 from etl.comum import NaoEncontrado, hoje
-from etl.fontes import anp, bcb, fao, ibge_ftp, inep, inpe, ipeadata, mds, oms, siconfi, sidra, sinesp, tabnet
+from etl.fontes import anp, bcb, fao, ibge_ftp, inep, inpe, ipeadata, mds, oms, senado, siconfi, sidra, sinesp, tabnet
 from etl.transforma.deflacao import deflacionar, indice_mensal
 
 REGISTRO: dict[str, Callable[[], pd.DataFrame]] = {}
@@ -397,6 +397,53 @@ def focos_queimadas():
                        "observacao": "arquivo mensal, satélite AQUA_M-T" + ("; mês em andamento" if incompleto else "")})
         mes = _somar_meses(mes, 1)
     return _base(pd.DataFrame(linhas), inpe.QUEIMADAS, coleta)
+
+
+# Ementa de decreto que homologa demarcação de terra indígena: homologações
+# novas ("Homologa a demarcação administrativa da terra indígena X") e decretos
+# que alteram uma homologação antiga para ampliar ou corrigir os limites
+# ("Altera o Decreto ..., que homologa a demarcação ... da área indígena X").
+HOMOLOGA_TI = re.compile(r"homologa\w*\s+a\s+demarca\w+.*\b(?:terra|[áa]rea|reserva)s?\s+ind[íi]gena", re.I | re.S)
+ALTERA = re.compile(r"^\s*altera\b", re.I)
+
+
+def _nome_ti(ementa: str) -> str:
+    m = re.search(r"ind[íi]gena\s+(.+?)(?:,|\.|\s+localizada|$)", ementa, re.I)
+    if not m:
+        return "terra indígena"
+    nome = m.group(1).strip()
+    if nome.isupper():  # ementas antigas vêm em caixa-alta
+        nome = re.sub(r"\b(Da|De|Do|Das|Dos|E)\b", lambda x: x.group(1).lower(), nome.title())
+    return nome
+
+
+def _nome_decreto(nome: str) -> str:
+    """'Decreto  de 10/02/2003 ( seq-sf: 10 )' -> 'Decreto de 10/02/2003'."""
+    return re.sub(r"\s+", " ", re.sub(r"\(\s*seq-sf:\s*\d+\s*\)", "", nome)).strip()
+
+
+@indicador("tis_homologadas")
+def tis_homologadas():
+    """Terras indígenas homologadas por decreto presidencial, por mês da assinatura."""
+    atual = pd.Timestamp(hoje())
+    decretos, coleta = [], None
+    for ano in range(2003, atual.year + 1):
+        df, b = senado.decretos(ano)
+        coleta = b.coletado_em
+        decretos.append(df[df["ementa"].str.contains(HOMOLOGA_TI)])
+    d = pd.concat(decretos)
+    d = d[~d["ementa"].str.match(r"^\s*(revoga|torna sem efeito)", case=False)]
+    d["mes"] = d["data"].dt.to_period("M")
+    linhas = []
+    for mes in pd.period_range("2003-01", atual.to_period("M"), freq="M"):
+        doc = d[d["mes"] == mes]
+        incompleto = mes == atual.to_period("M")
+        nomes = "; ".join(f"{_nome_ti(e)} ({_nome_decreto(n)}{', altera homologação anterior' if ALTERA.match(e) else ''})" for n, e in zip(doc["nome"], doc["ementa"]))
+        ini = mes.to_timestamp().date()
+        linhas.append({"periodo": str(mes), "data_inicio": ini, "data_fim": _fim_mes(ini), "valor": float(len(doc)),
+                       "parcial": incompleto, "entra_no_resumo": not incompleto,
+                       "observacao": "; ".join(x for x in [nomes, "mês em andamento" if incompleto else ""] if x)})
+    return _base(pd.DataFrame(linhas), senado.URL, coleta)
 
 
 # ------------------------------------------------------------- saúde (SIM)

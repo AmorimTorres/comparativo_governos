@@ -175,3 +175,10 @@ Registre aqui quando um teste de `tests/test_valores_conhecidos.py` falhar por r
 - O Safari (iPhone e Mac) aplica o `size-adjust` das faces da Reel, mas ignora `ascent-override` e `descent-override`. Por isso a caixa-alta ficava cerca de 0,2em abaixo do centro em etiquetas, botões e chips, e os nomes não alinhavam com o texto em Barlow ao lado.
 - Um script em `web/index.html` marca `<html class="sem-metricas">` quando o navegador não suporta `ascentOverride`; o fim de `web/src/estilos/global.css` sobe o texto da Reel (0,2em nos rótulos, 0,15em em títulos e números) só nesse caso. Chrome e Firefox não mudam.
 - O WebKit do Playwright não abre nesta máquina; a correção foi conferida simulando o Safari no Chromium (faces da Reel sem os overrides).
+
+## Terras indígenas homologadas (14/10/2026)
+
+- Novo indicador `tis_homologadas` (tema meio ambiente): número de decretos presidenciais que homologam a demarcação de terra indígena, pelo mês da assinatura, desde 2003. Fonte: API de dados abertos da legislação do Senado Federal (`etl/fontes/senado.py`), que lista todos os decretos federais, numerados e não numerados, com ementa.
+- Conta também os decretos que alteram uma homologação antiga para ampliar ou corrigir limites (Uneiuxi, Kariri-Xocó e Rio Gregório em 2023; Irantxe/Manoki em 2025), como faz o Ministério dos Povos Indígenas. Resultado: 0 em 2019–2022 e 20 em 2023–2025, o mesmo total divulgado pelo ministério. A série histórica bate com os totais conhecidos de outros governos (Dilma 1: 11; Temer: 1).
+- Direção "maior é melhor", decidida pelo mantenedor: demarcar é dever constitucional da União (art. 231). A ressalva registra que o tema é disputado (marco temporal) e que a homologação é só a última etapa.
+- Fora por enquanto: área demarcada (o servidor de dados da Funai devolveu 403) e as etapas anteriores (portarias declaratórias do Ministério da Justiça). O evento do STF sobre o marco temporal (set/2023) ficou de fora porque o portal do STF bloqueou a verificação automática; entrou só a Lei 14.701/2023, conferida no Planalto.

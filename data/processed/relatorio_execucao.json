@@ -1,5 +1,5 @@
 {
-  "executado_em": "2026-10-14T08:42:56",
+  "executado_em": "2026-10-14T22:16:38",
   "data_coleta": "2026-10-14",
   "indicadores_ok": [
     "analfabetismo",
@@ -51,6 +51,7 @@
     "selic_meta",
     "subalimentacao_fao",
     "suicidios_taxa",
+    "tis_homologadas",
     "vacina_dtp3",
     "vacina_sarampo"
   ],

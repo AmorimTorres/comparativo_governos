@@ -595,6 +595,30 @@ indicadores:
     casas_decimais: 0
     inicio_serie: 2012-01-01
 
+  - indicator_id: tis_homologadas
+    tema: meio_ambiente
+    grupo: terras_indigenas
+    camada: nucleo
+    ordem: 33
+    nome: Terras indígenas homologadas
+    descricao_curta: Terras indígenas com a demarcação homologada por decreto do presidente, a etapa final do reconhecimento.
+    unidade: terras
+    periodicidade: mensal
+    sentido_desejavel: maior_melhor
+    fonte_orgao: Presidência da República (decretos), via Senado Federal
+    fonte_tabela_ou_serie: Decretos federais de homologação de demarcação de terra indígena, listados com número, data e ementa pela API de dados abertos da legislação do Senado Federal
+    url_fonte: https://legis.senado.leg.br/dadosabertos/legislacao/lista?tipo=DEC&ano=2023
+    url_api: https://legis.senado.leg.br/dadosabertos/legislacao/lista
+    metodologia_resumo: Conta, pelo mês da assinatura, os decretos cuja ementa homologa a demarcação de uma terra indígena, incluindo os que alteram uma homologação antiga para ampliar ou corrigir os limites. Demarcar é dever da União pela Constituição (art. 231), por isso mais homologações contam como melhor resultado.
+    ressalvas: A homologação é só a última etapa; antes vêm a identificação (Funai) e a declaração (portaria do Ministério da Justiça), que não entram aqui. Não mede a área demarcada. Quatro das homologações de 2023–2025 (Uneiuxi, Kariri-Xocó, Rio Gregório e Manoki/Irantxe) alteram decretos antigos, e o governo também as conta como homologações. O tema é disputado no Congresso e no STF (marco temporal).
+    quebra_metodologica: não
+    nivel_geografico: Brasil
+    regra_atribuicao: centro
+    acumulado: soma
+    metrica_padrao: acumulado
+    casas_decimais: 0
+    inicio_serie: 2003-01-01
+
   # ------------------------------------------------------------------ saúde
   - indicator_id: mortalidade_infantil
     tema: saude

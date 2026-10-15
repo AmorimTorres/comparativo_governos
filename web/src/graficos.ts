@@ -75,6 +75,8 @@ export function opcaoMesMandato(ind: Indicador, obs: Observacao[], governos: Gov
         fontWeight: 600,
         fontSize: 13,
       },
+      // Rótulos finais no mesmo valor (ex.: os dois em 0) se afastam na vertical.
+      labelLayout: { moveOverlap: "shiftY" },
       emphasis: { focus: "series" },
       ...(marcas ?? {}),
     };

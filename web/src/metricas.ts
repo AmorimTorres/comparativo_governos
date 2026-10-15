@@ -167,6 +167,8 @@ function diferencaTexto(vMelhor: number, vOutro: number, ind: Indicador, compost
     const rel = (d / Math.abs(vOutro)) * 100;
     return `${numero(rel, rel < 1 ? 1 : 0)}% ${sentido}`;
   }
+  // Sem base para porcentagem (o outro é zero ou tem sinal oposto): diferença absoluta.
+  if (Math.abs(d) < 1e6 && !ind.unidade.startsWith("R$")) return `${numero(d, composto ? 1 : ind.casas_decimais)} ${ind.unidade} a ${menorMelhor ? "menos" : "mais"}`;
   return sentido;
 }
 

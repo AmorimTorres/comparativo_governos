@@ -188,3 +188,11 @@ eventos:
     indicadores_afetados: [vacina_sarampo]
     fonte_url: https://www.paho.org/pt/noticias/12-11-2024-opas-verifica-que-brasil-e-mais-uma-vez-um-pais-livre-do-sarampo
     descricao: A OPAS verificou que o Brasil voltou a ser livre do sarampo. Um surto iniciado em 2018 tinha retomado a transmissão endêmica no país em 2019, segundo a própria OPAS.
+
+  - data_inicio: 2023-12-28
+    data_fim: ""
+    evento: Lei do marco temporal (Lei 14.701/2023) passa a valer por inteiro
+    categoria: politica_publica
+    indicadores_afetados: [tis_homologadas]
+    fonte_url: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14701.htm
+    descricao: A Lei 14.701, de 20/10/2023, regulamenta a demarcação de terras indígenas. Os trechos vetados, entre eles o marco temporal de 5/10/1988, foram restabelecidos pelo Congresso e publicados no DOU de 28/12/2023.
