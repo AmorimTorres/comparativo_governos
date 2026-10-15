@@ -61,10 +61,14 @@ button { font: inherit; }
 .topo { background: var(--identidade-verde-escuro); color: var(--identidade-branco); border-bottom: 4px solid var(--identidade-amarelo); }
 .topo .conteudo { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; flex-wrap: wrap; }
 .topo a { color: var(--identidade-branco); text-decoration: none; }
-.topo a:hover { text-decoration: underline; }
+/* Passar o mouse: só um leve clareamento para um amarelo-pálido, sem sublinhado. */
+.topo a, .palco-nome a { transition: color 0.15s ease; }
+.topo a:hover, .palco-nome a:hover { color: #FFF3A8; }
 .topo nav { display: flex; gap: 18px; font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; font-size: 15px; }
-.topo nav a[aria-current="page"] { box-shadow: inset 0 -3px 0 var(--identidade-amarelo); }
-.marca { font-family: var(--fonte-display); text-transform: uppercase; font-size: 21px; letter-spacing: 0.03em; display: inline-flex; align-items: center; gap: 8px; }
+/* Página atual em amarelo (4,9:1 sobre o verde escuro); as outras em branco. */
+.topo nav a[aria-current="page"] { color: var(--identidade-amarelo); }
+.marca { font-family: var(--fonte-display); text-transform: uppercase; font-size: 21px; letter-spacing: 0.03em; display: inline-flex; align-items: center; gap: 10px; }
+.marca .simbolo { height: 0.95em; width: auto; display: block; }
 
 .kicker {
   display: inline-block; background: var(--identidade-verde-escuro); color: var(--identidade-branco);
@@ -124,7 +128,7 @@ button { font: inherit; }
 .palco-kicker { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 0; }
 .palco-nome { font-family: var(--fonte-display); font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 7.4cqi, 58px); line-height: 1; margin: 10px 0 4px; letter-spacing: 0.01em; }
 .palco-nome a { color: #fff; text-decoration: none; }
-.palco-nome a:hover { text-decoration: underline; text-decoration-color: var(--identidade-amarelo); text-decoration-thickness: 3px; }
+
 .palco-metrica { font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; font-size: 14px; margin: 0 0 8px; }
 .palco .duelo { margin: 6px 0 10px; }
 .palco .frase-destaque { justify-content: center; color: #fff; font-size: 16px; }

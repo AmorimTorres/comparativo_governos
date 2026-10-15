@@ -36,7 +36,8 @@ export function App() {
       <header className="topo sobre-verde">
         <div className="conteudo">
           <a className="marca" href={hrefRota("home")}>
-            Dois governos em dados
+            <img className="simbolo" src="./simbolo.png" alt="" width={296} height={186} />
+            Início
           </a>
           <nav aria-label="Principal">
             <a href={hrefRota("home")} aria-current={rota.pagina === "home" ? "page" : undefined}>
