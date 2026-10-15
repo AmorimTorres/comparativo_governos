@@ -62,7 +62,9 @@ button { font: inherit; }
 .topo .conteudo { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; flex-wrap: wrap; }
 .topo a { color: var(--identidade-branco); text-decoration: none; }
 /* Passar o mouse: o elemento diminui levemente, sem sublinhado nem troca de cor. */
-.topo a, .palco-nome a { display: inline-block; transition: transform 0.15s ease; }
+/* (.marca fica fora do display: ela é inline-flex, com o símbolo ao lado do texto) */
+.topo nav a, .palco-nome a { display: inline-block; }
+.topo a, .palco-nome a { transition: transform 0.15s ease; }
 .topo a:hover, .palco-nome a:hover { transform: scale(0.96); }
 .topo nav { display: flex; gap: 18px; font-family: var(--fonte-rotulo); font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; font-size: 15px; }
 /* Página atual em amarelo (4,9:1 sobre o verde escuro); as outras em branco. */
