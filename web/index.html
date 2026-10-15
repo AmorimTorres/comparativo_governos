@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://use.typekit.net" crossorigin />
     <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link rel="stylesheet" href="https://use.typekit.net/jgs6nnl.css" />
+    <!-- O Safari não aplica ascent/descent-override (src/estilos/reel.css): marca a
+         página para a compensação vertical da Reel em src/estilos/global.css. -->
+    <script>if (!("ascentOverride" in FontFace.prototype)) document.documentElement.classList.add("sem-metricas");</script>
     <title>Dois governos em dados</title>
 
     <!-- Prévia em WhatsApp, redes sociais e mensageiros (Open Graph e Twitter).

@@ -430,3 +430,29 @@ details summary { cursor: pointer; font-weight: 500; min-height: 36px; display: 
 }
 .seta-troca { width: 1.05em; height: 1.05em; vertical-align: -0.18em; }
 .seta-texto { white-space: nowrap; }
+
+/* ---------- Safari: compensação vertical da Reel ----------
+   O Safari aplica o size-adjust das faces de src/estilos/reel.css, mas não o
+   ascent/descent-override. Sem eles, a caixa-alta da Reel fica 0,2em (rótulos)
+   e 0,15em (títulos e números) abaixo de onde fica no Chrome e no Firefox. O
+   script em index.html marca <html class="sem-metricas"> nesses navegadores, e
+   aqui o texto sobe essa diferença. inset-block-start funciona também na faixa
+   "Melhor" em pé (writing-mode vertical). */
+.sem-metricas { --sobe-r: 0.2em; --sobe-d: 0.15em; }
+.sem-metricas :is(.texto-reel, .rotulo, .topo nav a, .heroi-apoio, .legenda strong, .palco-metrica, .frase-destaque strong,
+  .cartao-metrica, .legenda-mini b, .cabecalho-ind .apoio, .comparacao h2, .info h2, .bloco h2, .analise-sub, .texto-longo h3) {
+  position: relative; inset-block-start: calc(-1 * var(--sobe-r));
+}
+.sem-metricas :is(.heroi-titulo, .palco-nome, .numero, .cartao-nome, .cabecalho-ind h1, .analise h2, .texto-longo h2) {
+  position: relative; inset-block-start: calc(-1 * var(--sobe-d));
+}
+/* Caixas com texto e ícone centralizados: o respiro passa de baixo para cima
+   e o ícone desce de volta para o centro. */
+.sem-metricas .kicker { padding-top: max(0px, calc(3px - var(--sobe-r))); padding-bottom: calc(3px + var(--sobe-r)); }
+.sem-metricas .cartao-cabeca .kicker { padding-top: max(0px, calc(2px - var(--sobe-r))); padding-bottom: calc(2px + var(--sobe-r)); }
+.sem-metricas .botao { padding-top: calc(8px - var(--sobe-r)); padding-bottom: calc(8px + var(--sobe-r)); }
+.sem-metricas .segmento { padding-top: calc(6px - var(--sobe-r)); padding-bottom: calc(6px + var(--sobe-r)); }
+.sem-metricas .chip { padding-top: calc(5px - var(--sobe-r)); padding-bottom: calc(5px + var(--sobe-r)); }
+.sem-metricas .pill-parcial { padding-top: 0; padding-bottom: calc(1px + var(--sobe-r)); }
+.sem-metricas :is(.botao, .segmento, .chip) > svg { position: relative; top: var(--sobe-r); }
+.sem-metricas .marca .texto-reel { inset-block-start: calc(-1 * var(--sobe-d)); }

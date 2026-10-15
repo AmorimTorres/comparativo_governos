@@ -107,12 +107,12 @@ export function Duelo({ dados, destacar, ativo, mostrarJanela = true }: { dados:
               {melhor && (
                 <span className="selo-melhor">
                   <Estrela tamanho={13} />
-                  Melhor
+                  <span className="texto-reel">Melhor</span>
                 </span>
               )}
               <span className="lado-quem">
                 <MarcadorGoverno cor={g.estilo.cor} traco={g.estilo.traco} />
-                {g.nome}
+                <span className="texto-reel">{g.nome}</span>
               </span>
               <Numero v={v} ind={ind} ativo={ativo} inicio={ef === "inicio_fim"} n={n} />
               <span className="lado-ref">

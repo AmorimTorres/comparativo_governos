@@ -48,7 +48,7 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
                   <th scope="col" key={g.id} style={{ borderTopColor: g.estilo.cor }}>
                     <span className="th-gov">
                       <MarcadorGoverno cor={g.estilo.cor} traco={g.estilo.traco} tamanho={12} />
-                      {g.nome}
+                      <span className="texto-reel">{g.nome}</span>
                     </span>
                     <span className="th-janela">
                       {J ? r.periodo_coberto_janela_comum : r.periodo_coberto} · {J ? r.n_janela_comum : r.n_observacoes} obs.
@@ -80,7 +80,7 @@ function Comparacao({ ind, resumos, governos, janela, destacar }: { ind: Indicad
                       <td key={g.id} className={melhor ? "melhor" : undefined}>
                         {melhor && (
                           <span className="selo-celula">
-                            <Estrela tamanho={13} /> Melhor
+                            <Estrela tamanho={13} /> <span className="texto-reel">Melhor</span>
                           </span>
                         )}
                         <span className="valor-celula">{comSetas(principal)}</span>

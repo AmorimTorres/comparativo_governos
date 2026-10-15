@@ -37,7 +37,7 @@ export function App() {
         <div className="conteudo">
           <a className="marca" href={hrefRota("home")}>
             <img className="simbolo" src="./simbolo.png" alt="" width={296} height={186} />
-            Início
+            <span className="texto-reel">Início</span>
           </a>
           <nav aria-label="Principal">
             <a href={hrefRota("home")} aria-current={rota.pagina === "home" ? "page" : undefined}>

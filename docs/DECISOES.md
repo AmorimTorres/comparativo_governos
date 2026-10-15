@@ -169,3 +169,9 @@ Registre aqui quando um teste de `tests/test_valores_conhecidos.py` falhar por r
 ## Quadro também no lado não vencedor
 
 - O lado que não vence ganha um quadro igual ao azul, na cor `#DDBE03` (token `identidade.amarelo_escuro`), para não ficar vazio. Sem vencedor (indicador neutro, empate ou destaque desligado), os dois lados usam esse quadro. Azul-marinho sobre `#DDBE03`: 7,5:1.
+
+## Safari: alinhamento vertical da Reel
+
+- O Safari (iPhone e Mac) aplica o `size-adjust` das faces da Reel, mas ignora `ascent-override` e `descent-override`. Por isso a caixa-alta ficava cerca de 0,2em abaixo do centro em etiquetas, botões e chips, e os nomes não alinhavam com o texto em Barlow ao lado.
+- Um script em `web/index.html` marca `<html class="sem-metricas">` quando o navegador não suporta `ascentOverride`; o fim de `web/src/estilos/global.css` sobe o texto da Reel (0,2em nos rótulos, 0,15em em títulos e números) só nesse caso. Chrome e Firefox não mudam.
+- O WebKit do Playwright não abre nesta máquina; a correção foi conferida simulando o Safari no Chromium (faces da Reel sem os overrides).
