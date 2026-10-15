@@ -437,9 +437,10 @@ details summary { cursor: pointer; font-weight: 500; min-height: 36px; display: 
    e 0,15em (títulos e números) abaixo de onde fica no Chrome e no Firefox. O
    script em index.html marca <html class="sem-metricas"> nesses navegadores, e
    aqui o texto sobe essa diferença. inset-block-start funciona também na faixa
-   "Melhor" em pé (writing-mode vertical). */
+   "Melhor" em pé (writing-mode vertical). Texto em linha com outro texto (como
+   o rótulo "Fonte") já se alinha pela linha de base e fica de fora. */
 .sem-metricas { --sobe-r: 0.2em; --sobe-d: 0.15em; }
-.sem-metricas :is(.texto-reel, .rotulo, .topo nav a, .heroi-apoio, .legenda strong, .palco-metrica, .frase-destaque strong,
+.sem-metricas :is(.texto-reel, .topo nav a, .heroi-apoio, .legenda strong, .palco-metrica, .frase-destaque strong,
   .cartao-metrica, .legenda-mini b, .cabecalho-ind .apoio, .comparacao h2, .info h2, .bloco h2, .analise-sub, .texto-longo h3) {
   position: relative; inset-block-start: calc(-1 * var(--sobe-r));
 }
