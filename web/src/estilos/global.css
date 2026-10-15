@@ -173,6 +173,9 @@ button { font: inherit; }
    lados reservam o mesmo espaço da faixa, para os números continuarem
    alinhados e o losango com a mesma altura em todos os cartões. */
 .lado { padding-top: calc(clamp(14px, 3.4cqi, 26px) + 1.6em); }
+/* Cada lado tem o próprio quadro: azul no vencedor, amarelo-escuro no outro
+   (e nos dois quando não há vencedor ou o destaque está desligado). */
+.lado { background: var(--identidade-amarelo-escuro); }
 .lado.melhor { overflow: hidden; }
 .selo-melhor {
   position: absolute; top: 0; left: 0; right: 0; height: 1.6em;

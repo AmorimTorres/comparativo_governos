@@ -165,3 +165,7 @@ Registre aqui quando um teste de `tests/test_valores_conhecidos.py` falhar por r
 - Sem o losango decorativo do fundo da abertura (removido em seguida), o teste de acessibilidade passou a medir a abertura e aponta também a frase de apoio: branco sobre `#009C37` dá 3,6:1 e, como o axe só considera negrito a partir do peso 700, ela precisaria de 24 px. Os dois elementos estão excluídos da checagem em `web/testes/painel.spec.ts` até a correção.
 - Correção aplicada: o fundo da abertura passou para o verde escuro `#0A6B2A` (título amarelo 4,9:1, frase branca 6,7:1) e o destaque sorteado ganhou um tom mais fechado (`#07501F`) para não se confundir com o fundo. As exceções de contraste foram removidas de `scripts/contraste.py` e de `web/testes/painel.spec.ts`.
 - Revertido a pedido do mantenedor: a abertura voltou ao verde claro `#009C37`, que é a cor escolhida para a identidade. O título amarelo (2,7:1) e a frase de apoio branca (3,6:1) ficam abaixo do mínimo de contraste, como exceção aceita e registrada em `scripts/contraste.py` e `web/testes/painel.spec.ts`.
+
+## Quadro também no lado não vencedor
+
+- O lado que não vence ganha um quadro igual ao azul, na cor `#DDBE03` (token `identidade.amarelo_escuro`), para não ficar vazio. Sem vencedor (indicador neutro, empate ou destaque desligado), os dois lados usam esse quadro. Azul-marinho sobre `#DDBE03`: 7,5:1.

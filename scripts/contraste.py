@@ -13,6 +13,7 @@ TOKENS = Path(__file__).resolve().parent.parent / "design" / "tokens.json"
 # (texto/primeiro plano, fundo, mínimo exigido, uso)
 PARES = [
     ("identidade.azul_marinho", "identidade.amarelo", 4.5, "número e título no losango"),
+    ("identidade.azul_marinho", "identidade.amarelo_escuro", 4.5, "número e rótulos no quadro do lado não vencedor"),
     ("identidade.branco", "identidade.verde_escuro", 4.5, "texto branco pequeno sobre verde"),
     ("identidade.branco", "identidade.verde", 3.0, "texto branco grande (>= 24px) sobre o verde claro"),
     ("identidade.amarelo", "identidade.verde", 3.0, "título amarelo grande sobre o verde claro da abertura"),
